@@ -1,7 +1,13 @@
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-
 import { AppModule } from './app/app.module';
 
-platformBrowserDynamic()
-    .bootstrapModule(AppModule)
-    .catch(err => console.error(err));
+const bootstrap = () => platformBrowserDynamic().bootstrapModule(AppModule);
+
+bootstrap()
+    .then(() => {
+        const loaderDom = document.querySelector('[href="/assets/css/loading.css"]');
+        if (loaderDom && loaderDom.remove) {
+            loaderDom.remove();
+        }
+    })
+    .catch(console.log);

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ThemeService } from './theme.service';
 
 @Component({
     selector: 'app-root',
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
     styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-    title = 'project-management';
+    public theme;
+
+    constructor(private _themeService: ThemeService) {
+        this.theme = sessionStorage.getItem('theme') ?? 'light';
+    }
+
+    changeTheme() {
+        this.theme = this.theme === 'light' ? 'dark' : 'light';
+        sessionStorage.setItem('theme', this.theme);
+        this._themeService.changeTheme(this.theme).then();
+    }
 }
