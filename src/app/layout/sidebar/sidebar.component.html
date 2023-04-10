@@ -1,0 +1,45 @@
+<div class="flex flex-column justify-content-between h-screen p-3 bg-black-alpha-50">
+    <div class="flex justify-content-center mt-4">
+        <div class="flex flex-column">
+            <div class="flex">
+                <a [routerLink]="['dashboard']">
+                    <i class="pi pi-home"></i>
+                </a>
+            </div>
+            <div class="flex">
+                <a [routerLink]="['calendar']">
+                    <i class="pi pi-calendar"></i>
+                </a>
+            </div>
+            <div class="flex">
+                <a [routerLink]="['overview']">
+                    <i class="pi pi-globe"></i>
+                </a>
+            </div>
+            <div class="flex">
+                <a [routerLink]="['report']">
+                    <i class="pi pi-chart-pie"></i>
+                </a>
+            </div>
+            <div class="flex">
+                <a [routerLink]="['new-task']">
+                    <i class="pi pi-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="flex justify-content-center mb-4">
+        <div class="flex flex-column">
+            <div class="flex">
+                <a (click)="changeTheme()" href="javascript:void(0)">
+                    <i [class.pi-moon]="theme === 'light'" [class.pi-sun]="theme === 'dark'" class="pi"></i>
+                </a>
+            </div>
+            <div class="flex">
+                <a [routerLink]="['login']">
+                    <i class="pi pi-sign-out"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
