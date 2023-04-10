@@ -1,1 +1,47 @@
-<p>dashboard works!</p>
+<div class="grid align-items-center">
+    <div class="col-4">
+        <h1 class="mb-0 text-5xl">Welcome, juliana!</h1>
+        <p class="text-xl mt-1 text-500">Here is your agenda for today</p>
+    </div>
+    <div class="col-8">
+        <div class="grid">
+            <div class="col">
+                <span class="p-input-icon-right w-full">
+                    <i class="pi pi-search mr-3"></i>
+                    <input
+                        class="p-inputtext-lg pl-4 border-1 w-full border-round-2xl line-height-4 mr-8 bg-black-alpha-10"
+                        pInputText
+                        placeholder="Search"
+                        type="text" />
+                </span>
+            </div>
+            <div class="col-fixed">
+                <div class="card ml-8">
+                    <p-avatar
+                        image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png"
+                        shape="circle"
+                        size="xlarge"
+                        styleClass="mr-2"></p-avatar>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="grid">
+    <div class="lg:col-4 md:col-6 sm:col-12">
+        <p-calendar [inline]="true" [showWeek]="true" class="w-full"></p-calendar>
+    </div>
+    <div class="lg:col-8 md:col-12">
+        <p-card header="Urgent Task">
+            <div class="grid">
+                <div *ngFor="let item of urgentTask" class="flex align-items-center">
+                    <p-radioButton
+                        [(ngModel)]="item.completed"
+                        [inputId]="item.id.toString()"
+                        [name]="item.id.toString()"></p-radioButton>
+                    <label [for]="item.id.toString()" class="ml-2">{{ item.name }}</label>
+                </div>
+            </div>
+        </p-card>
+    </div>
+</div>

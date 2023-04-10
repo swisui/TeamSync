@@ -1,15 +1,22 @@
 :host {
-    background: var(--blue-800);
+    width: var(--sidebar-width);
+    background: var(--sidebar-bg);
     display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+
     .pi {
         color: #fff;
-        font-size: 24px;
+        font-size: 20px;
         padding: 20px;
         border-radius: 50%;
         cursor: pointer;
-        transition: all .2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+
         &:hover {
-            background: var(--blue-700);
+            background: var(--sidebar-hover-bg);
         }
     }
 }

@@ -1,0 +1,13 @@
+:host ::ng-deep {
+    .p-calendar {
+        width: 100%;
+        .p-datepicker {
+            border: none;
+            border-radius: 24px;
+
+            table td {
+                padding: 0;
+            }
+        }
+    }
+}
