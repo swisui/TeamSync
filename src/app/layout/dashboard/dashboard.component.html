@@ -29,12 +29,12 @@
 </div>
 <div class="grid">
     <div class="lg:col-4 md:col-6 sm:col-12">
-        <p-calendar [inline]="true" [showOtherMonths]="false" [showWeek]="false" class="w-full"> </p-calendar>
+        <p-calendar [inline]="true" [showOtherMonths]="false" [showWeek]="false" class="w-full"></p-calendar>
     </div>
     <div class="lg:col-8 md:col-12">
         <p-card header="Urgent Task">
             <ul>
-                <li *ngFor="let item of urgentTask; let last = last">
+                <li *ngFor="let item of urgentTask; let last = last" class="border-bottom-1 border-100">
                     <div class="grid align-items-center">
                         <div class="col-fixed">
                             <p-radioButton
@@ -58,17 +58,100 @@
 <div class="grid mt-1">
     <div class="lg:col-4 md:col-6 sm:col-12">
         <p-card header="Project directory">
-
+            <ul>
+                <li *ngFor="let item of projectDirectory" class="border-bottom-1 border-100">
+                    <div class="grid">
+                        <div class="col">
+                            <p-avatar
+                                [label]="item.name.charAt(0)"
+                                [style]="{ 'background-color': '#9c27b0', color: '#ffffff' }"
+                                shape="circle"
+                                styleClass="mr-2"></p-avatar>
+                            {{ item.name }}
+                        </div>
+                        <div class="col-fixed">
+                            <p-avatar
+                                *ngFor="let user of item.user"
+                                class="-ml-2"
+                                image="https://primefaces.org/cdn/primeng/images/demo/avatar/onyamalimba.png"
+                                shape="circle"></p-avatar>
+                        </div>
+                    </div>
+                </li>
+            </ul>
         </p-card>
     </div>
     <div class="lg:col-4 md:col-6 sm:col-12">
         <p-card header="New Comments">
+            <div
+                *ngFor="let item of newComments; let last = last"
+                [class.mb-4]="!last"
+                class="flex bg-blue-200 p-2 border-round">
+                <div class="grid align-items-center justify-content-center">
+                    <div class="col-fixed">
+                        <p-avatar
+                            image="https://primefaces.org/cdn/primeng/images/demo/avatar/onyamalimba.png"
+                            shape="circle"
+                            size="xlarge"></p-avatar>
+                    </div>
+                    <div class="col">
+                        <p class="mt-0 mb-1 text-sm">{{ item.user }} in {{ item.project }}</p>
+                        <p class="m-0 font-semibold text-overflow-ellipsis">
+                            {{ item.message }}
+                        </p>
+                    </div>
+                    <div class="col-fixed">
+                        <i class="pi pi-angle-right text-2xl"></i>
+                    </div>
+                </div>
+            </div>
+        </p-card>
 
+        <p-card styleClass="mt-5 p-0-body">
+            <div class="grid">
+                <div class="col-4">
+                    <div class="bg-purple-100 border-round flex flex-column justify-content-between">
+                        <div class="text-purple-900">#Research</div>
+                        <div class="grid flex-nowrap align-items-center">
+                            <div class="col">
+                                <span class="text-black-alpha-50">Survey Design</span>
+                            </div>
+                            <div class="col">
+                                <i class="pi pi-angle-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="bg-green-100 border-round flex flex-column justify-content-between">
+                        <div class="text-green-900">#Strategy</div>
+                        <div class="grid flex-nowrap align-items-center">
+                            <div class="col">
+                                <span class="text-black-alpha-50">Survey Design</span>
+                            </div>
+                            <div class="col">
+                                <i class="pi pi-angle-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="bg-yellow-100 border-round flex flex-column justify-content-between">
+                        <div class="text-yellow-900">#Operations</div>
+                        <div class="grid flex-nowrap align-items-center">
+                            <div class="col">
+                                <span class="text-black-alpha-50">Survey Design</span>
+                            </div>
+                            <div class="col">
+                                <i class="pi pi-angle-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </p-card>
     </div>
     <div class="lg:col-4 md:col-6 sm:col-12">
-        <p-card header="Team Directory">
-
-        </p-card>
+        <p-card header="Team Directory"></p-card>
     </div>
 </div>

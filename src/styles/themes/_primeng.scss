@@ -11,4 +11,7 @@
     .p-card-body {
         padding: 30px;
     }
+    &.p-0-body .p-card-body{
+        padding: 0;
+    }
 }
