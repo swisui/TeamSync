@@ -1,27 +1,27 @@
 <div class="grid align-items-center">
-    <div class="col-4">
+    <div class="lg:col-4 md:col-12 sm:col-12">
         <h1 class="m-0 text-5xl">Welcome, juliana!</h1>
-        <p class="text-xl mt-1 text-600 mb-0">Here is your agenda for today</p>
+        <p class="text-xl mt-1 mb-3">Here is your agenda for today</p>
     </div>
-    <div class="col-8">
+    <div class="lg:col-8 md:col-12 sm:col-12">
         <div class="grid">
             <div class="col">
                 <span class="p-input-icon-right w-full">
                     <i class="pi pi-search mr-3"></i>
                     <input
-                        class="p-inputtext-lg pl-4 border-1 w-full border-round-2xl line-height-4 mr-8 bg-black-alpha-10"
+                        class="w-full border-round-3xl border-1 border-100 bg-transparent py-3 px-4 search-input"
                         pInputText
-                        placeholder="Search"
-                        type="text" />
+                        placeholder="Search" />
                 </span>
             </div>
             <div class="col-fixed">
-                <div class="card ml-8">
+                <div class="card ml-4">
                     <p-avatar
-                        image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png"
+                        [style]="{ height: '50px', width: '50px' }"
+                        image="/assets/images/profile-pics/4.jpg"
                         shape="circle"
                         size="xlarge"
-                        styleClass="mr-2"></p-avatar>
+                        styleClass="mr-2" />
                 </div>
             </div>
         </div>
@@ -33,24 +33,24 @@
     </div>
     <div class="lg:col-8 md:col-12">
         <p-card header="Urgent Task">
-            <ul>
-                <li *ngFor="let item of urgentTask; let last = last" class="border-bottom-1 border-100">
-                    <div class="grid align-items-center">
-                        <div class="col-fixed">
-                            <p-radioButton
-                                [(ngModel)]="item.completed"
-                                [inputId]="item.id.toString()"
-                                [name]="item.id.toString()"></p-radioButton>
-                        </div>
-                        <div class="col">
-                            <label [for]="item.id.toString()" class="ml-2">{{ item.name }}</label>
-                        </div>
-                        <div class="col-fixed">
-                            {{ item.due | date : 'short' }}
-                        </div>
+            <div
+                *ngFor="let item of urgentTask; let last = last"
+                [class.-mb-3]="last"
+                [class.mb-4]="!last"
+                class="grid align-items-center">
+                <div class="col">
+                    <p-radioButton
+                        [(ngModel)]="item.completed"
+                        [inputId]="item.id.toString()"
+                        [name]="item.id.toString()" />
+                    <label [for]="item.id.toString()" class="ml-3">{{ item.name }}</label>
+                </div>
+                <div class="col-fixed text-pink-500 font-bold">
+                    <div class="flex align-items-center" [style.height.px]="20">
+                        <i class="pi pi-circle-fill mr-2" [style.font-size.px]="6"></i> Today
                     </div>
-                </li>
-            </ul>
+                </div>
+            </div>
         </p-card>
     </div>
 </div>
@@ -66,7 +66,7 @@
                                 [label]="item.name.charAt(0)"
                                 [style]="{ 'background-color': '#9c27b0', color: '#ffffff' }"
                                 shape="circle"
-                                styleClass="mr-2"></p-avatar>
+                                styleClass="mr-2" />
                             {{ item.name }}
                         </div>
                         <div class="col-fixed">
@@ -74,7 +74,7 @@
                                 *ngFor="let user of item.user"
                                 class="-ml-2"
                                 image="https://primefaces.org/cdn/primeng/images/demo/avatar/onyamalimba.png"
-                                shape="circle"></p-avatar>
+                                shape="circle" />
                         </div>
                     </div>
                 </li>
@@ -92,7 +92,7 @@
                         <p-avatar
                             image="https://primefaces.org/cdn/primeng/images/demo/avatar/onyamalimba.png"
                             shape="circle"
-                            size="xlarge"></p-avatar>
+                            size="xlarge" />
                     </div>
                     <div class="col">
                         <p class="mt-0 mb-1 text-sm">{{ item.user }} in {{ item.project }}</p>
@@ -152,6 +152,20 @@
         </p-card>
     </div>
     <div class="lg:col-4 md:col-6 sm:col-12">
-        <p-card header="Team Directory"></p-card>
+        <p-card header="Team Directory">
+            <div class="grid align-items-center justify-content-center">
+                <div *ngFor="let item of teamDirectory" class="col-6 text-center">
+                    <div class="bg-black-alpha-10 p-3 border-round">
+                        <p-avatar
+                            image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png"
+                            shape="circle"
+                            size="xlarge"
+                            styleClass="mb-2" />
+                        <div class="block mb-2 font-semibold">{{ item.name }}</div>
+                        <div class="block text-black-alpha-30 text-sm">{{ item.role }}</div>
+                    </div>
+                </div>
+            </div>
+        </p-card>
     </div>
 </div>

@@ -7,6 +7,21 @@ body {
     font-family: var(--font-family);
 }
 
+@font-face {
+    font-family: 'MalebuHeavy';
+    src: url('/assets/font/MalebuHeavy/font.woff2') format('woff2'),
+        url('/assets/font/MalebuHeavy/font.woff') format('woff');
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    letter-spacing: 1px;
+    font-family: MalebuHeavy, 'Inter', sans-serif;
+}
+
 [class*='col'] {
-    padding: 1rem;
+    padding: 0.625rem;
 }

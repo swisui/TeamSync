@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from "@angular/forms";
+import { DividerModule } from 'primeng/divider';
 import { RadioButtonModule } from "primeng/radiobutton";
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
@@ -12,6 +13,6 @@ import {CardModule} from "primeng/card";
 
 @NgModule({
     declarations: [DashboardComponent],
-    imports: [CommonModule, DashboardRoutingModule, InputTextModule, AvatarModule, CalendarModule, CardModule, RadioButtonModule, FormsModule],
+    imports: [CommonModule, DashboardRoutingModule, InputTextModule, AvatarModule, CalendarModule, CardModule, RadioButtonModule, FormsModule, DividerModule],
 })
 export class DashboardModule {}

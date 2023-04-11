@@ -2,27 +2,27 @@
     <div class="flex justify-content-center mt-8">
         <div class="flex flex-column">
             <div class="flex">
-                <a [routerLink]="['dashboard']">
+                <a [pTooltip]="'Dashboard'" [routerLink]="['dashboard']" routerLinkActive="active">
                     <i class="pi pi-home"></i>
                 </a>
             </div>
             <div class="flex">
-                <a [routerLink]="['calendar']">
+                <a [pTooltip]="'Calendar'" [routerLink]="['calendar']" routerLinkActive="active">
                     <i class="pi pi-calendar"></i>
                 </a>
             </div>
             <div class="flex">
-                <a [routerLink]="['overview']">
+                <a [pTooltip]="'Overview'" [routerLink]="['overview']" routerLinkActive="active">
                     <i class="pi pi-globe"></i>
                 </a>
             </div>
             <div class="flex">
-                <a [routerLink]="['report']">
+                <a [pTooltip]="'Report'" [routerLink]="['report']" routerLinkActive="active">
                     <i class="pi pi-chart-pie"></i>
                 </a>
             </div>
             <div class="flex">
-                <a [routerLink]="['new-task']">
+                <a [pTooltip]="'Add Task'" [routerLink]="['new-task']" routerLinkActive="active">
                     <i class="pi pi-plus"></i>
                 </a>
             </div>
@@ -31,12 +31,12 @@
     <div class="flex justify-content-center mb-4">
         <div class="flex flex-column">
             <div class="flex">
-                <a (click)="changeTheme()" href="javascript:void(0)">
+                <a [pTooltip]="theme === 'light' ? 'Dark' : 'Light'" (click)="changeTheme()" href="javascript:void(0)">
                     <i [class.pi-moon]="theme === 'light'" [class.pi-sun]="theme === 'dark'" class="pi"></i>
                 </a>
             </div>
             <div class="flex">
-                <a [routerLink]="['login']">
+                <a [pTooltip]="'Logout'" [routerLink]="['login']">
                     <i class="pi pi-sign-out"></i>
                 </a>
             </div>

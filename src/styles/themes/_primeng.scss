@@ -4,14 +4,56 @@
     border-radius: var(--border-radius);
 }
 
-
 .p-card {
+    color: var(--font-color);
     box-shadow: none;
     border-radius: var(--border-radius);
-    .p-card-body {
-        padding: 30px;
+
+    .p-card-title {
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 1.25rem;
     }
-    &.p-0-body .p-card-body{
+
+    .p-card-body {
+        padding: 20px;
+    }
+
+    &.p-0-body .p-card-body {
         padding: 0;
+    }
+}
+
+.p-tooltip .p-tooltip-text {
+    padding: 5px 10px;
+}
+
+.p-tooltip .p-tooltip-text {
+    background: var(--active-color);
+}
+
+.p-tooltip.p-tooltip-right .p-tooltip-arrow {
+    border-right-color: var(--active-color);
+}
+
+.p-datepicker .p-datepicker-header .p-datepicker-next,
+.p-datepicker .p-datepicker-header .p-datepicker-prev,
+.p-datepicker .p-datepicker-header .p-datepicker-prev:enabled:hover,
+.p-datepicker .p-datepicker-header .p-datepicker-next:enabled:hover,
+.p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-year,
+.p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-month,
+.p-datepicker {
+    color: var(--font-color);
+}
+
+.p-datepicker .p-datepicker-header .p-datepicker-next,
+.p-datepicker .p-datepicker-header .p-datepicker-prev {
+    font-size: 0.825rem;
+}
+
+.p-datepicker .p-datepicker-header .p-datepicker-title {
+    .p-datepicker-month, .p-datepicker-year {
+        font-size: 1.25rem;
+        font-weight: 400;
     }
 }
