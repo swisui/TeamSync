@@ -1,7 +1,7 @@
 <div class="grid align-items-center">
     <div class="col-4">
-        <h1 class="mb-0 text-5xl">Welcome, juliana!</h1>
-        <p class="text-xl mt-1 text-500">Here is your agenda for today</p>
+        <h1 class="m-0 text-5xl">Welcome, juliana!</h1>
+        <p class="text-xl mt-1 text-600 mb-0">Here is your agenda for today</p>
     </div>
     <div class="col-8">
         <div class="grid">
@@ -29,19 +29,46 @@
 </div>
 <div class="grid">
     <div class="lg:col-4 md:col-6 sm:col-12">
-        <p-calendar [inline]="true" [showWeek]="true" class="w-full"></p-calendar>
+        <p-calendar [inline]="true" [showOtherMonths]="false" [showWeek]="false" class="w-full"> </p-calendar>
     </div>
     <div class="lg:col-8 md:col-12">
         <p-card header="Urgent Task">
-            <div class="grid">
-                <div *ngFor="let item of urgentTask" class="flex align-items-center">
-                    <p-radioButton
-                        [(ngModel)]="item.completed"
-                        [inputId]="item.id.toString()"
-                        [name]="item.id.toString()"></p-radioButton>
-                    <label [for]="item.id.toString()" class="ml-2">{{ item.name }}</label>
-                </div>
-            </div>
+            <ul>
+                <li *ngFor="let item of urgentTask; let last = last">
+                    <div class="grid align-items-center">
+                        <div class="col-fixed">
+                            <p-radioButton
+                                [(ngModel)]="item.completed"
+                                [inputId]="item.id.toString()"
+                                [name]="item.id.toString()"></p-radioButton>
+                        </div>
+                        <div class="col">
+                            <label [for]="item.id.toString()" class="ml-2">{{ item.name }}</label>
+                        </div>
+                        <div class="col-fixed">
+                            {{ item.due | date : 'short' }}
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </p-card>
+    </div>
+</div>
+
+<div class="grid mt-1">
+    <div class="lg:col-4 md:col-6 sm:col-12">
+        <p-card header="Project directory">
+
+        </p-card>
+    </div>
+    <div class="lg:col-4 md:col-6 sm:col-12">
+        <p-card header="New Comments">
+
+        </p-card>
+    </div>
+    <div class="lg:col-4 md:col-6 sm:col-12">
+        <p-card header="Team Directory">
+
         </p-card>
     </div>
 </div>

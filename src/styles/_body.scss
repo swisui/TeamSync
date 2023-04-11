@@ -5,5 +5,8 @@ body {
     height: 100%;
     font-size: var(--font-size);
     font-family: var(--font-family);
-    background: var(--background);
+}
+
+[class*='col'] {
+    padding: 1rem;
 }

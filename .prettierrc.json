@@ -7,6 +7,5 @@
     "arrowParens": "avoid",
     "trailingComma": "all",
     "bracketSameLine": true,
-    "printWidth": 120,
-    "html.format.wrapAttributes": "force-aligned"
+    "printWidth": 120
 }

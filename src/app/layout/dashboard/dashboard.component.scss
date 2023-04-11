@@ -1,12 +1,29 @@
-:host ::ng-deep {
-    .p-calendar {
-        width: 100%;
-        .p-datepicker {
-            border: none;
-            border-radius: 24px;
+:host {
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        li {
+            margin-top: 5px;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--gray-100);
+            &:last-child {
+                border-bottom: none;
+                margin-bottom: -30px;
+            }
+        }
+    }
+    ::ng-deep {
+        .p-calendar {
+            width: 100%;
 
-            table td {
-                padding: 0;
+            .p-datepicker {
+                border: none;
+                border-radius: 24px;
+
+                table td {
+                    padding: 0;
+                }
             }
         }
     }

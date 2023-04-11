@@ -1,3 +1,8 @@
 @import '../variables';
 @import 'primeng/resources/themes/viva-light/theme.css';
 @import 'primeng';
+
+html,
+body {
+    background: var(--background);
+}
