@@ -22,6 +22,10 @@
     &.p-0-body .p-card-body {
         padding: 0;
     }
+
+    &.p-0-card-content .p-card-content {
+        padding: 0;
+    }
 }
 
 .p-tooltip .p-tooltip-text {
@@ -52,7 +56,8 @@
 }
 
 .p-datepicker .p-datepicker-header .p-datepicker-title {
-    .p-datepicker-month, .p-datepicker-year {
+    .p-datepicker-month,
+    .p-datepicker-year {
         font-size: 1.25rem;
         font-weight: 400;
     }

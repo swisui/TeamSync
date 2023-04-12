@@ -88,7 +88,7 @@
                 <li
                     *ngFor="let item of newComments; let index = index; let last = last"
                     [class.-mb-3]="last"
-                    class="mb-3 flex align-items-center border-round p-3 bg-purple-50">
+                    class="mb-3 flex align-items-center border-round-xl p-3 bg-purple-50">
                     <p-avatar
                         [image]="'/assets/images/profile-pics/' + (index + 1) + '.jpg'"
                         class="flex-auto"
@@ -101,42 +101,48 @@
                 </li>
             </ul>
         </p-card>
-        <p-card styleClass="mt-4">
+        <p-card styleClass="p-0-card-content mt-4">
             <div class="grid">
-                <div class="col-4">
-                    <div class="bg-purple-100 border-round flex flex-column justify-content-between">
-                        <div class="text-purple-900">#Research</div>
-                        <div class="grid flex-nowrap align-items-center">
-                            <div class="col">
-                                <span class="text-black-alpha-50">Survey Design</span>
+                <div class="lg:col-4 md:col-12 sm:col-12">
+                    <div class="bg-purple-100 border-round-xl p-3">
+                        <div class="grid grid-nogutter align-items-center">
+                            <div class="col-12">
+                                <span class="block text-purple-800 text-sm">#Research</span>
                             </div>
                             <div class="col">
+                                <span class="text-sm">Survey Design</span>
+                            </div>
+                            <div class="col-fixed">
                                 <i class="pi pi-angle-right"></i>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-4">
-                    <div class="bg-green-100 border-round flex flex-column justify-content-between">
-                        <div class="text-green-900">#Strategy</div>
-                        <div class="grid flex-nowrap align-items-center">
-                            <div class="col">
-                                <span class="text-black-alpha-50">Survey Design</span>
+                <div class="lg:col-4 md:col-12 sm:col-12">
+                    <div class="bg-green-100 border-round-xl p-3">
+                        <div class="grid grid-nogutter align-items-center">
+                            <div class="col-12">
+                                <span class="block text-green-900 text-sm">#Strategy</span>
                             </div>
                             <div class="col">
+                                <span class="text-sm">SWOT Analysis</span>
+                            </div>
+                            <div class="col-fixed">
                                 <i class="pi pi-angle-right"></i>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-4">
-                    <div class="bg-yellow-100 border-round flex flex-column justify-content-between">
-                        <div class="text-yellow-900">#Operations</div>
-                        <div class="grid flex-nowrap align-items-center">
-                            <div class="col">
-                                <span class="text-black-alpha-50">Survey Design</span>
+                <div class="lg:col-4 md:col-12 sm:col-12">
+                    <div class="bg-yellow-100 border-round-xl p-3">
+                        <div class="grid grid-nogutter align-items-center">
+                            <div class="col-12">
+                                <span class="block text-yellow-900 text-sm">#Strategy</span>
                             </div>
                             <div class="col">
+                                <span class="text-sm">Structural Design</span>
+                            </div>
+                            <div class="col-fixed">
                                 <i class="pi pi-angle-right"></i>
                             </div>
                         </div>
@@ -146,17 +152,17 @@
         </p-card>
     </div>
     <div class="lg:col-4 md:col-6 sm:col-12">
-        <p-card header="Team Directory">
+        <p-card header="Team Directory" styleClass="p-0-card-content">
             <div class="grid align-items-center justify-content-center">
-                <div *ngFor="let item of teamDirectory" class="col-6 text-center">
-                    <div class="bg-black-alpha-10 p-3 border-round">
+                <div *ngFor="let item of teamDirectory; let index = index" class="col-6 text-center mt-3">
+                    <div class="bg-bluegray-50 p-3 border-round-xl">
                         <p-avatar
-                            image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png"
+                            [image]="'/assets/images/profile-pics/' + (index + 1) + '.jpg'"
                             shape="circle"
                             size="xlarge"
                             styleClass="mb-2" />
-                        <div class="block mb-2 font-semibold">{{ item.name }}</div>
-                        <div class="block text-black-alpha-30 text-sm">{{ item.role }}</div>
+                        <div class="block font-semibold">{{ item.name }}</div>
+                        <div class="block text-black-alpha-50 text-sm">{{ item.role }}</div>
                     </div>
                 </div>
             </div>
