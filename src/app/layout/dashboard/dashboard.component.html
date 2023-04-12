@@ -84,29 +84,24 @@
     </div>
     <div class="lg:col-4 md:col-6 sm:col-12">
         <p-card header="New Comments">
-            <div
-                class="grid align-items-center justify-content-center"
-                *ngFor="let item of newComments; let index = index; let last = last"
-                [class.mb-4]="!last">
-                <div class="col-fixed">
+            <ul class="list-none p-0 m-0">
+                <li
+                    *ngFor="let item of newComments; let index = index; let last = last"
+                    [class.-mb-3]="last"
+                    class="mb-3 flex align-items-center border-round p-3 bg-purple-50">
                     <p-avatar
                         [image]="'/assets/images/profile-pics/' + (index + 1) + '.jpg'"
+                        class="flex-auto"
                         shape="circle"
                         size="large" />
-                </div>
-                <div class="col">
-                    <p class="mt-0 mb-1 text-sm">{{ item.user }} in {{ item.project }}</p>
-                    <p class="m-0 font-semibold text-overflow-ellipsis">
-                        {{ item.message }}
-                    </p>
-                </div>
-                <div class="col-fixed">
-                    <i class="pi pi-angle-right text-2xl"></i>
-                </div>
-            </div>
+                    <div class="ml-3">
+                        <span class="block text-sm">{{ item.user }} in {{ item.project }}</span>
+                        <span class="block font-semibold">{{ item.message }}</span>
+                    </div>
+                </li>
+            </ul>
         </p-card>
-
-        <p-card styleClass="mt-5 p-0-body">
+        <p-card styleClass="mt-4">
             <div class="grid">
                 <div class="col-4">
                     <div class="bg-purple-100 border-round flex flex-column justify-content-between">
