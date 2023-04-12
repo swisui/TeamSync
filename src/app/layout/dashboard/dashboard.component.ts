@@ -24,27 +24,26 @@ export class DashboardComponent {
             { id: 2, name: 'Report Signing', completed: false, due: new Date() },
             { id: 3, name: 'Market overview keynote', completed: false, due: new Date() },
             { id: 4, name: 'Deploy project to dev & staging', completed: false, due: new Date() },
-            // { id: 5, name: 'Prepare documentation', completed: false, due: new Date() },
         ];
         this.projectDirectory = [
             {
                 name: 'Market Research 2024',
                 user: [
-                    { name: 'David', profilePicUrl: '' },
-                    { name: 'Paul', profilePicUrl: '' },
+                    { name: 'David', profilePicUrl: '/assets/images/profile-pics/1.jpg' },
+                    { name: 'Paul', profilePicUrl: '/assets/images/profile-pics/2.jpg' },
                 ],
             },
-            { name: 'New Proposals', user: [{ name: 'David', profilePicUrl: '' }] },
-            { name: 'Brand sprints', user: [{ name: 'David', profilePicUrl: '' }] },
+            { name: 'New Proposals', user: [{ name: 'David', profilePicUrl: '/assets/images/profile-pics/4.jpg' }] },
+            { name: 'Brand sprints', user: [{ name: 'David', profilePicUrl: '/assets/images/profile-pics/3.jpg' }] },
             {
                 name: 'Customer experience Q3',
                 user: [
-                    { name: 'David', profilePicUrl: '' },
-                    { name: 'Paul', profilePicUrl: '' },
-                    { name: 'John', profilePicUrl: '' },
+                    { name: 'David', profilePicUrl: '/assets/images/profile-pics/1.jpg' },
+                    { name: 'Paul', profilePicUrl: '/assets/images/profile-pics/5.jpg' },
+                    { name: 'John', profilePicUrl: '/assets/images/profile-pics/6.jpg' },
                 ],
             },
-            { name: 'Report signing', user: [{ name: 'David', profilePicUrl: '' }] },
+            { name: 'Report signing', user: [{ name: 'David', profilePicUrl: '/assets/images/profile-pics/4.jpg' }] },
         ];
         this.newComments = [
             {

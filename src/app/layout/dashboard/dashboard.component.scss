@@ -1,39 +1,25 @@
-:host {
-    ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        li {
-            //&:last-child {
-                //border-bottom: none;
-                //margin-bottom: -30px;
-            //}
-        }
-    }
+:host ::ng-deep {
+    .p-calendar {
+        width: 100%;
 
-    ::ng-deep {
-        .p-calendar {
-            width: 100%;
+        .p-datepicker {
+            border: none;
+            border-radius: 24px;
 
-            .p-datepicker {
-                border: none;
-                border-radius: 24px;
-
-                table {
-                    th,
-                    td {
-                        padding: 0;
-                        font-size: 0.825rem;
-                        span {
-                            width: 2rem;
-                            height: 2rem;
-                        }
+            table {
+                th,
+                td {
+                    padding: 0;
+                    font-size: 0.825rem;
+                    span {
+                        width: 2rem;
+                        height: 2rem;
                     }
+                }
 
-                    td.p-datepicker-today > span {
-                        background: var(--active-color);
-                        color: var(--orange-50);
-                    }
+                td.p-datepicker-today > span {
+                    background: var(--active-color);
+                    color: var(--orange-50);
                 }
             }
         }

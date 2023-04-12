@@ -46,8 +46,8 @@
                     <label [for]="item.id.toString()" class="ml-3">{{ item.name }}</label>
                 </div>
                 <div class="col-fixed text-pink-500 font-bold">
-                    <div class="flex align-items-center" [style.height.px]="20">
-                        <i class="pi pi-circle-fill mr-2" [style.font-size.px]="6"></i> Today
+                    <div [style.height.px]="20" class="flex align-items-center">
+                        <i [style.font-size.px]="6" class="pi pi-circle-fill mr-2"></i> Today
                     </div>
                 </div>
             </div>
@@ -58,51 +58,50 @@
 <div class="grid mt-1">
     <div class="lg:col-4 md:col-6 sm:col-12">
         <p-card header="Project directory">
-            <ul>
-                <li *ngFor="let item of projectDirectory" class="border-bottom-1 border-100">
-                    <div class="grid">
-                        <div class="col">
-                            <p-avatar
-                                [label]="item.name.charAt(0)"
-                                [style]="{ 'background-color': '#9c27b0', color: '#ffffff' }"
-                                shape="circle"
-                                styleClass="mr-2" />
-                            {{ item.name }}
-                        </div>
-                        <div class="col-fixed">
-                            <p-avatar
-                                *ngFor="let user of item.user"
-                                class="-ml-2"
-                                image="https://primefaces.org/cdn/primeng/images/demo/avatar/onyamalimba.png"
-                                shape="circle" />
-                        </div>
-                    </div>
-                </li>
-            </ul>
+            <div *ngFor="let item of projectDirectory; let index = index" class="grid mb-2">
+                <div class="col">
+                    <p-avatar
+                        [label]="item.name.charAt(0)"
+                        [style]="{ backgroundColor: (index | getColor) }"
+                        shape="circle"
+                        styleClass="mr-2" />
+                    {{ item.name }}
+                </div>
+                <div class="col-fixed">
+                    <p-avatar
+                        *ngFor="let user of item.user"
+                        [image]="user.profilePicUrl"
+                        class="-ml-2"
+                        shape="circle" />
+                </div>
+            </div>
+            <div class="grid -mb-3">
+                <div class="col-12">
+                    <p-button [icon]="'pi pi-plus'" label="Add More"></p-button>
+                </div>
+            </div>
         </p-card>
     </div>
     <div class="lg:col-4 md:col-6 sm:col-12">
         <p-card header="New Comments">
             <div
-                *ngFor="let item of newComments; let last = last"
-                [class.mb-4]="!last"
-                class="flex bg-blue-200 p-2 border-round">
-                <div class="grid align-items-center justify-content-center">
-                    <div class="col-fixed">
-                        <p-avatar
-                            image="https://primefaces.org/cdn/primeng/images/demo/avatar/onyamalimba.png"
-                            shape="circle"
-                            size="xlarge" />
-                    </div>
-                    <div class="col">
-                        <p class="mt-0 mb-1 text-sm">{{ item.user }} in {{ item.project }}</p>
-                        <p class="m-0 font-semibold text-overflow-ellipsis">
-                            {{ item.message }}
-                        </p>
-                    </div>
-                    <div class="col-fixed">
-                        <i class="pi pi-angle-right text-2xl"></i>
-                    </div>
+                class="grid align-items-center justify-content-center"
+                *ngFor="let item of newComments; let index = index; let last = last"
+                [class.mb-4]="!last">
+                <div class="col-fixed">
+                    <p-avatar
+                        [image]="'/assets/images/profile-pics/' + (index + 1) + '.jpg'"
+                        shape="circle"
+                        size="large" />
+                </div>
+                <div class="col">
+                    <p class="mt-0 mb-1 text-sm">{{ item.user }} in {{ item.project }}</p>
+                    <p class="m-0 font-semibold text-overflow-ellipsis">
+                        {{ item.message }}
+                    </p>
+                </div>
+                <div class="col-fixed">
+                    <i class="pi pi-angle-right text-2xl"></i>
                 </div>
             </div>
         </p-card>
