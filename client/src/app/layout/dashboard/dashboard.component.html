@@ -17,7 +17,7 @@
             <div class="col-fixed">
                 <div class="ml-4">
                     <p-avatar
-                        [style]="{ height: '50px', width: '50px' }"
+                        [style]="{ height: '60px', width: '60px' }"
                         image="/assets/images/profile-pics/4.jpg"
                         shape="circle"
                         size="xlarge"
@@ -102,7 +102,7 @@
             </ul>
         </p-card>
         <p-card styleClass="p-0-card-content mt-4">
-            <div class="grid">
+            <div class="grid -mb-2">
                 <div class="lg:col-4 md:col-12 sm:col-12">
                     <div class="bg-purple-100 border-round-xl p-3">
                         <div class="grid grid-nogutter align-items-center">
@@ -153,8 +153,8 @@
     </div>
     <div class="lg:col-4 md:col-6 sm:col-12">
         <p-card header="Team Directory" styleClass="p-0-card-content">
-            <div class="grid align-items-center justify-content-center">
-                <div *ngFor="let item of teamDirectory; let index = index" class="col-6 text-center mt-3">
+            <div class="grid -mb-2 mt-3 align-items-center justify-content-center">
+                <div *ngFor="let item of teamDirectory; let index = index" class="col-6 text-center">
                     <div class="bg-bluegray-50 p-3 border-round-xl">
                         <p-avatar
                             [image]="'/assets/images/profile-pics/' + (index + 1) + '.jpg'"
