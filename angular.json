@@ -26,6 +26,7 @@
                         "assets": ["src/favicon.ico", "src/assets"],
                         "styles": [
                             "src/styles/styles.scss",
+                            "node_modules/angular-calendar/css/angular-calendar.css",
                             {
                                 "inject": false,
                                 "input": "src/styles/themes/light-theme.scss",
