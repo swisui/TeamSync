@@ -5,7 +5,7 @@ import { CHART_COLORS } from '../../shared/utils/chartjs.utils';
 @Component({
     selector: 'app-report',
     templateUrl: './report.component.html',
-    styleUrls: ['./report.component.scss'],
+    styleUrls: ['./report.component.scss']
 })
 export class ReportComponent implements OnInit {
     data: any;
@@ -19,7 +19,7 @@ export class ReportComponent implements OnInit {
         this.dropdownOptions = [
             { label: 'Day', value: 'day' },
             { label: 'Week', value: 'week' },
-            { label: 'Month', value: 'month' },
+            { label: 'Month', value: 'month' }
         ];
     }
 
@@ -38,7 +38,7 @@ export class ReportComponent implements OnInit {
                     borderColor: CHART_COLORS.yellow,
                     barThickness: 15,
                     borderWidth: 1,
-                    borderRadius: 50,
+                    borderRadius: 50
                 },
                 {
                     type: 'bar',
@@ -47,9 +47,9 @@ export class ReportComponent implements OnInit {
                     borderColor: CHART_COLORS.orange,
                     barThickness: 15,
                     borderRadius: 50,
-                    borderSkipped: true,
-                },
-            ],
+                    borderSkipped: true
+                }
+            ]
         };
 
         this.revenueData = {
@@ -61,20 +61,20 @@ export class ReportComponent implements OnInit {
                     data: [3000, 4000, 5000, 3000, 5000, 2500, 3000, 4000, 1000, 3000, 4000, 5000],
                     borderColor: CHART_COLORS.green,
                     barThickness: 10,
-                    borderRadius: 50,
-                },
-            ],
+                    borderRadius: 50
+                }
+            ]
         };
 
         this.options = {
             maintainAspectRatio: false,
             plugins: {
                 tooltip: {
-                    enabled: false,
+                    enabled: false
                 },
                 legend: {
-                    display: false,
-                },
+                    display: false
+                }
             },
             scales: {
                 x: {
@@ -82,29 +82,29 @@ export class ReportComponent implements OnInit {
                     ticks: {
                         font: {
                             family: 'Open Sans', // Your font family
-                            size: 12,
+                            size: 12
                         },
-                        color: textColorSecondary,
+                        color: textColorSecondary
                     },
                     grid: {
-                        display: false,
-                    },
+                        display: false
+                    }
                 },
                 y: {
                     stacked: false,
                     ticks: {
                         font: {
                             family: 'Open Sans', // Your font family
-                            size: 12,
+                            size: 12
                         },
                         beginAtZero: true,
-                        color: textColorSecondary,
+                        color: textColorSecondary
                     },
                     grid: {
-                        display: false,
-                    },
-                },
-            },
+                        display: false
+                    }
+                }
+            }
         };
 
         this.projectProgress = {
@@ -120,13 +120,13 @@ export class ReportComponent implements OnInit {
                     data: [
                         {
                             x: 0,
-                            y: 9,
+                            y: 9
                         },
                         {
                             x: 3,
-                            y: 9,
-                        },
-                    ],
+                            y: 9
+                        }
+                    ]
                 },
                 {
                     backgroundColor: 'rgba(208,255,154,1)',
@@ -137,13 +137,13 @@ export class ReportComponent implements OnInit {
                     data: [
                         {
                             x: 3,
-                            y: 7,
+                            y: 7
                         },
                         {
                             x: 5,
-                            y: 7,
-                        },
-                    ],
+                            y: 7
+                        }
+                    ]
                 },
                 {
                     label: 'Scatter Dataset',
@@ -155,13 +155,13 @@ export class ReportComponent implements OnInit {
                     data: [
                         {
                             x: 5,
-                            y: 5,
+                            y: 5
                         },
                         {
                             x: 10,
-                            y: 5,
-                        },
-                    ],
+                            y: 5
+                        }
+                    ]
                 },
                 {
                     backgroundColor: 'rgba(208,255,154,1)',
@@ -172,15 +172,15 @@ export class ReportComponent implements OnInit {
                     data: [
                         {
                             x: 10,
-                            y: 3,
+                            y: 3
                         },
                         {
                             x: 13,
-                            y: 3,
-                        },
-                    ],
-                },
-            ],
+                            y: 3
+                        }
+                    ]
+                }
+            ]
         };
 
         const textColor = documentStyle.getPropertyValue('--text-color');
@@ -188,7 +188,7 @@ export class ReportComponent implements OnInit {
 
         this.projectProgressOptions = {
             legend: {
-                display: false,
+                display: false
             },
             scales: {
                 x: [
@@ -197,22 +197,22 @@ export class ReportComponent implements OnInit {
                         position: 'bottom',
                         ticks: {
                             beginAtzero: true,
-                            stepSize: 1,
-                        },
-                    },
+                            stepSize: 1
+                        }
+                    }
                 ],
                 y: [
                     {
                         scaleLabel: {
-                            display: false,
+                            display: false
                         },
                         ticks: {
                             beginAtZero: true,
-                            max: 10,
-                        },
-                    },
-                ],
-            },
+                            max: 10
+                        }
+                    }
+                ]
+            }
         };
     }
 }
