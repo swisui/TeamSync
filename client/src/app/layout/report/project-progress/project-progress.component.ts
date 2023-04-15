@@ -31,7 +31,7 @@ export type ChartOptions = {
 export class ProjectProgressComponent {
     @ViewChild('chart')
     public chart: ChartComponent | undefined;
-    public chartOptions: any;
+    public chartOptions: Partial<ChartOptions> | any;
 
     constructor() {
         this.chartOptions = {
@@ -40,38 +40,44 @@ export class ProjectProgressComponent {
                     data: [
                         {
                             x: 'Analysis',
-                            y: [new Date('2019-02-27').getTime(), new Date('2019-03-04').getTime()],
+                            y: [new Date('2023-01-01').getTime(), new Date('2023-01-31').getTime()],
                             fillColor: '#008FFB',
                         },
                         {
                             x: 'Design',
-                            y: [new Date('2019-03-04').getTime(), new Date('2019-03-08').getTime()],
+                            y: [new Date('2023-01-11').getTime(), new Date('2023-01-16').getTime()],
                             fillColor: '#00E396',
                         },
                         {
                             x: 'Coding',
-                            y: [new Date('2019-03-07').getTime(), new Date('2019-03-10').getTime()],
+                            y: [new Date('2023-01-01').getTime(), new Date('2023-02-21').getTime()],
                             fillColor: '#775DD0',
                         },
                         {
                             x: 'Testing',
-                            y: [new Date('2019-03-08').getTime(), new Date('2019-03-12').getTime()],
+                            y: [new Date('2023-03-01').getTime(), new Date('2023-01-31').getTime()],
                             fillColor: '#FEB019',
                         },
                         {
                             x: 'Deployment',
-                            y: [new Date('2019-03-12').getTime(), new Date('2019-03-17').getTime()],
+                            y: [new Date('2023-02-01').getTime(), new Date('2023-02-11').getTime()],
                             fillColor: '#FF4560',
                         },
                     ],
                 },
             ],
             chart: {
-                height: 350,
+                height: 300,
                 type: 'rangeBar',
+                fontFamily: 'Open Sans,sans-serif',
+                toolbar: {
+                    show: false,
+                },
             },
             plotOptions: {
                 bar: {
+                    barHeight: 50,
+                    borderRadius: 10,
                     horizontal: true,
                     distributed: true,
                     dataLabels: {
@@ -81,16 +87,14 @@ export class ProjectProgressComponent {
             },
             dataLabels: {
                 enabled: true,
-                // @ts-ignore
-                formatter: function (_, opts) {
-                    return opts.w.globals.labels[opts.dataPointIndex];
-                },
+                formatter: () => '',
                 style: {
                     colors: ['#f3f4f5', '#fff'],
                 },
             },
             xaxis: {
-                type: 'datetime',
+                type: 'category',
+                categories: ['Jan', 'Feb', 'Mar'],
             },
             yaxis: {
                 show: false,
