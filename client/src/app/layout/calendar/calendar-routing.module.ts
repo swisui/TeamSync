@@ -5,12 +5,12 @@ import { CalendarComponent } from './calendar.component';
 const routes: Routes = [
     {
         path: '',
-        component: CalendarComponent,
-    },
+        component: CalendarComponent
+    }
 ];
 
 @NgModule({
     imports: [RouterModule.forChild(routes)],
-    exports: [RouterModule],
+    exports: [RouterModule]
 })
 export class CalendarRoutingModule {}

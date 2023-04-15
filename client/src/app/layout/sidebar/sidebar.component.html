@@ -31,7 +31,7 @@
     <div class="flex justify-content-center mb-4">
         <div class="flex flex-column">
             <div class="flex">
-                <a [pTooltip]="theme === 'light' ? 'Dark' : 'Light'" (click)="changeTheme()" href="javascript:void(0)">
+                <a (click)="changeTheme()" [pTooltip]="theme === 'light' ? 'Dark' : 'Light'" href="javascript:void(0)">
                     <i [class.pi-moon]="theme === 'light'" [class.pi-sun]="theme === 'dark'" class="pi"></i>
                 </a>
             </div>

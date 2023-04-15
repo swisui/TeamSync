@@ -5,9 +5,9 @@ import { Task } from '../../models/task.model';
 import { User } from '../../models/user.model';
 
 @Component({
-    selector: 'app-dashboard',
+    selector: 'dashboard',
     templateUrl: './dashboard.component.html',
-    styleUrls: ['./dashboard.component.scss'],
+    styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent {
     public now: Date;
@@ -23,15 +23,15 @@ export class DashboardComponent {
             { id: 1, name: 'Finish Monthly Report', completed: false, due: new Date() },
             { id: 2, name: 'Report Signing', completed: false, due: new Date() },
             { id: 3, name: 'Market overview keynote', completed: false, due: new Date() },
-            { id: 4, name: 'Deploy project to dev & staging', completed: false, due: new Date() },
+            { id: 4, name: 'Deploy project to dev & staging', completed: false, due: new Date() }
         ];
         this.projectDirectory = [
             {
                 name: 'Market Research 2024',
                 user: [
                     { name: 'David', profilePicUrl: '/assets/images/profile-pics/1.jpg' },
-                    { name: 'Paul', profilePicUrl: '/assets/images/profile-pics/2.jpg' },
-                ],
+                    { name: 'Paul', profilePicUrl: '/assets/images/profile-pics/2.jpg' }
+                ]
             },
             { name: 'New Proposals', user: [{ name: 'David', profilePicUrl: '/assets/images/profile-pics/4.jpg' }] },
             { name: 'Brand sprints', user: [{ name: 'David', profilePicUrl: '/assets/images/profile-pics/3.jpg' }] },
@@ -40,30 +40,30 @@ export class DashboardComponent {
                 user: [
                     { name: 'David', profilePicUrl: '/assets/images/profile-pics/1.jpg' },
                     { name: 'Paul', profilePicUrl: '/assets/images/profile-pics/5.jpg' },
-                    { name: 'John', profilePicUrl: '/assets/images/profile-pics/6.jpg' },
-                ],
+                    { name: 'John', profilePicUrl: '/assets/images/profile-pics/6.jpg' }
+                ]
             },
-            { name: 'Report signing', user: [{ name: 'David', profilePicUrl: '/assets/images/profile-pics/4.jpg' }] },
+            { name: 'Report signing', user: [{ name: 'David', profilePicUrl: '/assets/images/profile-pics/4.jpg' }] }
         ];
         this.newComments = [
             {
                 user: 'John',
                 project: 'Market Research 2024',
                 message: 'Find my keynote attached in the documents',
-                profileImageUrl: '',
+                profileImageUrl: ''
             },
             {
                 user: 'Dana R.',
                 project: 'Market Research 2024',
                 message: "I've added some new data. Let's connect after daily stand up.",
-                profileImageUrl: '',
-            },
+                profileImageUrl: ''
+            }
         ];
         this.teamDirectory = [
             { name: 'Dana R.', profilePicUrl: '', role: 'Project Manager' },
             { name: 'Elon S.', profilePicUrl: '', role: 'Key Account Planner' },
             { name: 'Nancy W.', profilePicUrl: '', role: 'Account Manager' },
-            { name: 'James M.', profilePicUrl: '', role: 'Digital Manager' },
+            { name: 'James M.', profilePicUrl: '', role: 'Digital Manager' }
         ];
     }
 }

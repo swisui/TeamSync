@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { ThemeService } from '../../theme.service';
 
 @Component({
-    selector: 'app-sidebar',
+    selector: 'sidebar',
     templateUrl: './sidebar.component.html',
-    styleUrls: ['./sidebar.component.scss'],
+    styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent {
     public theme: string;

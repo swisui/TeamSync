@@ -1,14 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import {
-    CalendarCommonModule,
-    CalendarDayModule,
-    CalendarMonthModule,
-    CalendarWeekModule,
-    DateAdapter,
-} from 'angular-calendar';
-import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { CalendarCommonModule, CalendarDayModule, CalendarMonthModule, CalendarWeekModule } from 'angular-calendar';
 import { AvatarModule } from 'primeng/avatar';
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
@@ -26,7 +19,7 @@ import { CalendarComponent } from './calendar.component';
         CalendarCommonModule,
         AvatarModule,
         ButtonModule,
-        RippleModule,
-    ],
+        RippleModule
+    ]
 })
 export class CalendarModule {}

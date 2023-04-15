@@ -67,85 +67,13 @@
         </div>
         <div class="grid">
             <div class="col-12">
-                <p-card styleClass="p-0-card-content mt-2">
-                    <div class="grid align-items-center">
-                        <div class="col">
-                            <div class="text-2xl font-semibold">Project Progress</div>
-                        </div>
-                        <div class="col-fixed">
-                            <p-dropdown [options]="dropdownOptions"></p-dropdown>
-                        </div>
-                    </div>
-                    <div class="grid align-items-center">
-                        <div class="col-fixed">
-                            <div class="text-3xl m-0 font-light">+{{ 12538.87 | currency }}</div>
-                        </div>
-                        <div class="col">
-                            <span class="bg-teal-100 text-teal-700 text-xs px-3 py-1 border-round-xl font-semibold">
-                                Avg. 148h/month
-                            </span>
-                        </div>
-                    </div>
-                    <div class="grid">
-                        <div class="col-12">
-                            <app-project-progress></app-project-progress>
-                        </div>
-                    </div>
-                </p-card>
+                <project-progress></project-progress>
+                <project-category></project-category>
             </div>
         </div>
     </div>
     <div class="lg:col-6 md:col-12">
-        <p-card styleClass="p-0-card-content">
-            <div class="grid align-items-center">
-                <div class="col">
-                    <div class="text-2xl font-semibold">Total Working Hour</div>
-                </div>
-                <div class="col-fixed">
-                    <p-dropdown [options]="dropdownOptions"></p-dropdown>
-                </div>
-            </div>
-            <div class="grid align-items-center">
-                <div class="col-fixed">
-                    <div class="text-3xl m-0 font-light">24 Hours</div>
-                </div>
-                <div class="col">
-                    <span class="bg-orange-100 text-orange-900 text-xs px-3 py-1 border-round-xl font-semibold">
-                        Avg. 148h/month
-                    </span>
-                </div>
-            </div>
-            <div class="grid">
-                <div class="col-12">
-                    <p-chart [data]="data" [options]="options" type="bar"></p-chart>
-                </div>
-            </div>
-        </p-card>
-
-        <p-card styleClass="p-0-card-content mt-4">
-            <div class="grid align-items-center">
-                <div class="col">
-                    <div class="text-2xl font-semibold">Project Revenue</div>
-                </div>
-                <div class="col-fixed">
-                    <p-dropdown [options]="dropdownOptions"></p-dropdown>
-                </div>
-            </div>
-            <div class="grid align-items-center">
-                <div class="col-fixed">
-                    <div class="text-3xl m-0 font-light">+{{ 12538.87 | currency }}</div>
-                </div>
-                <div class="col">
-                    <span class="bg-teal-100 text-teal-700 text-xs px-3 py-1 border-round-xl font-semibold">
-                        Avg. 148h/month
-                    </span>
-                </div>
-            </div>
-            <div class="grid">
-                <div class="col-12">
-                    <p-chart [data]="revenueData" [options]="options" type="bar"></p-chart>
-                </div>
-            </div>
-        </p-card>
+        <project-revenue></project-revenue>
+        <total-sale></total-sale>
     </div>
 </div>

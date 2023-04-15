@@ -1,18 +1,18 @@
-<p-card styleClass="p-0-card-content mt-2">
+<p-card styleClass="p-0-card-content mt-4">
     <div class="grid align-items-center">
         <div class="col">
-            <div class="text-2xl font-semibold">Project Progress</div>
+            <div class="text-2xl font-semibold">Total Sale</div>
         </div>
         <div class="col-fixed">
-            <p-dropdown [options]="dropdownOptions"></p-dropdown>
+            <p-dropdown [(ngModel)]="selectedItem" [options]="dropdownOptions"></p-dropdown>
         </div>
     </div>
     <div class="grid align-items-center">
         <div class="col-fixed">
-            <div class="text-3xl m-0 font-light">+{{ 12538.87 | currency }}</div>
+            <div class="text-3xl m-0 font-light">24 Hours</div>
         </div>
         <div class="col">
-            <span class="bg-teal-100 text-teal-700 text-xs px-3 py-1 border-round-xl font-semibold">
+            <span class="bg-orange-100 text-orange-900 text-xs px-3 py-1 border-round-xl font-semibold">
                 Avg. 148h/month
             </span>
         </div>

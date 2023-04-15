@@ -5,8 +5,6 @@ import { GetColorPipe } from './get-color.pipe';
 @NgModule({
     declarations: [GetColorPipe],
     imports: [CommonModule],
-    exports: [
-        GetColorPipe,
-    ],
+    exports: [GetColorPipe]
 })
 export class PipeModule {}

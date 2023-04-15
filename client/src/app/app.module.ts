@@ -17,8 +17,8 @@ const appInitializerFn = (appConfig: ConfigService) => () => appConfig.loadAppCo
         BrowserAnimationsModule,
         CalendarModule.forRoot({
             provide: DateAdapter,
-            useFactory: adapterFactory,
-        }),
+            useFactory: adapterFactory
+        })
     ],
     providers: [
         ConfigService,
@@ -26,9 +26,9 @@ const appInitializerFn = (appConfig: ConfigService) => () => appConfig.loadAppCo
             provide: APP_INITIALIZER,
             useFactory: appInitializerFn,
             multi: true,
-            deps: [ConfigService],
-        },
+            deps: [ConfigService]
+        }
     ],
-    bootstrap: [AppComponent],
+    bootstrap: [AppComponent]
 })
 export class AppModule {}

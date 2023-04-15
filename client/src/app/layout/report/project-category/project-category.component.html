@@ -1,0 +1,26 @@
+<p-card styleClass="p-0-card-content mt-4">
+    <div class="grid align-items-center">
+        <div class="col">
+            <div class="text-2xl font-semibold">Project Categories</div>
+        </div>
+        <div class="col-fixed">
+            <p-button icon="pi pi-arrow-right" label="See More" styleClass="p-button-text p-button-sm"></p-button>
+        </div>
+    </div>
+    <div class="grid align-items-center">
+        <div *ngFor="let category of categories" class="col-3">
+            <div
+                [ngClass]="'bg-' + category.color + '-100'"
+                class="p-4 border-round-xl flex flex-column align-items-center justify-content-center">
+                <p-avatar
+                    [icon]="category.icon + ' text-2xl' + ' text-' + category.color + '-500'"
+                    [styleClass]="'bg-' + category.color + '-200'"
+                    shape="circle"
+                    size="xlarge"></p-avatar>
+                <span [ngClass]="'text-' + category.color + '-700'" class="flex-1 mt-3">
+                    {{ category.text }}
+                </span>
+            </div>
+        </div>
+    </div>
+</p-card>

@@ -2,7 +2,7 @@ import { DOCUMENT } from '@angular/common';
 import { Inject, Injectable, Injector, Renderer2, RendererFactory2 } from '@angular/core';
 
 @Injectable({
-    providedIn: 'root',
+    providedIn: 'root'
 })
 export class ThemeService {
     private readonly _head: HTMLElement;
@@ -11,7 +11,7 @@ export class ThemeService {
     constructor(
         private _injector: Injector,
         private _rendererFactory: RendererFactory2,
-        @Inject(DOCUMENT) document: Document,
+        @Inject(DOCUMENT) document: Document
     ) {
         this._head = document.head;
         this._renderer = this._rendererFactory.createRenderer(null, null);

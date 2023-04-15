@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-    name: 'getColor',
+    name: 'getColor'
 })
 export class GetColorPipe implements PipeTransform {
     public colors: Array<string>;

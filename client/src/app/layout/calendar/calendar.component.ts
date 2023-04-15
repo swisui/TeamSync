@@ -7,22 +7,22 @@ import { Subject } from 'rxjs';
 const colors: Record<string, EventColor> = {
     red: {
         primary: '#ad2121',
-        secondary: '#FAE3E3',
+        secondary: '#FAE3E3'
     },
     blue: {
         primary: '#1e90ff',
-        secondary: '#D1E8FF',
+        secondary: '#D1E8FF'
     },
     yellow: {
         primary: '#e3bc08',
-        secondary: '#FDF1BA',
-    },
+        secondary: '#FDF1BA'
+    }
 };
 
 @Component({
-    selector: 'app-calendar',
+    selector: 'calendar',
     templateUrl: './calendar.component.html',
-    styleUrls: ['./calendar.component.scss'],
+    styleUrls: ['./calendar.component.scss']
 })
 export class CalendarComponent {
     view: CalendarView = CalendarView.Month;
@@ -42,14 +42,14 @@ export class CalendarComponent {
             allDay: true,
             resizable: {
                 beforeStart: true,
-                afterEnd: true,
+                afterEnd: true
             },
-            draggable: true,
+            draggable: true
         },
         {
             start: startOfDay(new Date()),
             title: 'An event with no end date',
-            color: { ...colors['yellow'] },
+            color: { ...colors['yellow'] }
             // actions: this.actions,
         },
         {
@@ -57,7 +57,7 @@ export class CalendarComponent {
             end: addDays(endOfMonth(new Date()), 3),
             title: 'A long event that spans 2 months',
             color: { ...colors['blue'] },
-            allDay: true,
+            allDay: true
         },
         {
             start: addHours(startOfDay(new Date()), 2),
@@ -67,10 +67,10 @@ export class CalendarComponent {
             // actions: this.actions,
             resizable: {
                 beforeStart: true,
-                afterEnd: true,
+                afterEnd: true
             },
-            draggable: true,
-        },
+            draggable: true
+        }
     ];
     actions: CalendarEventAction[] = [
         {
@@ -78,7 +78,7 @@ export class CalendarComponent {
             a11yLabel: 'Edit',
             onClick: ({ event }: { event: CalendarEvent }): void => {
                 this.handleEvent('Edited', event);
-            },
+            }
         },
         {
             label: '<i class="fas fa-fw fa-trash-alt"></i>',
@@ -86,8 +86,8 @@ export class CalendarComponent {
             onClick: ({ event }: { event: CalendarEvent }): void => {
                 this.events = this.events.filter(iEvent => iEvent !== event);
                 this.handleEvent('Deleted', event);
-            },
-        },
+            }
+        }
     ];
 
     constructor() {
@@ -111,7 +111,7 @@ export class CalendarComponent {
                 return {
                     ...event,
                     start: newStart,
-                    end: newEnd,
+                    end: newEnd
                 };
             }
             return iEvent;
@@ -134,9 +134,9 @@ export class CalendarComponent {
                 draggable: true,
                 resizable: {
                     beforeStart: true,
-                    afterEnd: true,
-                },
-            },
+                    afterEnd: true
+                }
+            }
         ];
     }
 

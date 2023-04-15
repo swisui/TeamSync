@@ -5,12 +5,12 @@ import { NewTaskComponent } from './new-task.component';
 const routes: Routes = [
     {
         path: '',
-        component: NewTaskComponent,
-    },
+        component: NewTaskComponent
+    }
 ];
 
 @NgModule({
     imports: [RouterModule.forChild(routes)],
-    exports: [RouterModule],
+    exports: [RouterModule]
 })
 export class NewTaskRoutingModule {}

@@ -10,7 +10,7 @@ const MONTHS = [
     'September',
     'October',
     'November',
-    'December',
+    'December'
 ];
 
 const COLORS = ['#4dc9f6', '#f67019', '#f53794', '#537bc4', '#acc236', '#166a8f', '#00a950', '#58595b', '#8549ba'];
@@ -22,7 +22,7 @@ export const CHART_COLORS = {
     green: 'rgb(75, 192, 192)',
     blue: 'rgb(54, 162, 235)',
     purple: 'rgb(153, 102, 255)',
-    grey: 'rgb(201, 203, 207)',
+    grey: 'rgb(201, 203, 207)'
 };
 
 const NAMED_COLORS = [
@@ -32,5 +32,5 @@ const NAMED_COLORS = [
     CHART_COLORS.green,
     CHART_COLORS.blue,
     CHART_COLORS.purple,
-    CHART_COLORS.grey,
+    CHART_COLORS.grey
 ];

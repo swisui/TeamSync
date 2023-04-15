@@ -9,6 +9,7 @@
 
     a {
         margin-bottom: 10px;
+
         .pi {
             color: #fff;
             font-size: 20px;
@@ -16,10 +17,12 @@
             border-radius: 50%;
             cursor: pointer;
             transition: all 0.2s ease-in-out;
+
             &:hover {
                 background: var(--sidebar-hover-bg);
             }
         }
+
         &.active .pi {
             background: var(--active-color);
             color: #fff;
