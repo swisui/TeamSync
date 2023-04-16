@@ -1,1 +1,39 @@
-<p>login works!</p>
+<div class="flex align-items-center h-full w-full justify-content-center">
+    <p-card>
+        <div class="grid">
+            <div class="col-12 text-center">
+                <h1>Login</h1>
+            </div>
+            <div class="col-12">
+                <div class="flex flex-column gap-2">
+                    <label htmlFor="username">Username</label>
+                    <span class="p-input-icon-left">
+                        <i class="pi pi-user"></i>
+                        <input pInputText id="username" aria-describedby="username-help" class="w-full" />
+                    </span>
+                </div>
+                <div class="flex flex-column gap-2">
+                    <label htmlFor="password">Password</label>
+                    <span class="p-input-icon-left">
+                        <i class="pi pi-lock"></i>
+                        <input pInputText id="password" aria-describedby="username-help" class="w-full" />
+                    </span>
+                    <span class="text-right text-sm cursor-pointer"> Forgot Password? </span>
+                </div>
+                <div class="flex flex-column gap-2">
+                    <p-button label="Login" styleClass="w-full" [routerLink]="'/'"></p-button>
+                </div>
+                <div class="flex flex-column gap-2 text-center my-4">
+                    <div>
+                        <p-button icon="pi pi-facebook" styleClass="p-button-rounded p-button-facebook"></p-button>
+                        <p-button icon="pi pi-google" styleClass="p-button-rounded p-button-google mx-2"></p-button>
+                        <p-button icon="pi pi-twitter" styleClass="p-button-rounded p-button-twitter"></p-button>
+                    </div>
+                </div>
+                <div class="flex flex-column gap-2 text-center">
+                    <p-button label="SignUp" styleClass="p-button-text p-button-sm"></p-button>
+                </div>
+            </div>
+        </div>
+    </p-card>
+</div>

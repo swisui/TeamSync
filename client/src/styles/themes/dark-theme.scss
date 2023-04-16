@@ -2,7 +2,12 @@
 
 :root {
     --font-color: #ffffff;
+    --card-bg: #19376D;
 }
 
 @import 'primeng/resources/themes/viva-dark/theme.css';
 @import 'primeng';
+
+.p-card {
+    //background: var(--card-bg);
+}

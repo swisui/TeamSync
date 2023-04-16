@@ -77,7 +77,7 @@ export class ProjectProgressComponent {
                 }
             ],
             chart: {
-                height: '220px',
+                height: '250px',
                 type: 'rangeBar',
                 fontFamily: 'Open Sans, Helvetica, Arial, sans-serif',
                 toolbar: {
@@ -90,7 +90,6 @@ export class ProjectProgressComponent {
             plotOptions: {
                 bar: {
                     horizontal: true,
-                    distributed: true,
                     dataLabels: {
                         hideOverflowingLabels: false
                     },
@@ -100,7 +99,9 @@ export class ProjectProgressComponent {
             },
             dataLabels: {
                 enabled: true,
-                formatter: function (val: number[], opts: any) {
+                formatter: function (val: number[], opts: never) {
+                    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                    // @ts-ignore
                     const label = opts.w.globals.labels[opts.dataPointIndex];
                     const [timestamp1, timestamp2] = val;
                     const diff = Math.floor((timestamp2 - timestamp1) / 1000 / 60 / 60 / 24);
@@ -113,7 +114,7 @@ export class ProjectProgressComponent {
             xaxis: {
                 type: 'datetime',
                 labels: {
-                    show: true
+                    show: false
                 }
             },
             yaxis: {
@@ -122,7 +123,7 @@ export class ProjectProgressComponent {
             grid: {
                 row: {
                     colors: ['#f3f4f5', '#fff'],
-                    opacity: 0.5
+                    opacity: 1
                 },
                 xaxis: {
                     lines: {

@@ -8,7 +8,7 @@ const routes: Routes = [
     },
     {
         path: 'login',
-        loadChildren: () => import('./layout/layout.module').then(value => value.LayoutModule)
+        loadChildren: () => import('./login/login.module').then(value => value.LoginModule)
     }
 ];
 
