@@ -39,6 +39,8 @@ export class ProjectProgressComponent {
     public dropdownOptions: Array<SelectItem>;
 
     constructor() {
+        const documentStyle = getComputedStyle(document.documentElement);
+
         this.dropdownOptions = [
             { label: 'Day', value: 'day' },
             { label: 'Week', value: 'week' },
@@ -79,12 +81,12 @@ export class ProjectProgressComponent {
             chart: {
                 height: '250px',
                 type: 'rangeBar',
-                fontFamily: 'Open Sans, Helvetica, Arial, sans-serif',
+                fontFamily: documentStyle.getPropertyValue('--font-family'),
                 toolbar: {
                     show: false
                 },
                 sparkline: {
-                    enabled: true
+                    enabled: false
                 }
             },
             plotOptions: {
@@ -93,38 +95,20 @@ export class ProjectProgressComponent {
                     dataLabels: {
                         hideOverflowingLabels: false
                     },
-                    borderRadius: 10,
+                    borderRadius: 8,
                     barHeight: '50'
                 }
             },
             dataLabels: {
-                enabled: true,
-                formatter: function (val: number[], opts: never) {
-                    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-                    // @ts-ignore
-                    const label = opts.w.globals.labels[opts.dataPointIndex];
-                    const [timestamp1, timestamp2] = val;
-                    const diff = Math.floor((timestamp2 - timestamp1) / 1000 / 60 / 60 / 24);
-                    return `${label}: ${diff}${diff > 1 ? ' days' : ' day'}`;
-                },
-                style: {
-                    colors: ['#f3f4f5', '#fff']
-                }
+                enabled: false
             },
             xaxis: {
-                type: 'datetime',
-                labels: {
-                    show: false
-                }
+                type: 'datetime'
             },
             yaxis: {
                 show: false
             },
             grid: {
-                row: {
-                    colors: ['#f3f4f5', '#fff'],
-                    opacity: 1
-                },
                 xaxis: {
                     lines: {
                         show: false
@@ -133,7 +117,7 @@ export class ProjectProgressComponent {
                 padding: {
                     top: 0,
                     right: 0,
-                    bottom: 0,
+                    bottom: 10,
                     left: 0
                 },
                 show: false

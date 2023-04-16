@@ -1,13 +1,10 @@
 @import '../variables';
 
 :root {
-    --font-color: #ffffff;
-    --card-bg: #19376D;
+    --font-color: #eef2ff;
+    --card-bg: #19376d;
+    --background: #232f51;
 }
 
-@import 'primeng/resources/themes/viva-dark/theme.css';
+@import 'primeng/resources/themes/lara-dark-indigo/theme.css';
 @import 'primeng';
-
-.p-card {
-    //background: var(--card-bg);
-}
