@@ -62,3 +62,27 @@
         font-weight: 400;
     }
 }
+
+.p-calendar {
+    width: 100%;
+
+    .p-datepicker {
+        border: none;
+        border-radius: 24px;
+
+        table {
+            th,
+            td {
+                span {
+                    width: 2rem;
+                    height: 2rem;
+                }
+            }
+
+            td.p-datepicker-today > span {
+                background: var(--active-color);
+                color: var(--orange-50);
+            }
+        }
+    }
+}

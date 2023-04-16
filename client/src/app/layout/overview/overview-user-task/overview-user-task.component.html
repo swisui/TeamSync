@@ -1,0 +1,47 @@
+<p-card header="Task by user" styleClass="p-0-card-content">
+    <ng-container *ngFor="let task of tasks; let index = index">
+        <div class="grid align-items-center justify-content-center">
+            <div class="col-fixed">
+                <p-avatar [image]="'/assets/images/profile-pics/' + (index + 1) + '.jpg'" shape="circle" />
+            </div>
+            <div class="col">{{ task.name }} responsibilities</div>
+        </div>
+        <div *ngFor="let item of task.tasks; let subIndex = index" class="grid align-items-center">
+            <div class="col-3">
+                <p-radioButton
+                    [(ngModel)]="item.completed"
+                    [inputId]="(index + subIndex).toString()"
+                    [name]="(index + subIndex).toString().toString()" />
+                <label [for]="(index + subIndex).toString()" class="ml-3 text-sm">{{ item.name }}</label>
+            </div>
+            <div class="col-3">
+                <span class="text-sm">{{ item.dueDate | formatRelative }}</span>
+            </div>
+            <div class="col-3">
+                <span
+                    [class.bg-cyan-100]="item.status === 'In Progress'"
+                    [class.bg-gray-300]="item.status === 'Paused'"
+                    [class.bg-purple-100]="item.status === 'Not Started'"
+                    [class.text-cyan-900]="item.status === 'In Progress'"
+                    [class.text-gray-900]="item.status === 'Paused'"
+                    [class.text-purple-900]="item.status === 'Not Started'"
+                    class="text-xs px-3 py-1 border-round-xl"
+                >{{ item.status }}</span
+                >
+            </div>
+            <div class="col-3">
+                <span
+                    [class.bg-green-100]="item.priority === 'Low Priority'"
+                    [class.bg-yellow-100]="item.priority === 'Medium Priority'"
+                    [class.bg-red-100]="item.priority === 'High Priority'"
+
+                    [class.text-green-900]="item.priority === 'Low Priority'"
+                    [class.text-yellow-900]="item.priority === 'Medium Priority'"
+                    [class.text-red-900]="item.priority === 'High Priority'"
+                    class="text-xs px-3 py-1 border-round-xl"
+                >{{ item.priority }}</span
+                >
+            </div>
+        </div>
+    </ng-container>
+</p-card>
