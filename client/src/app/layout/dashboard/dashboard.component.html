@@ -18,7 +18,7 @@
                 <div class="ml-4">
                     <p-avatar
                         [style]="{ height: '60px', width: '60px' }"
-                        image="/assets/images/profile-pics/4.jpg"
+                        image="/assets/images/profile-pics/1.jpg"
                         shape="circle"
                         size="xlarge"
                         styleClass="mr-2" />
@@ -35,8 +35,8 @@
         <p-card header="Urgent Task">
             <div
                 *ngFor="let item of urgentTask; let last = last"
-                [class.-mb-3]="last"
-                [class.mb-4]="!last"
+                [class.-mb-2]="last"
+                [class.mb-3]="!last"
                 class="grid align-items-center">
                 <div class="col">
                     <p-radioButton

@@ -23,7 +23,9 @@ export class DashboardComponent {
             { id: 1, name: 'Finish Monthly Report', completed: false, due: new Date() },
             { id: 2, name: 'Report Signing', completed: false, due: new Date() },
             { id: 3, name: 'Market overview keynote', completed: false, due: new Date() },
-            { id: 4, name: 'Deploy project to dev & staging', completed: false, due: new Date() }
+            { id: 4, name: 'Deploy project to dev & staging', completed: false, due: new Date() },
+            { id: 5, name: 'Code Review', completed: false, due: new Date() },
+            { id: 6, name: 'Upgrade Backend API', completed: false, due: new Date() }
         ];
         this.projectDirectory = [
             {
