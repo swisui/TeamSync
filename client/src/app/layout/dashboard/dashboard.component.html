@@ -31,7 +31,7 @@
     <div class="lg:col-4 md:col-6 sm:col-12">
         <p-calendar [inline]="true" [showOtherMonths]="false" [showWeek]="false" class="w-full"></p-calendar>
     </div>
-    <div class="lg:col-8 md:col-12">
+    <div class="lg:col-4 md:col-12">
         <p-card header="Urgent Task">
             <div
                 *ngFor="let item of urgentTask; let last = last"
@@ -52,6 +52,9 @@
                 </div>
             </div>
         </p-card>
+    </div>
+    <div class="lg:col-4 md:col-12">
+        <expense-statistic></expense-statistic>
     </div>
 </div>
 

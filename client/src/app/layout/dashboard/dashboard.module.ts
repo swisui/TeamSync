@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { NgApexchartsModule } from "ng-apexcharts";
 import { AvatarModule } from 'primeng/avatar';
 import { CalendarModule } from 'primeng/calendar';
 import { CardModule } from 'primeng/card';
@@ -11,20 +12,22 @@ import { PipeModule } from '../../shared/pipe/pipe.module';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
+import { ExpenseStatisticComponent } from './expense-statistic/expense-statistic.component';
 
 @NgModule({
-    declarations: [DashboardComponent],
-    imports: [
-        CommonModule,
-        DashboardRoutingModule,
-        InputTextModule,
-        AvatarModule,
-        CalendarModule,
-        CardModule,
-        RadioButtonModule,
-        FormsModule,
-        DividerModule,
-        PipeModule
-    ]
+    declarations: [DashboardComponent, ExpenseStatisticComponent],
+  imports: [
+    CommonModule,
+    DashboardRoutingModule,
+    InputTextModule,
+    AvatarModule,
+    CalendarModule,
+    CardModule,
+    RadioButtonModule,
+    FormsModule,
+    DividerModule,
+    PipeModule,
+    NgApexchartsModule
+  ]
 })
 export class DashboardModule {}
