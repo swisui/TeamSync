@@ -82,7 +82,7 @@ export class ExpenseStatisticComponent {
                     top: 0,
                     right: 0,
                     bottom: 0,
-                    left: 0
+                    left: 10
                 }
             },
             colors: ['#ea4c89']
