@@ -1,3 +1,4 @@
+import { CurrencyPipe } from '@angular/common';
 import { Component, ViewChild } from '@angular/core';
 
 import {
@@ -9,6 +10,7 @@ import {
     ApexStroke,
     ApexTooltip,
     ApexXAxis,
+    ApexYAxis,
     ChartComponent
 } from 'ng-apexcharts';
 import { getFontFamily } from '../../../shared/utils/common.util';
@@ -22,6 +24,8 @@ type ChartOptions = {
     dataLabels: ApexDataLabels;
     legend: ApexLegend;
     grid: ApexGrid;
+    colors: Array<string>;
+    yaxis: ApexYAxis;
 };
 
 @Component({
@@ -38,7 +42,7 @@ export class ExpenseStatisticComponent {
         this.chartOptions = {
             series: [
                 {
-                    name: 'series1',
+                    name: '',
                     data: [500, 600, 800, 800, 1200, 1000, 1400, 1200]
                 }
             ],
@@ -60,6 +64,11 @@ export class ExpenseStatisticComponent {
                 type: 'datetime',
                 categories: ['2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024']
             },
+            yaxis: {
+                labels: {
+                    formatter: value => <string>new CurrencyPipe('en').transform(value, 'USD', 'symbol')
+                }
+            },
             tooltip: {
                 x: {
                     format: 'dd/MM/yy HH:mm'
@@ -71,11 +80,12 @@ export class ExpenseStatisticComponent {
             grid: {
                 padding: {
                     top: 0,
-                    right: 10,
+                    right: 0,
                     bottom: 0,
-                    left: 10
+                    left: 0
                 }
-            }
+            },
+            colors: ['#ea4c89']
         };
     }
 }
