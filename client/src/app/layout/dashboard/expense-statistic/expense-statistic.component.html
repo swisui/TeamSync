@@ -1,14 +1,3 @@
 <p-card header="Expense Statistic" styleClass="p-0-card-content">
-    <apx-chart
-        [chart]="chartOptions.chart"
-        [colors]="chartOptions.colors"
-        [dataLabels]="chartOptions.dataLabels"
-        [grid]="chartOptions.grid"
-        [legend]="chartOptions.legend"
-        [series]="chartOptions.series"
-        [stroke]="chartOptions.stroke"
-        [theme]="chartOptions.theme"
-        [tooltip]="chartOptions.tooltip"
-        [xaxis]="chartOptions.xaxis"
-        [yaxis]="chartOptions.yaxis" />
+    <chart [chartOptions]="chartOptions" />
 </p-card>

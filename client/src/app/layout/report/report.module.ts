@@ -8,6 +8,7 @@ import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { DropdownModule } from 'primeng/dropdown';
 import { RippleModule } from 'primeng/ripple';
+import { ChartModule } from '../../shared/modules/chart/chart.module';
 import { ProjectCategoryComponent } from './project-category/project-category.component';
 import { ProjectProgressComponent } from './project-progress/project-progress.component';
 import { ProjectRevenueComponent } from './project-revenue/project-revenue.component';
@@ -33,7 +34,8 @@ import { TotalSaleComponent } from './total-sale/total-sale.component';
         RippleModule,
         BadgeModule,
         NgApexchartsModule,
-        FormsModule
-    ]
+        FormsModule,
+        ChartModule,
+    ],
 })
 export class ReportModule {}

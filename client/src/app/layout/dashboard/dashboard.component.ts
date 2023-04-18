@@ -3,6 +3,7 @@ import { Comment } from '../../models/comment.model';
 import { Project } from '../../models/project.model';
 import { Task } from '../../models/task.model';
 import { User } from '../../models/user.model';
+import { getRandomDate } from '../../shared/utils/common.util';
 
 @Component({
     selector: 'dashboard',
@@ -20,12 +21,12 @@ export class DashboardComponent {
     constructor() {
         this.now = new Date();
         this.urgentTask = [
-            { id: 1, name: 'Finish Monthly Report', completed: false, due: new Date() },
-            { id: 2, name: 'Report Signing', completed: false, due: new Date() },
-            { id: 3, name: 'Market overview keynote', completed: false, due: new Date() },
-            { id: 4, name: 'Deploy project to dev & staging', completed: false, due: new Date() },
-            { id: 5, name: 'Code Review', completed: false, due: new Date() },
-            { id: 6, name: 'Upgrade Backend API', completed: false, due: new Date() }
+            { id: 1, name: 'Finish Monthly Report', completed: false, due: getRandomDate() },
+            { id: 2, name: 'Report Signing', completed: false, due: getRandomDate() },
+            { id: 3, name: 'Market overview keynote', completed: false, due: getRandomDate() },
+            { id: 4, name: 'Deploy project to dev & staging', completed: false, due: getRandomDate() },
+            { id: 5, name: 'Code Review', completed: false, due: getRandomDate() },
+            { id: 6, name: 'Upgrade Backend API', completed: false, due: getRandomDate() }
         ];
         this.projectDirectory = [
             {

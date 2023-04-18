@@ -15,32 +15,38 @@
                 <label [for]="(index + subIndex).toString()" class="ml-3 text-sm">{{ item.name }}</label>
             </div>
             <div class="col-3">
-                <span class="text-sm">{{ item.dueDate | formatRelative }}</span>
+                <span
+                    [ngClass]="{
+                        'bg-yellow-100 text-yellow-900': (item.dueDate | formatRelative) === 'Today',
+                        'bg-green-100 text-green-900': (item.dueDate | formatRelative) === 'Tomorrow',
+                        'bg-red-100 text-red-900': (item.dueDate | formatRelative) === 'Yesterday',
+                        'bg-gray-100 text-gray-900': !['Today','Tomorrow','Yesterday'].includes($any(item.dueDate | formatRelative).toString()),
+                     }"
+                    class="block text-xs px-3 py-1 border-round-xl w-7rem text-center">
+                    {{ item.dueDate | formatRelative }}
+                </span>
             </div>
             <div class="col-3">
                 <span
-                    [class.bg-cyan-100]="item.status === 'In Progress'"
-                    [class.bg-gray-300]="item.status === 'Paused'"
-                    [class.bg-purple-100]="item.status === 'Not Started'"
-                    [class.text-cyan-900]="item.status === 'In Progress'"
-                    [class.text-gray-900]="item.status === 'Paused'"
-                    [class.text-purple-900]="item.status === 'Not Started'"
-                    class="text-xs px-3 py-1 border-round-xl"
-                >{{ item.status }}</span
-                >
+                    [ngClass]="{
+                        'bg-cyan-100 text-cyan-900': item.status === 'In Progress',
+                        'bg-gray-100 text-gray-900': item.status === 'In Paused',
+                        'bg-purple-100 text-purple-900': item.status === 'Not Started'
+                    }"
+                    class="block text-xs px-3 py-1 border-round-xl w-7rem text-center">
+                    {{ item.status }}
+                </span>
             </div>
             <div class="col-3">
                 <span
-                    [class.bg-green-100]="item.priority === 'Low Priority'"
-                    [class.bg-yellow-100]="item.priority === 'Medium Priority'"
-                    [class.bg-red-100]="item.priority === 'High Priority'"
-
-                    [class.text-green-900]="item.priority === 'Low Priority'"
-                    [class.text-yellow-900]="item.priority === 'Medium Priority'"
-                    [class.text-red-900]="item.priority === 'High Priority'"
-                    class="text-xs px-3 py-1 border-round-xl"
-                >{{ item.priority }}</span
-                >
+                    [ngClass]="{
+                        'bg-green-100 text-green-900': item.priority === 'Low Priority',
+                        'bg-red-100 text-red-900': item.priority === 'High Priority',
+                        'bg-yellow-100 text-yellow-900': item.priority === 'Medium Priority'
+                    }"
+                    class="block text-xs py-1 border-round-xl w-7rem text-center">
+                    {{ item.priority }}
+                </span>
             </div>
         </div>
     </ng-container>

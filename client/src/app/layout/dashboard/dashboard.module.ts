@@ -13,21 +13,23 @@ import { PipeModule } from '../../shared/pipe/pipe.module';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
 import { ExpenseStatisticComponent } from './expense-statistic/expense-statistic.component';
+import { ChartModule } from '../../shared/modules/chart/chart.module';
 
 @NgModule({
     declarations: [DashboardComponent, ExpenseStatisticComponent],
-  imports: [
-    CommonModule,
-    DashboardRoutingModule,
-    InputTextModule,
-    AvatarModule,
-    CalendarModule,
-    CardModule,
-    RadioButtonModule,
-    FormsModule,
-    DividerModule,
-    PipeModule,
-    NgApexchartsModule
-  ]
+    imports: [
+        CommonModule,
+        DashboardRoutingModule,
+        InputTextModule,
+        AvatarModule,
+        CalendarModule,
+        CardModule,
+        RadioButtonModule,
+        FormsModule,
+        DividerModule,
+        PipeModule,
+        NgApexchartsModule,
+        ChartModule,
+    ],
 })
 export class DashboardModule {}

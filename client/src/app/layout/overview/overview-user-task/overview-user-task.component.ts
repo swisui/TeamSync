@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { getRandomDate } from "../../../shared/utils/common.util";
 
 type UserTask = {
     name: string;
@@ -20,21 +21,21 @@ export class OverviewUserTaskComponent {
                 tasks: [
                     {
                         name: 'Research Check-in',
-                        dueDate: this._randomDate(),
+                        dueDate: getRandomDate(),
                         status: 'Not Started',
                         priority: 'High Priority',
                         completed: false
                     },
                     {
                         name: 'Survey Design',
-                        dueDate: this._randomDate(),
+                        dueDate: getRandomDate(),
                         status: 'In Progress',
                         priority: 'Medium Priority',
                         completed: false
                     },
                     {
                         name: 'Idea Sprint',
-                        dueDate: this._randomDate(),
+                        dueDate: getRandomDate(),
                         status: 'In Progress',
                         priority: 'High Priority',
                         completed: false
@@ -46,21 +47,21 @@ export class OverviewUserTaskComponent {
                 tasks: [
                     {
                         name: 'Market Analysis',
-                        dueDate: this._randomDate(),
+                        dueDate: getRandomDate(),
                         status: 'Not Started',
                         priority: 'High Priority',
                         completed: false
                     },
                     {
                         name: 'Survey Evaluation',
-                        dueDate: this._randomDate(),
+                        dueDate: getRandomDate(),
                         status: 'In Progress',
                         priority: 'Medium Priority',
                         completed: false
                     },
                     {
                         name: 'B2B Research',
-                        dueDate: this._randomDate(),
+                        dueDate: getRandomDate(),
                         status: 'Paused',
                         priority: 'Low Priority',
                         completed: false
@@ -68,13 +69,5 @@ export class OverviewUserTaskComponent {
                 ]
             }
         ];
-    }
-
-    private _randomDate(): Date {
-        const today = new Date();
-        const startDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 3);
-        const endDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 3);
-        const randomTimestamp = startDate.getTime() + Math.random() * (endDate.getTime() - startDate.getTime());
-        return new Date(randomTimestamp);
     }
 }

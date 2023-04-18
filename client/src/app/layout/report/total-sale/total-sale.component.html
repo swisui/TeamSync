@@ -1,7 +1,7 @@
 <p-card styleClass="p-0-card-content mt-4">
     <div class="grid align-items-center">
         <div class="col">
-            <div class="text-2xl font-semibold">Total Sale</div>
+            <div class="text-2xl">Total Sale</div>
         </div>
         <div class="col-fixed">
             <p-dropdown [(ngModel)]="selectedItem" [options]="dropdownOptions"></p-dropdown>
@@ -12,23 +12,12 @@
             <div class="text-3xl m-0 font-light">+{{ 12538.87 | currency }}</div>
         </div>
         <div class="col">
-            <span class="bg-orange-100 text-orange-900 text-xs px-3 py-1 border-round-xl font-semibold">
-                Avg. 148h/month
-            </span>
+            <span class="bg-orange-100 text-orange-900 text-xs px-3 py-1 border-round-xl"> Avg. 132k unit/month </span>
         </div>
     </div>
     <div class="grid">
         <div class="col-12">
-            <apx-chart
-                [chart]="chartOptions.chart"
-                [dataLabels]="chartOptions.dataLabels"
-                [fill]="chartOptions.fill"
-                [grid]="chartOptions.grid"
-                [plotOptions]="chartOptions.plotOptions"
-                [series]="chartOptions.series"
-                [tooltip]="chartOptions.tooltip"
-                [xaxis]="chartOptions.xaxis"
-                [yaxis]="chartOptions.yaxis" />
+            <chart [chartOptions]="chartOptions" />
         </div>
     </div>
 </p-card>

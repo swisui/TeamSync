@@ -1,25 +1,6 @@
-import { Component, ViewChild } from '@angular/core';
-import {
-    ApexAxisChartSeries,
-    ApexChart,
-    ApexFill,
-    ApexGrid,
-    ApexLegend,
-    ApexPlotOptions,
-    ApexXAxis,
-    ChartComponent
-} from 'ng-apexcharts';
+import { Component } from '@angular/core';
+import { ChartOptions } from '../../../models/chart-options.model';
 import { getFontFamily } from '../../../shared/utils/common.util';
-
-export type ChartOptions = {
-    series: ApexAxisChartSeries;
-    chart: ApexChart;
-    fill: ApexFill;
-    legend: ApexLegend;
-    xaxis: ApexXAxis;
-    plotOptions: ApexPlotOptions;
-    grid: ApexGrid;
-};
 
 @Component({
     selector: 'overview-project-progress',
@@ -27,11 +8,10 @@ export type ChartOptions = {
     styleUrls: ['./overview-project-progress.component.scss']
 })
 export class OverviewProjectProgressComponent {
-    @ViewChild('chart') chart!: ChartComponent;
-    public chartOptions!: ChartOptions;
+    public chartOptions: ChartOptions;
 
     constructor() {
-        this.chartOptions = {
+        this.chartOptions = <ChartOptions>{
             series: [
                 {
                     name: 'Bob',
@@ -111,7 +91,8 @@ export class OverviewProjectProgressComponent {
                 fontFamily: getFontFamily(),
                 toolbar: {
                     show: false
-                }
+                },
+                background: 'transparent'
             },
             plotOptions: {
                 bar: {
@@ -131,7 +112,7 @@ export class OverviewProjectProgressComponent {
                 horizontalAlign: 'center'
             },
             grid: {
-                show: false,
+                show: true,
                 padding: {
                     top: 0,
                     right: 0,

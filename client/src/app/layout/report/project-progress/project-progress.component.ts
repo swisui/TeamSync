@@ -1,35 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 
-import {
-    ApexAxisChartSeries,
-    ApexChart,
-    ApexDataLabels,
-    ApexFill,
-    ApexGrid,
-    ApexPlotOptions,
-    ApexTheme,
-    ApexTooltip,
-    ApexXAxis,
-    ApexYAxis,
-    ChartComponent
-} from 'ng-apexcharts';
+import { ChartComponent } from 'ng-apexcharts';
 import { SelectItem } from 'primeng/api';
 import { delay } from 'rxjs';
+import { ChartOptions } from '../../../models/chart-options.model';
 import { getFontColor } from '../../../shared/utils/common.util';
 import { ThemeService } from '../../../theme.service';
-
-export type ChartOptions = {
-    series: ApexAxisChartSeries;
-    chart: ApexChart;
-    fill: ApexFill;
-    dataLabels: ApexDataLabels;
-    grid: ApexGrid;
-    yaxis: ApexYAxis;
-    xaxis: ApexXAxis;
-    plotOptions: ApexPlotOptions;
-    tooltip: ApexTooltip;
-    theme: ApexTheme;
-};
 
 @Component({
     selector: 'project-progress',
@@ -39,7 +15,7 @@ export type ChartOptions = {
 export class ProjectProgressComponent implements OnInit {
     @ViewChild('chart')
     public chart!: ChartComponent;
-    public chartOptions!: ChartOptions;
+    public chartOptions: ChartOptions;
 
     public dropdownOptions: Array<SelectItem>;
 
@@ -49,9 +25,10 @@ export class ProjectProgressComponent implements OnInit {
         this.dropdownOptions = [
             { label: 'Day', value: 'day' },
             { label: 'Week', value: 'week' },
-            { label: 'Month', value: 'month' }
+            { label: 'Month', value: 'month' },
+            { label: 'Year', value: 'year' }
         ];
-        this.chartOptions = {
+        this.chartOptions = <ChartOptions>{
             series: [
                 {
                     data: [

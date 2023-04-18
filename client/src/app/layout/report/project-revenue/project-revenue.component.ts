@@ -1,31 +1,8 @@
 import { CurrencyPipe } from '@angular/common';
 import { Component, ViewChild } from '@angular/core';
-import {
-    ApexAxisChartSeries,
-    ApexChart,
-    ApexDataLabels,
-    ApexGrid,
-    ApexLegend,
-    ApexPlotOptions,
-    ApexTooltip,
-    ApexXAxis,
-    ApexYAxis,
-    ChartComponent
-} from 'ng-apexcharts';
+import { ChartComponent } from 'ng-apexcharts';
 import { SelectItem } from 'primeng/api';
-
-export type ChartOptions = {
-    series: ApexAxisChartSeries;
-    chart: ApexChart;
-    dataLabels: ApexDataLabels;
-    plotOptions: ApexPlotOptions;
-    xaxis: ApexXAxis;
-    yaxis: ApexYAxis;
-    grid: ApexGrid;
-    colors: string[];
-    legend: ApexLegend;
-    tooltip: ApexTooltip;
-};
+import { ChartOptions } from '../../../models/chart-options.model';
 
 @Component({
     selector: 'project-revenue',
@@ -35,7 +12,7 @@ export type ChartOptions = {
 export class ProjectRevenueComponent {
     @ViewChild('chart')
     public chart!: ChartComponent;
-    public chartOptions!: ChartOptions;
+    public chartOptions: ChartOptions;
 
     public dropdownOptions: Array<SelectItem>;
 
@@ -48,10 +25,10 @@ export class ProjectRevenueComponent {
             { label: 'Month', value: 'month' }
         ];
 
-        this.chartOptions = {
+        this.chartOptions = <ChartOptions>{
             series: [
                 {
-                    name: 'distibuted',
+                    name: '',
                     data: [3000, 4000, 5000, 3000, 5000, 2500, 3000, 4000, 1000, 3000, 4000, 5000]
                 }
             ],
@@ -62,7 +39,8 @@ export class ProjectRevenueComponent {
                     show: false
                 },
                 fontFamily: fontFamily,
-                stacked: true
+                stacked: true,
+                background: 'transparent'
             },
             colors: ['#98D8AA', '#3F497F'],
             plotOptions: {
@@ -87,28 +65,21 @@ export class ProjectRevenueComponent {
                     top: 0,
                     right: 0,
                     bottom: 0,
-                    left: 0
+                    left: 10
                 }
             },
             xaxis: {
-                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-                labels: {
-                    style: {
-                        colors: ['#98D8AA', '#3F497F'],
-                        fontSize: '12px'
-                    }
-                }
+                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
             },
             yaxis: {
                 labels: {
-                    formatter: value => <string>new CurrencyPipe('en').transform(value, 'USD', 'symbol')
+                    formatter: (value: number) => <string>new CurrencyPipe('en').transform(value, 'USD', 'symbol')
                 }
             },
             tooltip: {
+                theme: 'dark',
                 y: {
-                    formatter: function (val) {
-                        return val + 'K';
-                    }
+                    formatter: (val: number) => `${val}K`
                 }
             }
         };

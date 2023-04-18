@@ -1,31 +1,6 @@
 import { Component } from '@angular/core';
-import {
-    ApexAxisChartSeries,
-    ApexChart,
-    ApexDataLabels,
-    ApexFill,
-    ApexGrid,
-    ApexLegend,
-    ApexPlotOptions,
-    ApexTooltip,
-    ApexXAxis,
-    ApexYAxis
-} from 'ng-apexcharts';
-
 import { SelectItem } from 'primeng/api';
-
-type ChartOptions = {
-    series: ApexAxisChartSeries;
-    chart: ApexChart;
-    plotOptions: ApexPlotOptions;
-    dataLabels: ApexDataLabels;
-    xaxis: ApexXAxis;
-    grid: ApexGrid;
-    legend: ApexLegend;
-    tooltip: ApexTooltip;
-    fill: ApexFill;
-    yaxis: ApexYAxis;
-};
+import { ChartOptions } from '../../../models/chart-options.model';
 
 @Component({
     selector: 'total-sale',
@@ -33,9 +8,10 @@ type ChartOptions = {
     styleUrls: ['./total-sale.component.scss']
 })
 export class TotalSaleComponent {
-    public chartOptions!: ChartOptions;
     public selectedItem: string;
     public dropdownOptions: Array<SelectItem>;
+
+    public chartOptions: ChartOptions;
 
     constructor() {
         this.dropdownOptions = [
@@ -49,7 +25,7 @@ export class TotalSaleComponent {
         const documentStyle = getComputedStyle(document.documentElement);
         const fontFamily = documentStyle.getPropertyValue('--font-family');
 
-        this.chartOptions = {
+        this.chartOptions = Object.assign({
             series: [
                 {
                     name: 'Subscription',
@@ -75,7 +51,8 @@ export class TotalSaleComponent {
                 },
                 toolbar: {
                     show: false
-                }
+                },
+                background: 'transparent'
             },
             plotOptions: {
                 bar: {
@@ -86,15 +63,8 @@ export class TotalSaleComponent {
             xaxis: {
                 categories: ['2011 Q1', '2011 Q2', '2011 Q3', '2011 Q4', '2012 Q1', '2012 Q2', '2012 Q3', '2012 Q4']
             },
-            fill: {
-                opacity: 1
-            },
-            yaxis: {
-                show: false
-            },
             grid: {
                 show: false,
-                borderColor: '#f1f1f1',
                 padding: {
                     top: -50,
                     right: 0,
@@ -102,13 +72,13 @@ export class TotalSaleComponent {
                     left: 0
                 }
             },
-            legend: {
-                show: false
-            },
+            colors: ['#003f5c', '#58508d', '#bc5090', '#ff6361', '#ffa600'],
             dataLabels: {
                 enabled: false
             },
-            tooltip: {}
-        };
+            legend: {
+                show: false
+            }
+        });
     }
 }
