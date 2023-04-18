@@ -1,0 +1,30 @@
+<p-card styleClass="p-0-card-content">
+    <div class="grid align-items-center grid-nogutter">
+        <div class="col-fixed">
+            <i
+                [ngClass]="data.icon"
+                [style.background]="data.bgColor"
+                [style.padding.px]="10"
+                class="border-round-3xl"></i>
+        </div>
+        <div class="col">
+            <span class="ml-3">{{ data.cardName }}</span>
+        </div>
+    </div>
+    <div class="grid align-items-center grid-nogutter mt-2">
+        <div class="col">
+            <span *ngIf="data.isCurrency" class="text-4xl">
+                {{ data.value | currency : 'USD' : 'symbol' : '1.0-0' }}
+            </span>
+            <span *ngIf="!data.isCurrency" class="text-4xl">{{ data.value | number }}</span>
+        </div>
+        <div class="col-fixed text-center">
+            <span [class.text-green-500]="data.growth > 0" [class.text-red-500]="data.growth < 0" class="block">
+                <i class="pi pi-chart-line ml-2"></i> {{ Math.abs(data.growth) }}
+            </span>
+            <span class="block">
+                <span class="text-xs text-400 ml-2">vs last 7 days</span>
+            </span>
+        </div>
+    </div>
+</p-card>

@@ -4,12 +4,9 @@
             *ngFor="let item of newComments; let index = index; let last = last"
             [class.-mb-3]="last"
             class="mb-3 flex align-items-center border-round-xl p-3">
-            <p-avatar
-                [image]="'/assets/images/profile-pics/' + (index + 1) + '.jpg'"
-                shape="circle"
-                size="large" />
+            <p-avatar [image]="'/assets/images/profile-pics/' + (index + 1) + '.jpg'" shape="circle" size="large" />
             <div class="ml-3">
-                <span class="block text-sm">{{ item.user }} in {{ item.project }}</span>
+                <span class="block text-sm text-500">{{ item.user }} in {{ item.project }}</span>
                 <span class="block font-semibold">{{ item.message }}</span>
             </div>
         </li>

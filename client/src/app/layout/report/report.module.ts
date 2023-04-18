@@ -35,7 +35,7 @@ import { TotalSaleComponent } from './total-sale/total-sale.component';
         BadgeModule,
         NgApexchartsModule,
         FormsModule,
-        ChartModule,
-    ],
+        ChartModule
+    ]
 })
 export class ReportModule {}

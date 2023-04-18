@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { getRandomDate } from "../../../shared/utils/common.util";
+import { getRandomDate } from '../../../shared/utils/common.util';
 
 type UserTask = {
     name: string;

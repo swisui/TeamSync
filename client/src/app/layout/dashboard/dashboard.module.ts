@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { NgApexchartsModule } from "ng-apexcharts";
+import { NgApexchartsModule } from 'ng-apexcharts';
 import { AvatarModule } from 'primeng/avatar';
 import { CalendarModule } from 'primeng/calendar';
 import { CardModule } from 'primeng/card';
@@ -18,9 +18,18 @@ import { UrgentTaskComponent } from './urgent-task/urgent-task.component';
 import { ProjectDirectoryComponent } from './project-directory/project-directory.component';
 import { NewCommentsComponent } from './new-comments/new-comments.component';
 import { TeamDirectoryComponent } from './team-directory/team-directory.component';
+import { InfoCardComponent } from './info-card/info-card.component';
 
 @NgModule({
-    declarations: [DashboardComponent, ExpenseStatisticComponent, UrgentTaskComponent, ProjectDirectoryComponent, NewCommentsComponent, TeamDirectoryComponent],
+    declarations: [
+        DashboardComponent,
+        ExpenseStatisticComponent,
+        UrgentTaskComponent,
+        ProjectDirectoryComponent,
+        NewCommentsComponent,
+        TeamDirectoryComponent,
+        InfoCardComponent
+    ],
     imports: [
         CommonModule,
         DashboardRoutingModule,
@@ -33,7 +42,7 @@ import { TeamDirectoryComponent } from './team-directory/team-directory.componen
         DividerModule,
         PipeModule,
         NgApexchartsModule,
-        ChartModule,
-    ],
+        ChartModule
+    ]
 })
 export class DashboardModule {}

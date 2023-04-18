@@ -29,8 +29,8 @@ const routes: Routes = [
                 loadChildren: () => import('./report/report.module').then(value => value.ReportModule)
             },
             {
-                path: 'new-task',
-                loadChildren: () => import('./new-task/new-task.module').then(value => value.NewTaskModule)
+                path: 'components',
+                loadChildren: () => import('./components/components.module').then(value => value.ComponentsModule)
             }
         ]
     }

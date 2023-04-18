@@ -27,6 +27,13 @@
         </div>
     </div>
 </div>
+
+<div class="grid mb-2">
+    <div class="lg:col-3 md:col-6 sm:col-12" *ngFor="let item of infoCardList">
+        <info-card [data]="item" />
+    </div>
+</div>
+
 <div class="grid">
     <div class="lg:col-4 md:col-6 sm:col-12">
         <p-calendar [inline]="true" [showOtherMonths]="false" [showWeek]="false" class="w-full"></p-calendar>

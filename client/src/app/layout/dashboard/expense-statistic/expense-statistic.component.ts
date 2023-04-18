@@ -42,11 +42,13 @@ export class ExpenseStatisticComponent {
                     format: 'dd/MM/yy HH:mm'
                 }
             },
-            annotations: {},
             dataLabels: {
                 enabled: false
             },
-            colors: ['#ea4c89']
+            colors: ['#ea4c89'],
+            grid: {
+                show: false
+            }
         };
     }
 }
