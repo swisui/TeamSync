@@ -1,5 +1,5 @@
 import { CurrencyPipe } from '@angular/common';
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 import {
     ApexAxisChartSeries,
@@ -8,12 +8,15 @@ import {
     ApexGrid,
     ApexLegend,
     ApexStroke,
+    ApexTheme,
     ApexTooltip,
     ApexXAxis,
     ApexYAxis,
     ChartComponent
 } from 'ng-apexcharts';
-import { getFontFamily } from '../../../shared/utils/common.util';
+import { delay } from 'rxjs';
+import { getFontColor, getFontFamily } from '../../../shared/utils/common.util';
+import { ThemeService } from '../../../theme.service';
 
 type ChartOptions = {
     series: ApexAxisChartSeries;
@@ -26,6 +29,7 @@ type ChartOptions = {
     grid: ApexGrid;
     colors: Array<string>;
     yaxis: ApexYAxis;
+    theme: ApexTheme;
 };
 
 @Component({
@@ -33,12 +37,12 @@ type ChartOptions = {
     templateUrl: './expense-statistic.component.html',
     styleUrls: ['./expense-statistic.component.scss']
 })
-export class ExpenseStatisticComponent {
+export class ExpenseStatisticComponent implements OnInit {
     @ViewChild('chart')
     public chart!: ChartComponent;
     public chartOptions!: ChartOptions;
 
-    constructor() {
+    constructor(private _themeService: ThemeService) {
         this.chartOptions = {
             series: [
                 {
@@ -52,7 +56,8 @@ export class ExpenseStatisticComponent {
                 fontFamily: getFontFamily(),
                 toolbar: {
                     show: false
-                }
+                },
+                background: 'transparent'
             },
             dataLabels: {
                 enabled: false
@@ -72,20 +77,43 @@ export class ExpenseStatisticComponent {
             tooltip: {
                 x: {
                     format: 'dd/MM/yy HH:mm'
-                }
+                },
+                theme: 'dark'
             },
             legend: {
                 show: false
             },
             grid: {
+                show: false,
                 padding: {
                     top: 0,
                     right: 0,
                     bottom: 0,
-                    left: 0
+                    left: 10
                 }
             },
-            colors: ['#ea4c89']
+            colors: ['#ea4c89'],
+            theme: {}
         };
+    }
+
+    public ngOnInit() {
+        this._themeService
+            .onThemeChange()
+            .pipe(delay(50))
+            .subscribe(theme => {
+                console.log(theme);
+                this.chartOptions = {
+                    ...this.chartOptions,
+                    theme: {
+                        ...this.chartOptions,
+                        mode: theme === 'dark' ? 'light' : 'dark'
+                    },
+                    chart: {
+                        ...this.chartOptions.chart,
+                        foreColor: getFontColor()
+                    }
+                };
+            });
     }
 }

@@ -1,5 +1,6 @@
 import { DOCUMENT } from '@angular/common';
 import { Inject, Injectable, Injector, Renderer2, RendererFactory2 } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
@@ -7,6 +8,8 @@ import { Inject, Injectable, Injector, Renderer2, RendererFactory2 } from '@angu
 export class ThemeService {
     private readonly _head: HTMLElement;
     private _renderer: Renderer2;
+
+    private currentTheme$: BehaviorSubject<string> = new BehaviorSubject<string>('light');
 
     constructor(
         private _injector: Injector,
@@ -21,17 +24,22 @@ export class ThemeService {
         await this._loadCss(theme);
     }
 
-    private async _loadCss(filename: string): Promise<void> {
+    public onThemeChange(): Observable<string> {
+        return this.currentTheme$.asObservable();
+    }
+
+    private async _loadCss(theme: string): Promise<void> {
         return new Promise(resolve => {
             const linkEl: HTMLElement = this._renderer.createElement('link');
             this._renderer.setAttribute(linkEl, 'rel', 'stylesheet');
             this._renderer.setAttribute(linkEl, 'type', 'text/css');
-            this._renderer.setAttribute(linkEl, 'href', `${filename}-theme.css`);
+            this._renderer.setAttribute(linkEl, 'href', `${theme}-theme.css`);
             this._renderer.setProperty(linkEl, 'onload', () => {
                 this._removeDefaultTheme();
                 resolve();
             });
             this._renderer.appendChild(this._head, linkEl);
+            this.currentTheme$.next(theme);
         });
     }
 

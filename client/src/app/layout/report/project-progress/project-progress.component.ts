@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 import {
     ApexAxisChartSeries,
@@ -7,12 +7,16 @@ import {
     ApexFill,
     ApexGrid,
     ApexPlotOptions,
+    ApexTheme,
     ApexTooltip,
     ApexXAxis,
     ApexYAxis,
     ChartComponent
 } from 'ng-apexcharts';
 import { SelectItem } from 'primeng/api';
+import { delay } from 'rxjs';
+import { getFontColor } from '../../../shared/utils/common.util';
+import { ThemeService } from '../../../theme.service';
 
 export type ChartOptions = {
     series: ApexAxisChartSeries;
@@ -24,6 +28,7 @@ export type ChartOptions = {
     xaxis: ApexXAxis;
     plotOptions: ApexPlotOptions;
     tooltip: ApexTooltip;
+    theme: ApexTheme;
 };
 
 @Component({
@@ -31,14 +36,14 @@ export type ChartOptions = {
     templateUrl: './project-progress.component.html',
     styleUrls: ['./project-progress.component.scss']
 })
-export class ProjectProgressComponent {
+export class ProjectProgressComponent implements OnInit {
     @ViewChild('chart')
     public chart!: ChartComponent;
     public chartOptions!: ChartOptions;
 
     public dropdownOptions: Array<SelectItem>;
 
-    constructor() {
+    constructor(private _themeService: ThemeService) {
         const documentStyle = getComputedStyle(document.documentElement);
 
         this.dropdownOptions = [
@@ -87,7 +92,8 @@ export class ProjectProgressComponent {
                 },
                 sparkline: {
                     enabled: false
-                }
+                },
+                background: 'transparent'
             },
             plotOptions: {
                 bar: {
@@ -109,11 +115,6 @@ export class ProjectProgressComponent {
                 show: false
             },
             grid: {
-                xaxis: {
-                    lines: {
-                        show: false
-                    }
-                },
                 padding: {
                     top: 0,
                     right: 0,
@@ -123,7 +124,28 @@ export class ProjectProgressComponent {
                 show: false
             },
             tooltip: {},
-            fill: {}
+            fill: {},
+            theme: {}
         };
+    }
+
+    public ngOnInit() {
+        this._themeService
+            .onThemeChange()
+            .pipe(delay(50))
+            .subscribe(theme => {
+                console.log(theme);
+                this.chartOptions = {
+                    ...this.chartOptions,
+                    theme: {
+                        ...this.chartOptions,
+                        mode: theme === 'dark' ? 'light' : 'dark'
+                    },
+                    chart: {
+                        ...this.chartOptions.chart,
+                        foreColor: getFontColor()
+                    }
+                };
+            });
     }
 }

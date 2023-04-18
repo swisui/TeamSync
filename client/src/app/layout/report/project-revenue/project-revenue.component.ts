@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { CurrencyPipe } from '@angular/common';
+import { Component, ViewChild } from '@angular/core';
 import {
     ApexAxisChartSeries,
     ApexChart,
@@ -8,6 +9,7 @@ import {
     ApexPlotOptions,
     ApexTooltip,
     ApexXAxis,
+    ApexYAxis,
     ChartComponent
 } from 'ng-apexcharts';
 import { SelectItem } from 'primeng/api';
@@ -18,6 +20,7 @@ export type ChartOptions = {
     dataLabels: ApexDataLabels;
     plotOptions: ApexPlotOptions;
     xaxis: ApexXAxis;
+    yaxis: ApexYAxis;
     grid: ApexGrid;
     colors: string[];
     legend: ApexLegend;
@@ -29,7 +32,7 @@ export type ChartOptions = {
     templateUrl: './project-revenue.component.html',
     styleUrls: ['./project-revenue.component.scss']
 })
-export class ProjectRevenueComponent implements OnInit {
+export class ProjectRevenueComponent {
     @ViewChild('chart')
     public chart!: ChartComponent;
     public chartOptions!: ChartOptions;
@@ -96,6 +99,11 @@ export class ProjectRevenueComponent implements OnInit {
                     }
                 }
             },
+            yaxis: {
+                labels: {
+                    formatter: value => <string>new CurrencyPipe('en').transform(value, 'USD', 'symbol')
+                }
+            },
             tooltip: {
                 y: {
                     formatter: function (val) {
@@ -105,6 +113,4 @@ export class ProjectRevenueComponent implements OnInit {
             }
         };
     }
-
-    public ngOnInit(): void {}
 }
