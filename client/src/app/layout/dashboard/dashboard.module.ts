@@ -14,9 +14,13 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
 import { ExpenseStatisticComponent } from './expense-statistic/expense-statistic.component';
 import { ChartModule } from '../../shared/modules/chart/chart.module';
+import { UrgentTaskComponent } from './urgent-task/urgent-task.component';
+import { ProjectDirectoryComponent } from './project-directory/project-directory.component';
+import { NewCommentsComponent } from './new-comments/new-comments.component';
+import { TeamDirectoryComponent } from './team-directory/team-directory.component';
 
 @NgModule({
-    declarations: [DashboardComponent, ExpenseStatisticComponent],
+    declarations: [DashboardComponent, ExpenseStatisticComponent, UrgentTaskComponent, ProjectDirectoryComponent, NewCommentsComponent, TeamDirectoryComponent],
     imports: [
         CommonModule,
         DashboardRoutingModule,

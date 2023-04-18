@@ -1,6 +1,6 @@
 <div class="grid align-items-center">
     <div class="lg:col-4 md:col-12 sm:col-12">
-        <h1 class="m-0 text-5xl">Welcome, juliana!</h1>
+        <h1 class="m-0 text-5xl font-light">Welcome, juliana!</h1>
         <p class="text-xl mt-1 mb-3">Here is your agenda for today</p>
     </div>
     <div class="lg:col-8 md:col-12 sm:col-12">
@@ -32,85 +32,19 @@
         <p-calendar [inline]="true" [showOtherMonths]="false" [showWeek]="false" class="w-full"></p-calendar>
     </div>
     <div class="lg:col-4 md:col-12">
-        <p-card header="Urgent Task">
-            <div
-                *ngFor="let item of urgentTask; let last = last"
-                [class.-mb-2]="last"
-                [class.mb-3]="!last"
-                class="grid align-items-center">
-                <div class="col">
-                    <p-radioButton
-                        [(ngModel)]="item.completed"
-                        [inputId]="item.id.toString()"
-                        [name]="item.id.toString()" />
-                    <label [for]="item.id.toString()" class="ml-3">{{ item.name }}</label>
-                </div>
-                <div class="col-fixed text-pink-500 font-bold">
-                    <div [style.height.px]="20" class="flex align-items-center">
-                        <span
-                            [ngClass]="{
-                                'text-yellow-500': (item.due | formatRelative) === 'Today',
-                                'text-green-500': (item.due | formatRelative) === 'Tomorrow',
-                                'text-red-500': (item.due | formatRelative) === 'Yesterday',
-                                'text-gray-500': !['Today','Tomorrow','Yesterday'].includes($any(item.due | formatRelative).toString()),}">
-                            <i [style.font-size.px]="6" class="pi pi-circle-fill mr-2"></i>
-                            {{ item.due | formatRelative }}
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </p-card>
+        <urgent-task />
     </div>
     <div class="lg:col-4 md:col-12">
-        <expense-statistic></expense-statistic>
+        <expense-statistic />
     </div>
 </div>
 
 <div class="grid mt-1">
     <div class="lg:col-4 md:col-6 sm:col-12">
-        <p-card header="Project directory">
-            <div *ngFor="let item of projectDirectory; let index = index" class="grid mb-2">
-                <div class="col">
-                    <p-avatar
-                        [label]="item.name.charAt(0)"
-                        [style]="{ backgroundColor: (index | getColor) }"
-                        shape="circle"
-                        styleClass="mr-2" />
-                    {{ item.name }}
-                </div>
-                <div class="col-fixed">
-                    <p-avatar
-                        *ngFor="let user of item.user"
-                        [image]="user.profilePicUrl"
-                        class="-ml-2"
-                        shape="circle" />
-                </div>
-            </div>
-            <div class="grid -mb-3">
-                <div class="col-12">
-                    <p-button [icon]="'pi pi-plus'" label="Add More"></p-button>
-                </div>
-            </div>
-        </p-card>
+        <project-directory />
     </div>
     <div class="lg:col-4 md:col-6 sm:col-12">
-        <p-card header="New Comments">
-            <ul class="list-none p-0 m-0">
-                <li
-                    *ngFor="let item of newComments; let index = index; let last = last"
-                    [class.-mb-3]="last"
-                    class="mb-3 flex align-items-center border-round-xl p-3">
-                    <p-avatar
-                        [image]="'/assets/images/profile-pics/' + (index + 1) + '.jpg'"
-                        shape="circle"
-                        size="large" />
-                    <div class="ml-3">
-                        <span class="block text-sm">{{ item.user }} in {{ item.project }}</span>
-                        <span class="block font-semibold">{{ item.message }}</span>
-                    </div>
-                </li>
-            </ul>
-        </p-card>
+        <new-comments />
         <p-card styleClass="p-0-card-content mt-4">
             <div class="grid -mb-2">
                 <div class="lg:col-4 md:col-12 sm:col-12">
@@ -162,20 +96,6 @@
         </p-card>
     </div>
     <div class="lg:col-4 md:col-6 sm:col-12">
-        <p-card header="Team Directory" styleClass="p-0-card-content">
-            <div class="grid -mb-2 mt-3 align-items-center justify-content-center">
-                <div *ngFor="let item of teamDirectory; let index = index" class="col-6 text-center">
-                    <div class="p-3 border-round-xl">
-                        <p-avatar
-                            [image]="'/assets/images/profile-pics/' + (index + 1) + '.jpg'"
-                            shape="circle"
-                            size="xlarge"
-                            styleClass="mb-2" />
-                        <div class="block font-semibold">{{ item.name }}</div>
-                        <div class="block text-sm">{{ item.role }}</div>
-                    </div>
-                </div>
-            </div>
-        </p-card>
+        <team-directory />
     </div>
 </div>
