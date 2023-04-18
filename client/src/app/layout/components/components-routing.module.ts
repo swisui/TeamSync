@@ -5,7 +5,18 @@ import { ComponentsComponent } from './components.component';
 const routes: Routes = [
     {
         path: '',
-        component: ComponentsComponent
+        component: ComponentsComponent,
+        children: [
+            {
+                path: '',
+                pathMatch: 'full',
+                redirectTo: 'typography'
+            },
+            {
+                path: 'typography',
+                loadChildren: () => import('./typography/typography.module').then(value => value.TypographyModule)
+            }
+        ]
     }
 ];
 

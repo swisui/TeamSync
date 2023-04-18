@@ -1,25 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CalendarCommonModule } from "angular-calendar";
-import { AvatarModule } from "primeng/avatar";
-import { ButtonModule } from "primeng/button";
-import { RippleModule } from "primeng/ripple";
+import { CalendarCommonModule } from 'angular-calendar';
+import { AvatarModule } from 'primeng/avatar';
+import { ButtonModule } from 'primeng/button';
+import { RippleModule } from 'primeng/ripple';
+import { TabMenuModule } from 'primeng/tabmenu';
 
 import { ComponentsRoutingModule } from './components-routing.module';
 import { ComponentsComponent } from './components.component';
 
-
 @NgModule({
-  declarations: [
-    ComponentsComponent
-  ],
+    declarations: [ComponentsComponent],
     imports: [
         CommonModule,
         ComponentsRoutingModule,
         AvatarModule,
         ButtonModule,
         CalendarCommonModule,
-        RippleModule
+        RippleModule,
+        TabMenuModule
     ]
 })
-export class ComponentsModule { }
+export class ComponentsModule {}

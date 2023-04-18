@@ -5,6 +5,7 @@
 }
 
 .p-card {
+    margin-bottom: 1.5rem;
     color: var(--font-color);
     box-shadow: none;
     border-radius: var(--card-border-radius);
@@ -84,5 +85,13 @@
                 color: var(--orange-50);
             }
         }
+    }
+}
+
+.p-tabmenu .p-tabmenu-nav {
+    background: unset;
+    .p-tabmenuitem.p-highlight .p-menuitem-link,
+    .p-tabmenuitem .p-menuitem-link {
+        background: unset;
     }
 }
