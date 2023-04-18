@@ -97,24 +97,21 @@ export class OverviewProjectProgressComponent {
             plotOptions: {
                 bar: {
                     horizontal: true,
-                    barHeight: '90%',
-                    borderRadius: 5
+                    barHeight: '80%',
+                    borderRadius: 10
                 }
             },
             xaxis: {
                 type: 'datetime'
-            },
-            fill: {
-                type: 'gradient'
             },
             legend: {
                 position: 'bottom',
                 horizontalAlign: 'center'
             },
             grid: {
-                show: true,
+                show: false,
                 padding: {
-                    top: 0,
+                    top: -20,
                     right: 0,
                     bottom: 0,
                     left: 0
