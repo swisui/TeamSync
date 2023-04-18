@@ -15,6 +15,10 @@ const routes: Routes = [
             {
                 path: 'typography',
                 loadChildren: () => import('./typography/typography.module').then(value => value.TypographyModule)
+            },
+            {
+                path: 'tab',
+                loadChildren: () => import('./tab/tab.module').then(value => value.TabModule)
             }
         ]
     }

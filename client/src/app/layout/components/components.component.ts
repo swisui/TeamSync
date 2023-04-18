@@ -12,11 +12,11 @@ export class ComponentsComponent {
 
     constructor() {
         this.menuItems = [
-            { label: 'Typography', icon: 'pi pi-fw pi-home', routerLink: 'typography' },
-            { label: 'Calendar', icon: 'pi pi-fw pi-calendar' },
-            { label: 'Edit', icon: 'pi pi-fw pi-pencil' },
-            { label: 'Documentation', icon: 'pi pi-fw pi-file' },
-            { label: 'Settings', icon: 'pi pi-fw pi-cog' }
+            { label: 'Typography', routerLink: 'typography' },
+            { label: 'Tab', routerLink: 'tab' },
+            { label: 'Edit' },
+            { label: 'Documentation' },
+            { label: 'Settings' }
         ];
         this.activeItem = this.menuItems[0];
     }
