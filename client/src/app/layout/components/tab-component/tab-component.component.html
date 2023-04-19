@@ -66,13 +66,53 @@
             </p-tabView>
         </p-card>
     </div>
-    <div class="lg:col-12">
-        <div class="overflow-auto" style="width: 50%; max-width: 500px">
-            <p-tabView [(activeIndex)]="activeIndex" [scrollable]="true">
-                <p-tabPanel *ngFor="let tab of scrollableTabs" [header]="tab.title">
-                    <p>{{ tab.content }}</p>
+    <div class="lg:col-6">
+        <p-card header="Controlled Tab" styleClass="p-0-card-content">
+            <span class="p-buttonset mt-4 block">
+                <button (click)="activeIndex = 0" label="Activate 1rd" pButton pRipple></button>
+                <button (click)="activeIndex = 1" label="Activate 2rd" pButton pRipple></button>
+                <button (click)="activeIndex = 2" label="Activate 3rd" pButton pRipple></button>
+            </span>
+            <p-tabView [(activeIndex)]="activeIndex">
+                <p-tabPanel header="Header I">
+                    <p>1st active</p>
+                </p-tabPanel>
+                <p-tabPanel header="Header II">
+                    <p>2nd active</p>
+                </p-tabPanel>
+                <p-tabPanel header="Header III">
+                    <p>3rd active</p>
                 </p-tabPanel>
             </p-tabView>
-        </div>
+        </p-card>
+    </div>
+    <div class="lg:col-6">
+        <p-card header="Closable Tab" styleClass="p-0-card-content">
+            <div class="card">
+                <p-tabView id="closableTabView">
+                    <p-tabPanel [selected]="true" header="Header I">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                        </p>
+                    </p-tabPanel>
+                    <p-tabPanel [closable]="true" header="Header II">
+                        <p>
+                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                            laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+                            architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
+                        </p>
+                    </p-tabPanel>
+                    <p-tabPanel [closable]="true" header="Header III">
+                        <p>
+                            At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+                            voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
+                            cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id
+                        </p>
+                    </p-tabPanel>
+                </p-tabView>
+            </div>
+        </p-card>
     </div>
 </div>

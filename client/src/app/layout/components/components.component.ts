@@ -14,9 +14,8 @@ export class ComponentsComponent {
         this.menuItems = [
             { label: 'Typography', routerLink: 'typography' },
             { label: 'Tab', routerLink: 'tab' },
-            { label: 'Edit' },
-            { label: 'Documentation' },
-            { label: 'Settings' }
+            { label: 'Button', routerLink: 'button' },
+            { label: 'Form', routerLink: 'form' }
         ];
         this.activeItem = this.menuItems[0];
     }

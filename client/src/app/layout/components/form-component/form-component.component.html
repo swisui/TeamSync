@@ -1,0 +1,212 @@
+<div class="grid">
+    <div class="lg:col-6">
+        <p-card header="Vertical">
+            <div class="field">
+                <label for="firstname1">Firstname</label>
+                <input
+                    class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                    id="firstname1"
+                    type="text" />
+            </div>
+            <div class="field">
+                <label for="lastname1">Lastname</label>
+                <input
+                    class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                    id="lastname1"
+                    type="text" />
+            </div>
+        </p-card>
+
+        <p-card header="Vertical and Grid">
+            <div class="formgrid grid">
+                <div class="field col">
+                    <label for="firstname2">Firstname</label>
+                    <input
+                        class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                        id="firstname2"
+                        type="text" />
+                </div>
+                <div class="field col">
+                    <label for="lastname2">Lastname</label>
+                    <input
+                        class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                        id="lastname2"
+                        type="text" />
+                </div>
+            </div>
+        </p-card>
+        <p-card header="Horizontal and Fixed Width">
+            <div class="field grid">
+                <label class="col-fixed" for="firstname3" style="width: 100px">Firstname</label>
+                <div class="col">
+                    <input
+                        class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary"
+                        id="firstname3"
+                        type="text" />
+                </div>
+            </div>
+            <div class="field grid">
+                <label class="col-fixed" for="lastname3" style="width: 100px">Lastname</label>
+                <div class="col">
+                    <input
+                        class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary"
+                        id="lastname3"
+                        type="text" />
+                </div>
+            </div>
+        </p-card>
+        <p-card header="Horizontal">
+            <div class="field grid">
+                <label class="col-12 mb-2 md:col-2 md:mb-0" for="firstname4">Firstname</label>
+                <div class="col-12 md:col-10">
+                    <input
+                        class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                        id="firstname4"
+                        type="text" />
+                </div>
+            </div>
+            <div class="field grid">
+                <label class="col-12 mb-2 md:col-2 md:mb-0" for="lastname4">Lastname</label>
+                <div class="col-12 md:col-10">
+                    <input
+                        class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                        id="lastname4"
+                        type="text" />
+                </div>
+            </div>
+        </p-card>
+        <p-card header="Inline">
+            <div class="formgroup-inline">
+                <div class="field">
+                    <label class="p-sr-only" for="firstname5">Firstname</label>
+                    <input
+                        class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary"
+                        id="firstname5"
+                        placeholder="Firstname"
+                        type="text" />
+                </div>
+                <div class="field">
+                    <label class="p-sr-only" for="lastname5">Lastname</label>
+                    <input
+                        class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary"
+                        id="lastname5"
+                        placeholder="Lastname"
+                        type="text" />
+                </div>
+                <button
+                    class="text-white bg-primary-500 border-primary-500 px-3 py-2 text-base border-1 border-solid border-round cursor-pointer transition-all transition-duration-200 hover:bg-primary-600 hover:border-primary-600 active:bg-primary-700 active:border-primary-700"
+                    type="button">
+                    Submit
+                </button>
+            </div>
+        </p-card>
+    </div>
+    <div class="lg:col-6">
+        <p-card header="Form Validation">
+            <div class="formgrid grid">
+                <div class="field col-12 md:col-6">
+                    <label for="firstname6">Firstname</label>
+                    <input
+                        class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                        id="firstname6"
+                        type="text" />
+                </div>
+                <div class="field col-12 md:col-6">
+                    <label for="lastname6">Lastname</label>
+                    <input
+                        class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                        id="lastname6"
+                        type="text" />
+                </div>
+                <div class="field col-12">
+                    <label for="address">Address</label>
+                    <textarea
+                        class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                        id="address"
+                        rows="4"
+                        type="text"></textarea>
+                </div>
+                <div class="field col-12 md:col-6">
+                    <label for="city">City</label>
+                    <input
+                        class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                        id="city"
+                        type="text" />
+                </div>
+                <div class="field col-12 md:col-3">
+                    <label for="state">State</label>
+                    <select
+                        class="w-full text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round outline-none focus:border-primary"
+                        id="state"
+                        style="appearance: auto">
+                        <option>Arizona</option>
+                        <option>California</option>
+                        <option>Florida</option>
+                        <option>Ohio</option>
+                        <option>Washington</option>
+                    </select>
+                </div>
+                <div class="field col-12 md:col-3">
+                    <label for="zip">Zip</label>
+                    <input
+                        class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                        id="zip"
+                        type="text" />
+                </div>
+            </div>
+        </p-card>
+        <p-card header="Advanced">
+            <div class="formgrid grid">
+                <div class="field col-12 md:col-6">
+                    <label for="firstname6">Firstname</label>
+                    <input
+                        class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                        id="firstname6"
+                        type="text" />
+                </div>
+                <div class="field col-12 md:col-6">
+                    <label for="lastname6">Lastname</label>
+                    <input
+                        class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                        id="lastname6"
+                        type="text" />
+                </div>
+                <div class="field col-12">
+                    <label for="address">Address</label>
+                    <textarea
+                        class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                        id="address"
+                        rows="4"
+                        type="text"></textarea>
+                </div>
+                <div class="field col-12 md:col-6">
+                    <label for="city">City</label>
+                    <input
+                        class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                        id="city"
+                        type="text" />
+                </div>
+                <div class="field col-12 md:col-3">
+                    <label for="state">State</label>
+                    <select
+                        class="w-full text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round outline-none focus:border-primary"
+                        id="state"
+                        style="appearance: auto">
+                        <option>Arizona</option>
+                        <option>California</option>
+                        <option>Florida</option>
+                        <option>Ohio</option>
+                        <option>Washington</option>
+                    </select>
+                </div>
+                <div class="field col-12 md:col-3">
+                    <label for="zip">Zip</label>
+                    <input
+                        class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+                        id="zip"
+                        type="text" />
+                </div>
+            </div>
+        </p-card>
+    </div>
+</div>

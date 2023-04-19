@@ -18,7 +18,18 @@ const routes: Routes = [
             },
             {
                 path: 'tab',
-                loadChildren: () => import('./tab/tab.module').then(value => value.TabModule)
+                loadChildren: () =>
+                    import('./tab-component/tab-component.module').then(value => value.TabComponentModule)
+            },
+            {
+                path: 'button',
+                loadChildren: () =>
+                    import('./button-component/button-component.module').then(value => value.ButtonComponentModule)
+            },
+            {
+                path: 'form',
+                loadChildren: () =>
+                    import('./form-component/form-component.module').then(value => value.FormComponentModule)
             }
         ]
     }

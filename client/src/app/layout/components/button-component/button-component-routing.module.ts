@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TabComponent } from './tab.component';
+import { ButtonComponentComponent } from './button-component.component';
 
 const routes: Routes = [
     {
         path: '',
-        component: TabComponent
+        component: ButtonComponentComponent
     }
 ];
 
@@ -13,4 +13,4 @@ const routes: Routes = [
     imports: [RouterModule.forChild(routes)],
     exports: [RouterModule]
 })
-export class TabRoutingModule {}
+export class ButtonComponentRoutingModule {}
