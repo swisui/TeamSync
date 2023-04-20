@@ -3,11 +3,11 @@
         <p-card header="Vertical">
             <div class="field">
                 <label>Firstname</label>
-                <input pInputText class="w-full border-1 border-solid surface-border" type="text" />
+                <input class="w-full" pInputText type="text" />
             </div>
             <div class="field">
                 <label>Lastname</label>
-                <input pInputText class="w-full border-1 border-solid surface-border" type="text" />
+                <input class="w-full" pInputText type="text" />
             </div>
         </p-card>
 
@@ -15,11 +15,11 @@
             <div class="formgrid grid">
                 <div class="field col">
                     <label>Firstname</label>
-                    <input pInputText class="w-full border-1 border-solid surface-border" type="text" />
+                    <input class="w-full" pInputText type="text" />
                 </div>
                 <div class="field col">
                     <label>Lastname</label>
-                    <input pInputText class="w-full border-1 border-solid surface-border" type="text" />
+                    <input class="w-full" pInputText type="text" />
                 </div>
             </div>
         </p-card>
@@ -27,13 +27,13 @@
             <div class="field grid">
                 <label class="col-fixed" style="width: 100px">Firstname</label>
                 <div class="col">
-                    <input pInputText class="border-1 border-solid surface-border" type="text" />
+                    <input class="" pInputText type="text" />
                 </div>
             </div>
             <div class="field grid">
                 <label class="col-fixed" style="width: 100px">Lastname</label>
                 <div class="col">
-                    <input pInputText class="border-1 border-solid surface-border" type="text" />
+                    <input class="" pInputText type="text" />
                 </div>
             </div>
         </p-card>
@@ -41,13 +41,13 @@
             <div class="field grid">
                 <label class="col-12 mb-2 md:col-2 md:mb-0">Firstname</label>
                 <div class="col-12 md:col-10">
-                    <input pInputText class="w-full border-1 border-solid surface-border" type="text" />
+                    <input class="w-full" pInputText type="text" />
                 </div>
             </div>
             <div class="field grid">
                 <label class="col-12 mb-2 md:col-2 md:mb-0">Lastname</label>
                 <div class="col-12 md:col-10">
-                    <input pInputText class="w-full border-1 border-solid surface-border" type="text" />
+                    <input class="w-full" pInputText type="text" />
                 </div>
             </div>
         </p-card>
@@ -55,128 +55,103 @@
             <div class="formgroup-inline">
                 <div class="field">
                     <label class="p-sr-only">Firstname</label>
-                    <input
-                        pInputText
-                        class="border-1 border-solid surface-border"
-                        type="text"
-                        placeholder="First Name" />
+                    <input class="" pInputText placeholder="First Name" type="text" />
                 </div>
                 <div class="field">
                     <label class="p-sr-only">Lastname</label>
-                    <input
-                        pInputText
-                        class="border-1 border-solid surface-border"
-                        type="text"
-                        placeholder="Last Name" />
+                    <input class="" pInputText placeholder="Last Name" type="text" />
                 </div>
-                <button pButton label="Submit"></button>
+                <button label="Submit" pButton></button>
             </div>
         </p-card>
     </div>
     <div class="lg:col-6">
         <p-card header="Form Validation">
-            <div class="formgrid grid">
+            <form [formGroup]="form" class="formgrid grid">
                 <div class="field col-12 md:col-6">
-                    <label for="firstname6">Firstname</label>
-                    <input
-                        class="text-base text-color surface-overlay border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
-                        id="firstname6"
-                        type="text" />
+                    <label>Firstname</label>
+                    <input class="w-full ng-invalid ng-dirty" formControlName="firstname" pInputText type="text" />
+                    <small class="text-red-500" *ngIf="form.get('firstname')?.hasError('required')">
+                        Firstname is required
+                    </small>
                 </div>
                 <div class="field col-12 md:col-6">
-                    <label for="lastname6">Lastname</label>
-                    <input
-                        class="text-base text-color surface-overlay border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
-                        id="lastname6"
-                        type="text" />
+                    <label>Lastname</label>
+                    <input class="w-full ng-invalid ng-dirty" formControlName="lastname" pInputText type="text" />
+                    <small class="text-red-500" *ngIf="form.get('firstname')?.hasError('required')">
+                        Lastname is required
+                    </small>
                 </div>
                 <div class="field col-12">
-                    <label for="address">Address</label>
+                    <label>Address</label>
                     <textarea
-                        class="text-base text-color surface-overlay border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
-                        id="address"
-                        rows="4"
-                        type="text"></textarea>
+                        class="w-full ng-invalid ng-dirty"
+                        formControlName="address"
+                        pInputTextarea
+                        rows="4"></textarea>
+                    <small class="text-red-500" *ngIf="form.get('firstname')?.hasError('required')">
+                        Address is required
+                    </small>
                 </div>
                 <div class="field col-12 md:col-6">
-                    <label for="city">City</label>
-                    <input
-                        class="text-base text-color surface-overlay border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
-                        id="city"
-                        type="text" />
+                    <label>City</label>
+                    <input class="w-full ng-invalid ng-dirty" formControlName="city" pInputText type="text" />
+                    <small class="text-red-500" *ngIf="form.get('firstname')?.hasError('required')">
+                        City is required
+                    </small>
                 </div>
                 <div class="field col-12 md:col-3">
-                    <label for="state">State</label>
-                    <select
-                        class="w-full text-base text-color surface-overlay border-1 border-solid surface-border border-round outline-none focus:border-primary"
-                        id="state"
-                        style="appearance: auto">
-                        <option>Arizona</option>
-                        <option>California</option>
-                        <option>Florida</option>
-                        <option>Ohio</option>
-                        <option>Washington</option>
-                    </select>
+                    <div class="flex flex-column">
+
+                        <label>State</label>
+                        <p-dropdown
+                            [options]="['Arizona', 'California', 'Florida', 'Ohio', 'Washington']"
+                            formControlName="state"
+                            class="ng-invalid ng-dirty w-full" />
+                    </div>
+                    <small class="text-red-500" *ngIf="form.get('firstname')?.hasError('required')">
+                        State is required
+                    </small>
                 </div>
                 <div class="field col-12 md:col-3">
-                    <label for="zip">Zip</label>
-                    <input
-                        class="text-base text-color surface-overlay border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
-                        id="zip"
-                        type="text" />
+                    <label>Zipcode</label>
+                    <input class="w-full ng-invalid ng-dirty" formControlName="zip" pInputText type="text" />
+                    <small class="text-red-500 block" *ngIf="form.get('firstname')?.hasError('required')">
+                        Zipcode is required
+                    </small>
                 </div>
-            </div>
+                <div class="field mb-0 col-12 md:col-3">
+                    <button pButton type="submit">Submit</button>
+                </div>
+            </form>
         </p-card>
         <p-card header="Advanced Form">
             <div class="formgrid grid">
                 <div class="field col-12 md:col-6">
-                    <label for="firstname6">Firstname</label>
-                    <input
-                        class="text-base text-color surface-overlay border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
-                        id="firstname6"
-                        type="text" />
+                    <label>Firstname</label>
+                    <input class="w-full" pInputText type="text" />
                 </div>
                 <div class="field col-12 md:col-6">
-                    <label for="lastname6">Lastname</label>
-                    <input
-                        class="text-base text-color surface-overlay border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
-                        id="lastname6"
-                        type="text" />
+                    <label>Lastname</label>
+                    <input class="w-full" pInputText type="text" />
                 </div>
                 <div class="field col-12">
-                    <label for="address">Address</label>
-                    <textarea
-                        class="text-base text-color surface-overlay border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
-                        id="address"
-                        rows="4"
-                        type="text"></textarea>
+                    <label>Address</label>
+                    <textarea class="w-full" pInputTextarea rows="4"></textarea>
                 </div>
                 <div class="field col-12 md:col-6">
-                    <label for="city">City</label>
-                    <input
-                        class="text-base text-color surface-overlay border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
-                        id="city"
-                        type="text" />
+                    <label>City</label>
+                    <input class="w-full" pInputText type="text" />
                 </div>
                 <div class="field col-12 md:col-3">
-                    <label for="state">State</label>
-                    <select
-                        class="w-full text-base text-color surface-overlay border-1 border-solid surface-border border-round outline-none focus:border-primary"
-                        id="state"
-                        style="appearance: auto">
-                        <option>Arizona</option>
-                        <option>California</option>
-                        <option>Florida</option>
-                        <option>Ohio</option>
-                        <option>Washington</option>
-                    </select>
+                    <label>State</label>
+                    <p-dropdown
+                        [options]="['Arizona', 'California', 'Florida', 'Ohio', 'Washington']"
+                        styleClass="w-full" />
                 </div>
                 <div class="field col-12 md:col-3">
-                    <label for="zip">Zip</label>
-                    <input
-                        class="text-base text-color surface-overlay border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
-                        id="zip"
-                        type="text" />
+                    <label>Zip</label>
+                    <input class="w-full" pInputText type="text" />
                 </div>
             </div>
         </p-card>
