@@ -15,7 +15,9 @@ export class ComponentsComponent {
             { label: 'Typography', routerLink: 'typography' },
             { label: 'Tab', routerLink: 'tab' },
             { label: 'Button', routerLink: 'button' },
-            { label: 'Form', routerLink: 'form' }
+            { label: 'Form', routerLink: 'form' },
+            { label: 'Timeline', routerLink: 'timeline' },
+            { label: 'Icon', routerLink: 'icon' }
         ];
         this.activeItem = this.menuItems[0];
     }

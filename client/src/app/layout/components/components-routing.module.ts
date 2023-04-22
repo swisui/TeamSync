@@ -30,6 +30,18 @@ const routes: Routes = [
                 path: 'form',
                 loadChildren: () =>
                     import('./form-component/form-component.module').then(value => value.FormComponentModule)
+            },
+            {
+                path: 'timeline',
+                loadChildren: () =>
+                    import('./timeline-component/timeline-component.module').then(
+                        value => value.TimelineComponentModule
+                    )
+            },
+            {
+                path: 'icon',
+                loadChildren: () =>
+                    import('./icon-component/icon-component.module').then(value => value.IconComponentModule)
             }
         ]
     }

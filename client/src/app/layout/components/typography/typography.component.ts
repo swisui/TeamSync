@@ -9,6 +9,7 @@ export class TypographyComponent {
     public shortText: string;
     public dummyText: string;
     public texts: Array<string>;
+
     constructor() {
         this.shortText = `Welcome to our website! We are a leading provider of innovative solutions and cutting-edge technology designed to help you achieve your goals.`;
         this.dummyText = `Welcome to our website! We are a leading provider of innovative solutions and cutting-edge technology designed to help you achieve your goals. Our team of experts is dedicated to providing you with top-notch service and support, ensuring that you get the most out of our products and services. Whether you're looking for the latest software solutions, cutting-edge hardware, or comprehensive IT support, we've got you covered. Our extensive range of products and services is designed to meet the needs of businesses of all sizes, from small startups to large corporations.`;

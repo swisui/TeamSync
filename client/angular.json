@@ -35,8 +35,7 @@
                                 "inject": false,
                                 "input": "src/styles/themes/dark-theme.scss",
                                 "bundleName": "dark-theme"
-                            },
-                            "src/styles/styles.scss"
+                            }
                         ],
                         "scripts": ["node_modules/apexcharts/dist/apexcharts.js"]
                     },

@@ -1,0 +1,9 @@
+:host ::ng-deep {
+    .p-timeline-event-separator > span {
+        height: 25px;
+        width: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

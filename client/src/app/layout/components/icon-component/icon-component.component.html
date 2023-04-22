@@ -1,0 +1,39 @@
+<p-card header="Icon">
+    <div class="grid text-center">
+        <div class="col-12">
+            <input
+                #searchInput
+                autofocus
+                class="px-4 py-3 border-round-3xl w-full"
+                pInputText
+                placeholder="Search"
+                type="text" />
+        </div>
+        <div *ngFor="let icon of icons | iconFilter : searchInput.value" class="col-12 md:col-2 mb-5">
+            <i [ngClass]="icon" class="mb-3 pi text-2xl text-color-secondary"></i>
+            <div>{{ icon }}</div>
+        </div>
+    </div>
+</p-card>
+<p-card header="Loading Icons">
+    <div class="grid align-content-center text-center">
+        <div class="col-12 md:col-2">
+            <i class="pi text-2xl text-color-secondary pi-cog pi-spin"></i>
+        </div>
+        <div class="col-12 md:col-2">
+            <i class="pi text-2xl text-color-secondary pi-sync pi-spin"></i>
+        </div>
+        <div class="col-12 md:col-2">
+            <i class="pi text-2xl text-color-secondary pi-spinner pi-spin"></i>
+        </div>
+        <div class="col-12 md:col-2">
+            <i class="pi text-2xl text-color-secondary pi-refresh pi-spin"></i>
+        </div>
+        <div class="col-12 md:col-2">
+            <i class="pi text-2xl text-color-secondary pi-star pi-spin"></i>
+        </div>
+        <div class="col-12 md:col-2">
+            <i class="pi text-2xl text-color-secondary pi-sun pi-spin"></i>
+        </div>
+    </div>
+</p-card>
