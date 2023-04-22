@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { addDays } from 'date-fns';
 
 @Component({
     selector: 'timeline-component',
@@ -7,25 +6,20 @@ import { addDays } from 'date-fns';
     styleUrls: ['./timeline-component.component.scss']
 })
 export class TimelineComponentComponent {
-    events: any[];
+    events: Array<any>;
 
     constructor() {
-        this.events = [
+        this.events = this.events = [
             {
-                status: 'Show 4 more events',
-                date: addDays(new Date(), 1),
-                icon: 'pi pi-sort'
+                status: 'Ordered',
+                date: '15/10/2020 10:30',
+                icon: 'pi pi-shopping-cart',
+                color: '#9C27B0',
+                image: 'game-controller.jpg'
             },
-            {
-                status: 'John declined the request',
-                message: 'The amount of keyboards must be increased by 10 as decided during our last meeting',
-                icon: 'pi pi-tag'
-            },
-
-            { status: 'Processing', icon: 'pi pi-tag', color: '#673AB7' },
-            { status: 'Shipped', icon: 'pi pi-shopping-cart', color: '#FF9800' },
-            { status: 'Delivered', icon: 'pi pi-check', color: '#607D8B' }
+            { status: 'Processing', date: '15/10/2020 14:00', icon: 'pi pi-cog', color: '#673AB7' },
+            { status: 'Shipped', date: '15/10/2020 16:15', icon: 'pi pi-shopping-cart', color: '#FF9800' },
+            { status: 'Delivered', date: '16/10/2020 10:00', icon: 'pi pi-check', color: '#607D8B' }
         ];
-        console.log(this.events[0].date);
     }
 }

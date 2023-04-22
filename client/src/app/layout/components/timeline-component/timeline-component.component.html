@@ -1,25 +1,37 @@
 <p-card header="Timeline">
-    <p-timeline [align]="'left'" [value]="events" styleClass="no-left-space">
-        <ng-template let-event pTemplate="marker">
-            <span [style.color]="event.color" class="border-round border-1">
+    <p-timeline [value]="events" align="alternate" styleClass="customized-timeline">
+        <ng-template pTemplate="marker" let-event>
+            <span class="custom-marker shadow-2" [style.background-color]="event.color">
                 <i [ngClass]="event.icon"></i>
             </span>
         </ng-template>
-        <ng-template let-event pTemplate="content">
-            {{ event.status }}
-            <div class="flex column-gap-7 gap-3 flex-column p-3 surface-ground my-3 border-round" *ngIf="event.message">
-                <div class="flex-1">
-                    {{ event.message }}
-                </div>
-                <div class="flex-1">
-                    <div class="flex align-items-center gap-3">
-                        <p-tag styleClass="text-sm text-yellow-800 bg-yellow-100 px-3" [style]="{}" value="Pending"></p-tag>
-                        <i class="pi pi-arrow-right"></i>
-                        <p-tag styleClass="text-sm text-red-800 bg-red-100 px-3" [style]="{}" value="Declined"></p-tag>
-                        <span *ngIf="event.date">123{{event.date | date}}</span>
+        <ng-template pTemplate="content" let-event>
+            <p-card [header]="event.status" [subheader]="event.date">
+                <img
+                    *ngIf="event.image"
+                    src="/assets/images/order.jpeg"
+                    [alt]="event.name"
+                    width="200"
+                    class="shadow-2" />
+                <p class="font-semibold">
+                    APPLE 2022 MacBook AIR M2 - (8 GB/512 GB SSD/Mac OS Monterey) Z160000Z1 (13.6 Inch, Midnight, 1.24 Kg)
+                </p>
+                <div class="flex flex-column gap-3">
+                    <div class="flex-1">
+                        <i class="pi pi-circle-fill text-xs"></i> Stylish & Portable Thin and Light Laptop
+                    </div>
+                    <div class="flex-1">
+                        <i class="pi pi-circle-fill text-xs"></i> 13.6 Inch Liquid Retina Display, LED-backlit display
+                        with IPS technology, 500 nits brightness, Wide colour (P3), True Tone technology
+                    </div>
+                    <div class="flex-1">
+                        <i class="pi pi-circle-fill text-xs"></i>
+                        Light Laptop without Optical Disk Drive
                     </div>
                 </div>
-            </div>
+
+                <button pButton label="Read more" class="p-button-text"></button>
+            </p-card>
         </ng-template>
     </p-timeline>
 </p-card>

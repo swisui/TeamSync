@@ -6,9 +6,11 @@ import { TimelineModule } from 'primeng/timeline';
 
 import { TimelineComponentRoutingModule } from './timeline-component-routing.module';
 import { TimelineComponentComponent } from './timeline-component.component';
+import { SafeHtmlPipe } from './safe-html.pipe';
+import { ButtonModule } from "primeng/button";
 
 @NgModule({
-    declarations: [TimelineComponentComponent],
-    imports: [CommonModule, TimelineComponentRoutingModule, TimelineModule, CardModule, TagModule]
+    declarations: [TimelineComponentComponent, SafeHtmlPipe],
+    imports: [CommonModule, TimelineComponentRoutingModule, TimelineModule, CardModule, TagModule, ButtonModule]
 })
 export class TimelineComponentModule {}
