@@ -29,7 +29,7 @@
 </div>
 
 <div class="grid mb-2">
-    <div class="lg:col-3 md:col-6 sm:col-12" *ngFor="let item of infoCardList">
+    <div *ngFor="let item of infoCardList" class="lg:col-3 md:col-6 sm:col-12">
         <info-card [data]="item" />
     </div>
 </div>

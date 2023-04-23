@@ -1,7 +1,5 @@
 <p-card header="Urgent Task">
-    <div
-        *ngFor="let item of urgentTask; let last = last"
-        class="grid align-items-center">
+    <div *ngFor="let item of urgentTask" class="grid align-items-center">
         <div class="col">
             <p-radioButton [(ngModel)]="item.completed" [inputId]="item.id.toString()" [name]="item.id.toString()" />
             <label [for]="item.id.toString()" class="ml-3">{{ item.name }}</label>
