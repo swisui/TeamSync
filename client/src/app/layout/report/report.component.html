@@ -14,73 +14,68 @@
     </div>
 </div>
 <div class="grid">
-    <div class="lg:col-6 md:col-12">
-        <div class="grid">
-            <div class="col-6">
-                <p-card styleClass="p-0-card-content">
-                    <div class="grid align-items-center">
-                        <div class="col">
-                            <div class="text-2xl">Total Projects</div>
-                        </div>
-                        <div class="col-fixed">
-                            <p-button
-                                icon="pi pi-box"
-                                styleClass="p-button-rounded p-button-danger p-button-outlined"></p-button>
-                        </div>
-                        <div class="col-12">
-                            <div class="text-6xl font-light">182</div>
-                        </div>
-                        <div class="col-12">
-                            <button
-                                class="p-button p-button-danger w-full p-3 mt-2"
-                                label="Add new project"
-                                pButton
-                                pRipple></button>
-                        </div>
+    <div class="lg:col-6 col-12">
+        <div class="flex gap-5">
+            <p-card styleClass="p-0-card-content">
+                <div class="grid align-items-center">
+                    <div class="col">
+                        <div class="text-2xl">Total Projects</div>
                     </div>
-                </p-card>
-            </div>
-            <div class="col-6">
-                <p-card styleClass="p-0-card-content">
-                    <div class="grid align-items-center">
-                        <div class="col">
-                            <div class="text-2xl">Team Size</div>
-                        </div>
-                        <div class="col-fixed">
-                            <p-button
-                                icon="pi pi-users"
-                                styleClass="p-button-rounded p-button-success p-button-outlined"></p-button>
-                        </div>
-                        <div class="col-12">
-                            <div class="text-6xl font-light">14</div>
-                        </div>
-                        <div class="col-12">
-                            <button
-                                class="p-button p-button-success w-full p-3 mt-2"
-                                label="Add new member"
-                                pButton
-                                pRipple></button>
-                        </div>
+                    <div class="col-fixed">
+                        <p-button
+                            icon="pi pi-box"
+                            styleClass="p-button-rounded p-button-danger p-button-outlined"></p-button>
                     </div>
-                </p-card>
-            </div>
+                    <div class="col-12">
+                        <div class="text-6xl font-light">182</div>
+                    </div>
+                    <div class="col-12">
+                        <button
+                            class="p-button p-button-danger w-full p-3 mt-2"
+                            label="Add new project"
+                            pButton
+                            pRipple></button>
+                    </div>
+                </div>
+            </p-card>
+            <p-card styleClass="p-0-card-content">
+                <div class="grid align-items-center">
+                    <div class="col">
+                        <div class="text-2xl">Team Size</div>
+                    </div>
+                    <div class="col-fixed">
+                        <p-button
+                            icon="pi pi-users"
+                            styleClass="p-button-rounded p-button-success p-button-outlined"></p-button>
+                    </div>
+                    <div class="col-12">
+                        <div class="text-6xl font-light">14</div>
+                    </div>
+                    <div class="col-12">
+                        <button
+                            class="p-button p-button-success w-full p-3 mt-2"
+                            label="Add new member"
+                            pButton
+                            pRipple></button>
+                    </div>
+                </div>
+            </p-card>
         </div>
-        <div class="grid">
+        <div class="grid grid-nogutter mt-5">
             <div class="col-12">
                 <project-progress />
             </div>
-            <div class="col-12">
+            <div class="col-12 mt-5">
                 <project-category />
             </div>
         </div>
     </div>
-    <div class="lg:col-6 md:col-12">
-        <div class="grid">
+    <div class="lg:col-6 col-12">
+        <div class="grid grid-nogutter">
             <div class="col-12">
                 <project-revenue />
             </div>
-            <div class="col-12">
-                <total-sale></total-sale>
+            <div class="col-12 mt-5">
                 <project-revenue />
             </div>
         </div>

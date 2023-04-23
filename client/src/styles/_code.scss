@@ -1,24 +1,18 @@
-/* Style the code block */
 code {
     background-color: #f4f4f4;
     color: #e83e8c;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: 600;
-    font-size: 14px;
     padding: 5px;
     display: block;
     overflow-x: auto;
     white-space: pre-wrap;
-    border-radius: 10px;
+    border-radius: var(--border-radius);
 }
 
-/* Style the code block inside a pre tag */
 pre code {
     margin: 0;
     padding: 0;
 }
 
-/* Style the code block text selection */
 ::-moz-selection {
     background: #b3d4fc;
     text-shadow: none;

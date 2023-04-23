@@ -1,6 +1,6 @@
 <div class="grid">
     <div class="lg:col-6 col-12">
-        <p-card header="Vertical">
+        <p-card styleClass="mb-5" header="Vertical">
             <div class="field">
                 <label>Firstname</label>
                 <input class="w-full" pInputText type="text" />
@@ -11,7 +11,7 @@
             </div>
         </p-card>
 
-        <p-card header="Vertical and Grid">
+        <p-card styleClass="mb-5" header="Vertical and Grid">
             <div class="formgrid grid">
                 <div class="field col">
                     <label>Firstname</label>
@@ -23,7 +23,7 @@
                 </div>
             </div>
         </p-card>
-        <p-card header="Horizontal and Fixed Width">
+        <p-card styleClass="mb-5" header="Horizontal and Fixed Width">
             <div class="field grid">
                 <label class="col-fixed" style="width: 100px">Firstname</label>
                 <div class="col">
@@ -37,7 +37,7 @@
                 </div>
             </div>
         </p-card>
-        <p-card header="Horizontal">
+        <p-card styleClass="mb-5" header="Horizontal">
             <div class="field grid">
                 <label class="col-12 mb-2 md:col-2 md:mb-0">Firstname</label>
                 <div class="col-12 md:col-10">
@@ -51,7 +51,7 @@
                 </div>
             </div>
         </p-card>
-        <p-card header="Inline">
+        <p-card styleClass="mb-5" header="Inline">
             <div class="formgroup-inline">
                 <div class="field">
                     <label class="p-sr-only">Firstname</label>
@@ -66,7 +66,7 @@
         </p-card>
     </div>
     <div class="lg:col-6 col-12">
-        <p-card header="Form Validation">
+        <p-card styleClass="mb-5" header="Form Validation">
             <form
                 (ngSubmit)="onSubmit()"
                 (reset)="submitted = false; form.reset()"
@@ -162,7 +162,7 @@
                 </div>
             </form>
         </p-card>
-        <p-card header="Advanced Form Validation">
+        <p-card styleClass="mb-5" header="Advanced Form Validation">
             <form (ngSubmit)="onAdvanceFormSubmit()" [formGroup]="advanceForm" class="formgrid grid">
                 <div class="field col-12 md:col-6">
                     <label>Min. 8 Characters</label>
@@ -265,7 +265,7 @@
                 </div>
             </form>
         </p-card>
-        <p-card header="Advanced Form">
+        <p-card styleClass="mb-5" header="Advanced Form">
             <div class="formgrid grid">
                 <div class="field col-12 md:col-6">
                     <label>Firstname</label>

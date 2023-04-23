@@ -1,4 +1,4 @@
-<div class="grid align-items-center mb-3">
+<div class="grid align-items-center mb-2">
     <div class="col">
         <h1 class="m-0 text-5xl font-light">Components</h1>
     </div>
@@ -10,8 +10,9 @@
             size="xlarge"
             styleClass="mr-2" />
     </div>
+    <div class="col-12">
+        <p-tabMenu [activeItem]="activeItem" [model]="menuItems" [scrollable]="true" />
+    </div>
 </div>
-<p-tabMenu [activeItem]="activeItem" [model]="menuItems" [scrollable]="true" />
-<div class="mt-4">
-    <router-outlet></router-outlet>
-</div>
+
+<router-outlet></router-outlet>

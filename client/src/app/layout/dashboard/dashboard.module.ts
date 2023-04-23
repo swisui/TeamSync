@@ -16,9 +16,9 @@ import { ChartModule } from '../../shared/modules/chart/chart.module';
 import { UrgentTaskComponent } from './urgent-task/urgent-task.component';
 import { ProjectDirectoryComponent } from './project-directory/project-directory.component';
 import { NewCommentsComponent } from './new-comments/new-comments.component';
-import { TeamDirectoryComponent } from './team-directory/team-directory.component';
 import { InfoCardComponent } from './info-card/info-card.component';
 import { SectorItemsComponent } from './sector-items/sector-items.component';
+import { TeamDirectoryModule } from '../../shared/modules/team-directory/team-directory.module';
 
 @NgModule({
     declarations: [
@@ -27,7 +27,6 @@ import { SectorItemsComponent } from './sector-items/sector-items.component';
         UrgentTaskComponent,
         ProjectDirectoryComponent,
         NewCommentsComponent,
-        TeamDirectoryComponent,
         InfoCardComponent,
         SectorItemsComponent
     ],
@@ -43,7 +42,8 @@ import { SectorItemsComponent } from './sector-items/sector-items.component';
         DividerModule,
         PipeModule,
         NgApexchartsModule,
-        ChartModule
+        ChartModule,
+        TeamDirectoryModule
     ]
 })
 export class DashboardModule {}
