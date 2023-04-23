@@ -1,37 +1,8 @@
-<p-card header="Timeline">
-    <p-timeline [value]="events" align="alternate" styleClass="customized-timeline">
-        <ng-template pTemplate="marker" let-event>
-            <span class="custom-marker shadow-2" [style.background-color]="event.color">
-                <i [ngClass]="event.icon"></i>
-            </span>
-        </ng-template>
-        <ng-template pTemplate="content" let-event>
-            <p-card [header]="event.status" [subheader]="event.date">
-                <img
-                    *ngIf="event.image"
-                    src="/assets/images/order.jpeg"
-                    [alt]="event.name"
-                    width="200"
-                    class="shadow-2" />
-                <p class="font-semibold">
-                    APPLE 2022 MacBook AIR M2 - (8 GB/512 GB SSD/Mac OS Monterey) Z160000Z1 (13.6 Inch, Midnight, 1.24 Kg)
-                </p>
-                <div class="flex flex-column gap-3">
-                    <div class="flex-1">
-                        <i class="pi pi-circle-fill text-xs"></i> Stylish & Portable Thin and Light Laptop
-                    </div>
-                    <div class="flex-1">
-                        <i class="pi pi-circle-fill text-xs"></i> 13.6 Inch Liquid Retina Display, LED-backlit display
-                        with IPS technology, 500 nits brightness, Wide colour (P3), True Tone technology
-                    </div>
-                    <div class="flex-1">
-                        <i class="pi pi-circle-fill text-xs"></i>
-                        Light Laptop without Optical Disk Drive
-                    </div>
-                </div>
-
-                <button pButton label="Read more" class="p-button-text"></button>
-            </p-card>
-        </ng-template>
-    </p-timeline>
-</p-card>
+<div class="grid">
+    <div class="lg:col-6 col-12">
+        <timeline-event />
+    </div>
+    <div class="lg:col-6 col-12">
+        <timeline-task />
+    </div>
+</div>

@@ -9,7 +9,6 @@ import { DividerModule } from 'primeng/divider';
 import { InputTextModule } from 'primeng/inputtext';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { PipeModule } from '../../shared/pipe/pipe.module';
-
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
 import { ExpenseStatisticComponent } from './expense-statistic/expense-statistic.component';
@@ -19,6 +18,7 @@ import { ProjectDirectoryComponent } from './project-directory/project-directory
 import { NewCommentsComponent } from './new-comments/new-comments.component';
 import { TeamDirectoryComponent } from './team-directory/team-directory.component';
 import { InfoCardComponent } from './info-card/info-card.component';
+import { SectorItemsComponent } from './sector-items/sector-items.component';
 
 @NgModule({
     declarations: [
@@ -28,7 +28,8 @@ import { InfoCardComponent } from './info-card/info-card.component';
         ProjectDirectoryComponent,
         NewCommentsComponent,
         TeamDirectoryComponent,
-        InfoCardComponent
+        InfoCardComponent,
+        SectorItemsComponent
     ],
     imports: [
         CommonModule,
