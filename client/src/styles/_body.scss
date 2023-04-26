@@ -11,3 +11,14 @@ body {
 [class*='col'] {
     padding: 1rem;
 }
+
+//p-sm-* : min-width 576px
+//p-md-* : min-width 768px
+//p-lg-* : min-width 992px
+//p-xl-* : min-width 1200p
+
+@media screen and (max-width: 480px) {
+    [class*='col'] {
+        padding: .5rem;
+    }
+}

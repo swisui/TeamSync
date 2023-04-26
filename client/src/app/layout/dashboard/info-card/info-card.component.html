@@ -12,13 +12,11 @@
         </div>
     </div>
     <div class="grid align-items-center grid-nogutter mt-2">
-        <div class="col">
-            <span *ngIf="data.isCurrency" class="text-4xl">
-                {{ data.value | currency : 'USD' : 'symbol' : '1.0-0' }}
-            </span>
-            <span *ngIf="!data.isCurrency" class="text-4xl">{{ data.value | number }}</span>
+        <div class="col-fixed" [style.width.px]="110">
+            <span *ngIf="data.isCurrency" class="text-4xl"> ${{ data.value | shortNumber }} </span>
+            <span *ngIf="!data.isCurrency" class="text-4xl">{{ data.value | shortNumber }}</span>
         </div>
-        <div class="col-fixed text-center">
+        <div class="col text-right">
             <span [class.text-green-500]="data.growth > 0" [class.text-red-500]="data.growth < 0" class="block">
                 <i class="pi pi-chart-line ml-2"></i> {{ Math.abs(data.growth) }}
             </span>

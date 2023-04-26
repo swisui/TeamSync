@@ -16,7 +16,7 @@ export class DashboardComponent {
             {
                 cardName: 'Total Revenue',
                 icon: 'pi pi-wallet',
-                value: 612839,
+                value: 612839123123,
                 growth: 16,
                 isCurrency: true,
                 bgColor: '#9e90ff'
@@ -24,7 +24,7 @@ export class DashboardComponent {
             {
                 cardName: 'Total Customer',
                 icon: 'pi pi-users',
-                value: 513456,
+                value: 513456123123,
                 growth: -4,
                 isCurrency: false,
                 bgColor: '#ff8389'
@@ -32,7 +32,7 @@ export class DashboardComponent {
             {
                 cardName: 'Total Transaction',
                 icon: 'pi pi-arrow-right-arrow-left',
-                value: 637902,
+                value: 637902123123,
                 growth: 8,
                 isCurrency: false,
                 bgColor: '#6b8dc8'
@@ -40,7 +40,7 @@ export class DashboardComponent {
             {
                 cardName: 'Total Product',
                 icon: 'pi pi-tablet',
-                value: 256721,
+                value: 256721123123,
                 growth: 2,
                 isCurrency: false,
                 bgColor: '#65baba'

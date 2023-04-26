@@ -5,3 +5,13 @@
     overflow-y: auto;
     overflow-x: hidden;
 }
+
+@media screen and (max-width: 480px) {
+    .main-container {
+        padding: 1rem;
+        margin-left: 0;
+    }
+    sidebar {
+        display: none !important;
+    }
+}
