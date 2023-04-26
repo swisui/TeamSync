@@ -19,6 +19,7 @@ import { NewCommentsComponent } from './new-comments/new-comments.component';
 import { InfoCardComponent } from './info-card/info-card.component';
 import { SectorItemsComponent } from './sector-items/sector-items.component';
 import { TeamDirectoryModule } from '../../shared/modules/team-directory/team-directory.module';
+import { MainBreadcrumbModule } from "../../shared/modules/main-breadcrumb/main-breadcrumb.module";
 
 @NgModule({
     declarations: [
@@ -30,20 +31,21 @@ import { TeamDirectoryModule } from '../../shared/modules/team-directory/team-di
         InfoCardComponent,
         SectorItemsComponent
     ],
-    imports: [
-        CommonModule,
-        DashboardRoutingModule,
-        InputTextModule,
-        AvatarModule,
-        CalendarModule,
-        CardModule,
-        RadioButtonModule,
-        FormsModule,
-        DividerModule,
-        PipeModule,
-        NgApexchartsModule,
-        ChartModule,
-        TeamDirectoryModule
-    ]
+  imports: [
+    CommonModule,
+    DashboardRoutingModule,
+    InputTextModule,
+    AvatarModule,
+    CalendarModule,
+    CardModule,
+    RadioButtonModule,
+    FormsModule,
+    DividerModule,
+    PipeModule,
+    NgApexchartsModule,
+    ChartModule,
+    TeamDirectoryModule,
+    MainBreadcrumbModule
+  ]
 })
 export class DashboardModule {}

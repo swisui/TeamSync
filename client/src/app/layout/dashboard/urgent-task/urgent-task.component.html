@@ -1,8 +1,10 @@
 <p-card header="Urgent Task">
     <div *ngFor="let item of urgentTask" class="grid align-items-center">
-        <div class="col">
+        <div class="col-fixed">
             <p-radioButton [(ngModel)]="item.completed" [inputId]="item.id.toString()" [name]="item.id.toString()" />
-            <label [for]="item.id.toString()" class="ml-3">{{ item.name }}</label>
+        </div>
+        <div class="col white-space-nowrap overflow-hidden text-overflow-ellipsis">
+            <label [for]="item.id.toString()">{{ item.name }}</label>
         </div>
         <div class="col-fixed text-pink-500 font-bold">
             <div [style.height.px]="20" class="flex align-items-center">

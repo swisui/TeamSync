@@ -15,6 +15,7 @@ import { OverviewProjectProgressComponent } from './overview-project-progress/ov
 import { OverviewRoutingModule } from './overview-routing.module';
 import { OverviewUserTaskComponent } from './overview-user-task/overview-user-task.component';
 import { OverviewComponent } from './overview.component';
+import { MainBreadcrumbModule } from "../../shared/modules/main-breadcrumb/main-breadcrumb.module";
 
 @NgModule({
     declarations: [
@@ -23,19 +24,20 @@ import { OverviewComponent } from './overview.component';
         OverviewProjectProgressComponent,
         OverviewUserTaskComponent
     ],
-    imports: [
-        CommonModule,
-        OverviewRoutingModule,
-        AvatarModule,
-        InputTextModule,
-        CalendarModule,
-        CardModule,
-        RadioButtonModule,
-        NgApexchartsModule,
-        TeamDirectoryModule,
-        FormsModule,
-        PipeModule,
-        ChartModule
-    ]
+  imports: [
+    CommonModule,
+    OverviewRoutingModule,
+    AvatarModule,
+    InputTextModule,
+    CalendarModule,
+    CardModule,
+    RadioButtonModule,
+    NgApexchartsModule,
+    TeamDirectoryModule,
+    FormsModule,
+    PipeModule,
+    ChartModule,
+    MainBreadcrumbModule
+  ]
 })
 export class OverviewModule {}

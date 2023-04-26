@@ -1,34 +1,22 @@
-<div class="grid grid-nogutter align-items-center">
-    <div class="lg:col-4 md:col-12 col-12">
-        <h1 class="m-0 text-5xl font-light">
-            <p-button icon="pi pi-bars" styleClass="p-button-rounded p-button-text"></p-button>
-            Welcome, juliana!
-        </h1>
-        <p class="text-xl mt-1 mb-3">Here is your agenda for today</p>
-    </div>
-    <div class="lg:col-8 md:col-12 col-12">
-        <div class="grid grid-nogutter align-items-center">
-            <div class="col">
-                <span class="p-input-icon-right w-full">
-                    <i class="pi pi-search mr-3"></i>
-                    <input
-                        class="w-full border-round-3xl border-1 bg-transparent py-3 px-4 search-input"
-                        pInputText
-                        placeholder="Search" />
-                </span>
-            </div>
-            <div class="col-fixed">
-                <div class="lg:ml-4 ml-0 mr-0">
-                    <p-avatar
-                        [style]="{ height: '60px', width: '60px' }"
-                        image="/assets/images/profile-pics/1.jpg"
-                        shape="circle"
-                        size="xlarge" />
-                </div>
-            </div>
+<main-breadcrumb>
+    <div class="grid grid-nogutter align-items-center flex-1">
+        <div class="col">
+            <h1 class="m-0 text-5xl font-light white-space-nowrap overflow-hidden text-overflow-ellipsis">
+                Welcome, juliana!
+            </h1>
+            <p class="text-xl mt-1 mb-3">Here is your agenda for today</p>
+        </div>
+        <div class="col-fixed hidden md:inline-flex ">
+            <span class="p-input-icon-right w-full">
+                <i class="pi pi-search mr-3"></i>
+                <input
+                    class="w-full border-round-3xl border-1 bg-transparent py-3 px-4 search-input"
+                    pInputText
+                    placeholder="Search" />
+            </span>
         </div>
     </div>
-</div>
+</main-breadcrumb>
 
 <div class="grid mb-2">
     <div *ngFor="let item of infoCardList" class="lg:col-3 md:col-6 col-12">
@@ -40,23 +28,20 @@
     <div class="lg:col-4 md:col-6 col-12">
         <p-calendar [inline]="true" [showOtherMonths]="false" [showWeek]="false" class="w-full"></p-calendar>
     </div>
-    <div class="lg:col-4 md:col-12">
+    <div class="lg:col-4 md:col-6 col-12">
         <urgent-task />
     </div>
-    <div class="lg:col-4 md:col-12">
+    <div class="lg:col-4 md:col-6 col-12">
         <expense-statistic />
     </div>
-</div>
-
-<div class="grid mt-1">
-    <div class="lg:col-4 md:col-6 sm:col-12">
+    <div class="lg:col-4 md:col-6 col-12">
         <project-directory />
     </div>
-    <div class="lg:col-4 md:col-6 sm:col-12">
+    <div class="lg:col-4 md:col-6 col-12">
         <new-comments />
         <sector-items />
     </div>
-    <div class="lg:col-4 md:col-6 sm:col-12">
+    <div class="lg:col-4 md:col-6 col-12">
         <team-directory />
     </div>
 </div>
