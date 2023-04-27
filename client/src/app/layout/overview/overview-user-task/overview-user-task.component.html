@@ -7,7 +7,7 @@
             <div class="col">{{ task.name }} responsibilities</div>
         </div>
         <div *ngFor="let item of task.tasks; let subIndex = index" class="grid align-items-center">
-            <div class="col-3">
+            <div class="col-3 white-space-nowrap overflow-hidden text-overflow-ellipsis">
                 <p-radioButton
                     [(ngModel)]="item.completed"
                     [inputId]="(index + subIndex).toString()"
@@ -50,4 +50,6 @@
             </div>
         </div>
     </ng-container>
+    <!--<div class="overflow-x-auto" [style.width.px]="500">
+    </div>-->
 </p-card>

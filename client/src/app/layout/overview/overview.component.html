@@ -1,35 +1,18 @@
-<!--<div class="grid align-items-center">
-    <div class="col">
-        <h1 class="m-0 text-5xl font-light">Overview / Market Research {{ today + 1 }}</h1>
-    </div>
-    <div class="col-fixed">
-        <p-avatar
-            [style]="{ height: '60px', width: '60px' }"
-            image="/assets/images/profile-pics/1.jpg"
-            shape="circle"
-            size="xlarge"
-            styleClass="mr-2" />
-    </div>
-</div>-->
-
 <main-breadcrumb>
-    <h1 class="m-0 text-5xl font-light">Overview / Market Research {{ today + 1 }}</h1>
+    <h1 class="m-0 text-5xl font-light white-space-nowrap overflow-hidden text-overflow-ellipsis">Overview</h1>
 </main-breadcrumb>
 
 <div class="grid">
-    <div class="lg:col-4 md:col-6 sm:col-12">
+    <div class="lg:col-4 col-12">
         <overview-calendar />
     </div>
-    <div class="lg:col-8 md:col-12">
+    <div class="lg:col-8 col-12">
         <overview-project-progress />
     </div>
-</div>
-
-<div class="grid mt-1">
-    <div class="lg:col-4 md:col-6 sm:col-12">
+    <div class="lg:col-4 col-12">
         <team-directory />
     </div>
-    <div class="lg:col-8 md:col-12">
+    <div class="lg:col-8 col-12">
         <overview-user-task />
     </div>
 </div>
