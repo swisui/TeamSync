@@ -15,6 +15,8 @@ import { ProjectRevenueComponent } from './project-revenue/project-revenue.compo
 import { ReportRoutingModule } from './report-routing.module';
 import { ReportComponent } from './report.component';
 import { TotalSaleComponent } from './total-sale/total-sale.component';
+import { InputTextModule } from 'primeng/inputtext';
+import { MainBreadcrumbModule } from '../../shared/modules/main-breadcrumb/main-breadcrumb.module';
 
 @NgModule({
     declarations: [
@@ -35,7 +37,9 @@ import { TotalSaleComponent } from './total-sale/total-sale.component';
         BadgeModule,
         NgApexchartsModule,
         FormsModule,
-        ChartModule
+        ChartModule,
+        InputTextModule,
+        MainBreadcrumbModule
     ]
 })
 export class ReportModule {}

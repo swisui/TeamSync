@@ -1,8 +1,8 @@
+<main-breadcrumb>
+    <h1 class="m-0 text-5xl font-light white-space-nowrap overflow-hidden text-overflow-ellipsis">Calendar</h1>
+</main-breadcrumb>
 <div class="grid align-items-center">
     <div class="col">
-        <h1 class="m-0 text-5xl font-light">Calendar</h1>
-    </div>
-    <div class="col-fixed">
         <div class="p-buttonset">
             <button
                 (viewDateChange)="closeOpenMonthViewDay()"
@@ -29,14 +29,6 @@
             <button (click)="setView(CalendarView.Week)" label="Week" pButton pRipple></button>
             <button (click)="setView(CalendarView.Day)" label="Day" pButton pRipple></button>
         </span>
-    </div>
-    <div class="col-fixed">
-        <p-avatar
-            [style]="{ height: '60px', width: '60px' }"
-            image="/assets/images/profile-pics/1.jpg"
-            shape="circle"
-            size="xlarge"
-            styleClass="mr-2" />
     </div>
 </div>
 

@@ -7,6 +7,7 @@ import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
 import { CalendarRoutingModule } from './calendar-routing.module';
 import { CalendarComponent } from './calendar.component';
+import { MainBreadcrumbModule } from '../../shared/modules/main-breadcrumb/main-breadcrumb.module';
 
 @NgModule({
     declarations: [CalendarComponent],
@@ -19,7 +20,8 @@ import { CalendarComponent } from './calendar.component';
         CalendarCommonModule,
         AvatarModule,
         ButtonModule,
-        RippleModule
+        RippleModule,
+        MainBreadcrumbModule
     ]
 })
 export class CalendarModule {}
