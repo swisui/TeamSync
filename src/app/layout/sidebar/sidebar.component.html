@@ -1,0 +1,46 @@
+<div class="flex flex-column justify-content-between h-screen">
+    <div class="flex justify-content-center mt-8">
+        <div class="flex flex-column">
+            <div class="flex">
+                <a [pTooltip]="'Dashboard'" [routerLink]="['dashboard']" routerLinkActive="active">
+                    <i class="pi pi-home"></i>
+                </a>
+            </div>
+            <div class="flex">
+                <a [pTooltip]="'Overview'" [routerLink]="['overview']" routerLinkActive="active">
+                    <i class="pi pi-globe"></i>
+                </a>
+            </div>
+            <div class="flex">
+                <a [pTooltip]="'Report'" [routerLink]="['report']" routerLinkActive="active">
+                    <i class="pi pi-chart-pie"></i>
+                </a>
+            </div>
+            <div class="flex">
+                <a [pTooltip]="'Calendar'" [routerLink]="['calendar']" routerLinkActive="active">
+                    <i class="pi pi-calendar"></i>
+                </a>
+            </div>
+            <div class="flex">
+                <a [pTooltip]="'Components'" [routerLink]="['components']" routerLinkActive="active">
+                    <i class="pi pi-database"></i>
+                </a>
+            </div>
+
+        </div>
+    </div>
+    <div class="flex justify-content-center mb-4">
+        <div class="flex flex-column">
+            <div class="flex">
+                <a (click)="changeTheme()" [pTooltip]="theme === 'light' ? 'Dark' : 'Light'" href="javascript:void(0)">
+                    <i [class.pi-moon]="theme === 'light'" [class.pi-sun]="theme === 'dark'" class="pi"></i>
+                </a>
+            </div>
+            <div class="flex">
+                <a [pTooltip]="'Logout'" [routerLink]="['/login']">
+                    <i class="pi pi-sign-out"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

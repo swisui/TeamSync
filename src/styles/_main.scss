@@ -1,0 +1,8 @@
+.main-container {
+    padding: 2rem;
+    height: 100%;
+    margin-left: var(--sidebar-width);
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: all 0.2s ease-in-out;
+}

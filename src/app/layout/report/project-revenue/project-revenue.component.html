@@ -1,0 +1,25 @@
+<p-card styleClass="p-0-card-content">
+    <div class="grid align-items-center">
+        <div class="col">
+            <div class="text-2xl">Project Revenue</div>
+        </div>
+        <div class="col-fixed">
+            <p-dropdown [options]="dropdownOptions" [placeholder]="'Year'"></p-dropdown>
+        </div>
+    </div>
+    <div class="grid align-items-center">
+        <div class="col-fixed">
+            <div class="text-3xl m-0 font-light">+{{ 12538.87 | currency }}</div>
+        </div>
+        <div class="col">
+            <span class="bg-teal-100 text-teal-700 text-xs px-3 py-1 border-round-xl">
+                Avg. +{{ 1334.87 | currency }}/month
+            </span>
+        </div>
+    </div>
+    <div class="grid -mb-4">
+        <div class="col-12">
+            <chart [chartOptions]="chartOptions" />
+        </div>
+    </div>
+</p-card>

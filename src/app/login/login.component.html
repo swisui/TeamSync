@@ -1,0 +1,58 @@
+<div class="grid h-full w-full align-items-center">
+    <div class="col">
+        <div class="flex align-items-center h-full w-full justify-content-center">
+            <p-card>
+                <div class="grid">
+                    <div class="col-12 text-center">
+                        <h1>Login</h1>
+                    </div>
+                    <div class="col-12">
+                        <div class="flex flex-column gap-2">
+                            <label for="username">Username</label>
+                            <span class="p-input-icon-left">
+                                <i class="pi pi-user"></i>
+                                <input aria-describedby="username-help" class="w-full" id="username" pInputText />
+                            </span>
+                        </div>
+                        <div class="flex flex-column gap-2">
+                            <label for="password">Password</label>
+                            <span class="p-input-icon-left">
+                                <i class="pi pi-lock"></i>
+                                <input aria-describedby="username-help" class="w-full" id="password" pInputText />
+                            </span>
+                            <span class="text-right text-sm cursor-pointer"> Forgot Password? </span>
+                        </div>
+                        <div class="flex flex-column gap-2">
+                            <p-button [routerLink]="'/'" label="Login" styleClass="w-full"></p-button>
+                        </div>
+                        <div class="flex flex-column gap-2 text-center">
+                            <p-divider align="center">
+                                <span class="text-sm">Or SignIn using</span>
+                            </p-divider>
+                            <div>
+                                <p-button
+                                    icon="pi pi-facebook"
+                                    styleClass="p-button-rounded p-button-facebook"></p-button>
+                                <p-button
+                                    icon="pi pi-google"
+                                    styleClass="p-button-rounded p-button-google mx-2"></p-button>
+                                <p-button
+                                    icon="pi pi-twitter"
+                                    styleClass="p-button-rounded p-button-twitter"></p-button>
+                            </div>
+                        </div>
+                        <div class="flex flex-column gap-2 text-center">
+                            <p-button
+                                label="SignUp"
+                                routerLink="/signup"
+                                styleClass="p-button-text p-button-sm"></p-button>
+                        </div>
+                    </div>
+                </div>
+            </p-card>
+        </div>
+    </div>
+    <div class="col text-center">
+        <img src="/assets/images/login.svg" width="400" />
+    </div>
+</div>

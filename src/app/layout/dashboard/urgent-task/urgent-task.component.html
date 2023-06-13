@@ -1,0 +1,26 @@
+<p-card header="Urgent Task">
+    <div *ngFor="let item of urgentTask" class="grid align-items-center">
+        <div class="col-fixed">
+            <p-radioButton [(ngModel)]="item.completed" [inputId]="item.id.toString()" [name]="item.id.toString()" />
+        </div>
+        <div class="col white-space-nowrap overflow-hidden text-overflow-ellipsis">
+            <label [for]="item.id.toString()">{{ item.name }}</label>
+        </div>
+        <div class="col-fixed text-pink-500 font-bold">
+            <div [style.height.px]="20" class="flex align-items-center">
+                <span
+                    [ngClass]="{
+                        'text-yellow-500': (item.due | formatRelative) === 'Today',
+                        'text-green-500': (item.due | formatRelative) === 'Tomorrow',
+                        'text-red-500': (item.due | formatRelative) === 'Yesterday',
+                        'text-gray-500': !['Today', 'Tomorrow', 'Yesterday'].includes(
+                            $any(item.due | formatRelative).toString()
+                        )
+                    }">
+                    <i [style.font-size.px]="6" class="pi pi-circle-fill mr-2"></i>
+                    {{ item.due | formatRelative }}
+                </span>
+            </div>
+        </div>
+    </div>
+</p-card>

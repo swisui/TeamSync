@@ -1,0 +1,14 @@
+<p-card header="New Comments">
+    <ul class="list-none p-0 m-0">
+        <li
+            *ngFor="let item of newComments; let index = index; let last = last"
+            [class.-mb-3]="last"
+            class="mb-3 flex align-items-center surface-ground border-round-xl p-3">
+            <p-avatar [image]="'/assets/images/profile-pics/' + (index + 1) + '.jpg'" shape="circle" size="large" />
+            <div class="ml-3">
+                <span class="block text-sm text-500">{{ item.user }} in {{ item.project }}</span>
+                <span class="block font-semibold">{{ item.message }}</span>
+            </div>
+        </li>
+    </ul>
+</p-card>

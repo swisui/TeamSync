@@ -1,0 +1,18 @@
+<div class="grid align-items-center mb-2">
+    <div class="col">
+        <h1 class="m-0 text-5xl font-light">Components</h1>
+    </div>
+    <div class="col-fixed">
+        <p-avatar
+            [style]="{ height: '60px', width: '60px' }"
+            image="/assets/images/profile-pics/1.jpg"
+            shape="circle"
+            size="xlarge"
+            styleClass="mr-2" />
+    </div>
+    <div class="col-12">
+        <p-tabMenu [activeItem]="activeItem" [model]="menuItems" [scrollable]="true" />
+    </div>
+</div>
+
+<router-outlet></router-outlet>

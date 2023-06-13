@@ -1,0 +1,33 @@
+:host {
+    width: var(--sidebar-width);
+    background: var(--sidebar-bg);
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    overflow-y: auto;
+    z-index: 1024;
+
+    a {
+        margin-bottom: 10px;
+
+        .pi {
+            color: #fff;
+            font-size: 20px;
+            padding: 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+                background: var(--sidebar-hover-bg);
+            }
+        }
+
+        &.active .pi {
+            background: var(--active-color);
+            color: #fff;
+        }
+    }
+}

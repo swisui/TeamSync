@@ -1,0 +1,55 @@
+<p-card header="Task by user" styleClass="p-0-card-content">
+    <ng-container *ngFor="let task of tasks; let index = index">
+        <div class="grid align-items-center justify-content-center">
+            <div class="col-fixed">
+                <p-avatar [image]="'/assets/images/profile-pics/' + (index + 1) + '.jpg'" shape="circle" />
+            </div>
+            <div class="col">{{ task.name }} responsibilities</div>
+        </div>
+        <div *ngFor="let item of task.tasks; let subIndex = index" class="grid align-items-center">
+            <div class="col-3 white-space-nowrap overflow-hidden text-overflow-ellipsis">
+                <p-radioButton
+                    [(ngModel)]="item.completed"
+                    [inputId]="(index + subIndex).toString()"
+                    [name]="(index + subIndex).toString().toString()" />
+                <label [for]="(index + subIndex).toString()" class="ml-3 text-sm">{{ item.name }}</label>
+            </div>
+            <div class="col-3">
+                <span
+                    [ngClass]="{
+                        'bg-yellow-100 text-yellow-900': (item.dueDate | formatRelative) === 'Today',
+                        'bg-green-100 text-green-900': (item.dueDate | formatRelative) === 'Tomorrow',
+                        'bg-red-100 text-red-900': (item.dueDate | formatRelative) === 'Yesterday',
+                        'bg-gray-100 text-gray-900': !['Today','Tomorrow','Yesterday'].includes($any(item.dueDate | formatRelative).toString()),
+                     }"
+                    class="block text-xs px-3 py-1 border-round-xl w-7rem text-center">
+                    {{ item.dueDate | formatRelative }}
+                </span>
+            </div>
+            <div class="col-3">
+                <span
+                    [ngClass]="{
+                        'bg-cyan-100 text-cyan-900': item.status === 'In Progress',
+                        'bg-gray-100 text-gray-900': item.status === 'Paused',
+                        'bg-purple-100 text-purple-900': item.status === 'Not Started'
+                    }"
+                    class="block text-xs px-3 py-1 border-round-xl w-7rem text-center">
+                    {{ item.status }}
+                </span>
+            </div>
+            <div class="col-3">
+                <span
+                    [ngClass]="{
+                        'bg-green-100 text-green-900': item.priority === 'Low Priority',
+                        'bg-red-100 text-red-900': item.priority === 'High Priority',
+                        'bg-yellow-100 text-yellow-900': item.priority === 'Medium Priority'
+                    }"
+                    class="block text-xs py-1 border-round-xl w-7rem text-center">
+                    {{ item.priority }}
+                </span>
+            </div>
+        </div>
+    </ng-container>
+    <!--<div class="overflow-x-auto" [style.width.px]="500">
+    </div>-->
+</p-card>

@@ -1,0 +1,59 @@
+<p-card header="Timeline">
+    <p-timeline [value]="events" styleClass="no-left-space">
+        <ng-template pTemplate="marker" let-event>
+            <span
+                [style.background-color]="event.color"
+                [ngClass]="
+                    (event.status === 'Order Confirmed' ? 'text-gray-800 bg-gray-100' : '') +
+                    (event.status === 'Order' ? 'text-green-800 bg-green-100' : '') +
+                    (event.status === 'New Order' ? 'text-green-800 bg-green-100' : '') +
+                    (event.status === 'Processing' ? 'text-yellow-800 bg-yellow-100' : '') +
+                    (event.status === 'Shipped' ? 'text-orange-800 bg-orange-100' : '') +
+                    (event.status === 'Out For Delivery' ? 'text-purple-800 bg-purple-100' : '') +
+                    (event.status === 'Delivered' ? 'text-green-800 bg-green-100' : '')
+                ">
+                <i [ngClass]="event.icon"></i>
+            </span>
+        </ng-template>
+        <ng-template pTemplate="content" let-event>
+            <div class="flex justify-content-between align-items-center">
+                <div class="text-lg">
+                    {{ event.status }}
+                </div>
+                <div class="text-color-secondary text-sm">{{ event.date | date : "MMM d, y 'at' h:mm a" }}</div>
+            </div>
+            <p-image *ngIf="event.image" [src]="event.image" [preview]="true" alt="Image" width="250" />
+            <div class="flex flex-column px-0">
+                <div class="flex-1 surface-ground p-3 border-round" *ngIf="event.message">
+                    <div [innerHTML]="event.message | newline"></div>
+                </div>
+                <div class="flex align-items-center column-gap-2 px-0">
+                    <p-tag
+                        *ngIf="event.from"
+                        [styleClass]="
+                            'text-sm px-3 ' +
+                            (event.from === 'Order' ? 'text-green-800 bg-green-100' : '') +
+                            (event.from === 'New Order' ? 'text-green-800 bg-green-100' : '') +
+                            (event.from === 'Processing' ? 'text-yellow-800 bg-yellow-100' : '') +
+                            (event.from === 'Shipped' ? 'text-orange-800 bg-orange-100' : '') +
+                            (event.from === 'Out For Delivery' ? 'text-purple-800 bg-purple-100' : '')
+                        "
+                        [value]="event.from" />
+                    <ng-container class="flex" *ngIf="event.to">
+                        <i class="pi pi-arrow-right"></i>
+                        <p-tag
+                            [styleClass]="
+                                'text-sm px-3 ' +
+                                (event.to === 'Processing' ? 'text-yellow-800 bg-yellow-100' : '') +
+                                (event.to === 'Shipped' ? 'text-orange-800 bg-orange-100' : '') +
+                                (event.to === 'Out For Delivery' ? 'text-purple-800 bg-purple-100' : '') +
+                                (event.to === 'Delivered' ? 'text-green-800 bg-green-100' : '')
+                            "
+                            [value]="event.to" />
+                    </ng-container>
+                </div>
+            </div>
+            <button pButton label="Read more" class="p-button-text p-button-sm"></button>
+        </ng-template>
+    </p-timeline>
+</p-card>

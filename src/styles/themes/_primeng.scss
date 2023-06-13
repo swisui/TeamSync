@@ -1,0 +1,100 @@
+.p-component {
+    font-size: var(--font-size);
+    font-family: var(--font-family);
+    border-radius: var(--border-radius);
+}
+
+.p-card {
+    color: var(--font-color);
+    box-shadow: none;
+    border-radius: var(--card-border-radius);
+
+    .p-card-title {
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 1.25rem;
+    }
+
+    .p-card-body {
+        padding: 20px;
+    }
+
+    &.p-0-body .p-card-body {
+        padding: 0;
+    }
+
+    &.p-0-card-content .p-card-content {
+        padding: 0;
+    }
+}
+
+.p-tooltip .p-tooltip-text {
+    padding: 5px 10px;
+}
+
+.p-tooltip .p-tooltip-text {
+    background: var(--active-color);
+}
+
+.p-tooltip.p-tooltip-right .p-tooltip-arrow {
+    border-right-color: var(--active-color);
+}
+
+.p-datepicker .p-datepicker-header .p-datepicker-next,
+.p-datepicker .p-datepicker-header .p-datepicker-prev,
+.p-datepicker .p-datepicker-header .p-datepicker-prev:enabled:hover,
+.p-datepicker .p-datepicker-header .p-datepicker-next:enabled:hover,
+.p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-year,
+.p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-month,
+.p-datepicker {
+    color: var(--font-color);
+}
+
+.p-datepicker .p-datepicker-header .p-datepicker-next,
+.p-datepicker .p-datepicker-header .p-datepicker-prev {
+    font-size: 0.825rem;
+}
+
+.p-datepicker .p-datepicker-header .p-datepicker-title {
+    .p-datepicker-month,
+    .p-datepicker-year {
+        font-size: 1.25rem;
+        font-weight: 400;
+    }
+}
+
+.p-calendar {
+    width: 100%;
+
+    .p-datepicker {
+        border: none;
+        border-radius: 24px;
+
+        table {
+            th,
+            td {
+                span {
+                    width: 2rem;
+                    height: 2rem;
+                }
+            }
+
+            td.p-datepicker-today > span {
+                background: var(--active-color);
+                color: var(--orange-50);
+            }
+        }
+    }
+}
+
+.p-tabmenu .p-tabmenu-nav {
+    background: unset;
+    .p-tabmenuitem.p-highlight .p-menuitem-link,
+    .p-tabmenuitem .p-menuitem-link {
+        background: unset;
+    }
+}
+
+.no-left-space .p-timeline-event-opposite {
+    display: none;
+}

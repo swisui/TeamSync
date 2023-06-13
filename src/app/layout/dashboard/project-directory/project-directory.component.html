@@ -1,0 +1,20 @@
+<p-card header="Project directory">
+    <div *ngFor="let item of projectDirectory; let index = index" class="grid">
+        <div class="col">
+            <p-avatar
+                [label]="item.name.charAt(0)"
+                [style]="{ backgroundColor: (index | getColor) }"
+                shape="circle"
+                styleClass="mr-2" />
+            {{ item.name }}
+        </div>
+        <div class="col-fixed">
+            <p-avatar *ngFor="let user of item.user" [image]="user.profilePicUrl" class="-ml-2" shape="circle" />
+        </div>
+    </div>
+    <div class="grid -mb-3">
+        <div class="col-12">
+            <p-button [icon]="'pi pi-plus'" label="Add More"></p-button>
+        </div>
+    </div>
+</p-card>

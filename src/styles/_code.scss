@@ -1,0 +1,24 @@
+code {
+    background-color: #f4f4f4;
+    color: #e83e8c;
+    padding: 5px;
+    display: block;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    border-radius: var(--border-radius);
+}
+
+pre code {
+    margin: 0;
+    padding: 0;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}

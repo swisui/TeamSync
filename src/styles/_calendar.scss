@@ -1,0 +1,12 @@
+.cal-week-view .cal-hour:not(:last-child) .cal-hour-segment,
+.cal-week-view .cal-hour:last-child :not(:last-child) .cal-hour-segment {
+    border-bottom: none;
+}
+
+.cal-month-view {
+    .cal-header {
+        .cal-cell {
+            padding: 20px 0;
+        }
+    }
+}

@@ -1,0 +1,315 @@
+<div class="grid">
+    <div class="lg:col-6 col-12">
+        <p-card styleClass="mb-5" header="Vertical">
+            <div class="field">
+                <label>Firstname</label>
+                <input class="w-full" pInputText type="text" />
+            </div>
+            <div class="field">
+                <label>Lastname</label>
+                <input class="w-full" pInputText type="text" />
+            </div>
+        </p-card>
+
+        <p-card styleClass="mb-5" header="Vertical and Grid">
+            <div class="formgrid grid">
+                <div class="field col">
+                    <label>Firstname</label>
+                    <input class="w-full" pInputText type="text" />
+                </div>
+                <div class="field col">
+                    <label>Lastname</label>
+                    <input class="w-full" pInputText type="text" />
+                </div>
+            </div>
+        </p-card>
+        <p-card styleClass="mb-5" header="Horizontal and Fixed Width">
+            <div class="field grid">
+                <label class="col-fixed" style="width: 100px">Firstname</label>
+                <div class="col">
+                    <input class="" pInputText type="text" />
+                </div>
+            </div>
+            <div class="field grid">
+                <label class="col-fixed" style="width: 100px">Lastname</label>
+                <div class="col">
+                    <input class="" pInputText type="text" />
+                </div>
+            </div>
+        </p-card>
+        <p-card styleClass="mb-5" header="Horizontal">
+            <div class="field grid">
+                <label class="col-12 mb-2 md:col-2 md:mb-0">Firstname</label>
+                <div class="col-12 md:col-10">
+                    <input class="w-full" pInputText type="text" />
+                </div>
+            </div>
+            <div class="field grid">
+                <label class="col-12 mb-2 md:col-2 md:mb-0">Lastname</label>
+                <div class="col-12 md:col-10">
+                    <input class="w-full" pInputText type="text" />
+                </div>
+            </div>
+        </p-card>
+        <p-card styleClass="mb-5" header="Inline">
+            <div class="formgroup-inline">
+                <div class="field">
+                    <label class="p-sr-only">Firstname</label>
+                    <input class="" pInputText placeholder="First Name" type="text" />
+                </div>
+                <div class="field">
+                    <label class="p-sr-only">Lastname</label>
+                    <input class="" pInputText placeholder="Last Name" type="text" />
+                </div>
+                <button label="Submit" pButton></button>
+            </div>
+        </p-card>
+    </div>
+    <div class="lg:col-6 col-12">
+        <p-card styleClass="mb-5" header="Form Validation">
+            <form
+                (ngSubmit)="onSubmit()"
+                (reset)="submitted = false; form.reset()"
+                [formGroup]="form"
+                class="formgrid grid">
+                <div class="field col-12 md:col-6">
+                    <label>Firstname</label>
+                    <input
+                        [ngClass]="{
+                            'ng-invalid ng-dirty': submitted && form.get('firstname')?.hasError('required')
+                        }"
+                        class="w-full"
+                        formControlName="firstname"
+                        pInputText
+                        type="text" />
+                    <small *ngIf="submitted && form.get('firstname')?.hasError('required')" class="text-red-500">
+                        Firstname is required
+                    </small>
+                </div>
+                <div class="field col-12 md:col-6">
+                    <label>Lastname</label>
+                    <input
+                        [ngClass]="{
+                            'ng-invalid ng-dirty': submitted && form.get('lastname')?.hasError('required')
+                        }"
+                        class="w-full"
+                        formControlName="lastname"
+                        pInputText
+                        type="text" />
+                    <small *ngIf="submitted && form.get('lastname')?.hasError('required')" class="text-red-500">
+                        Lastname is required
+                    </small>
+                </div>
+                <div class="field col-12">
+                    <label>Address</label>
+                    <textarea
+                        [ngClass]="{
+                            'ng-invalid ng-dirty': submitted && form.get('address')?.hasError('required')
+                        }"
+                        class="w-full"
+                        formControlName="address"
+                        pInputTextarea
+                        rows="4"></textarea>
+                    <small *ngIf="submitted && form.get('address')?.hasError('required')" class="text-red-500">
+                        Address is required
+                    </small>
+                </div>
+                <div class="field col-12 md:col-6">
+                    <label>City</label>
+                    <input
+                        [ngClass]="{
+                            'ng-invalid ng-dirty': submitted && form.get('city')?.hasError('required')
+                        }"
+                        class="w-full"
+                        formControlName="city"
+                        pInputText
+                        type="text" />
+                    <small *ngIf="submitted && form.get('city')?.hasError('required')" class="text-red-500">
+                        City is required
+                    </small>
+                </div>
+                <div class="field col-12 md:col-3">
+                    <label>State</label>
+                    <p-dropdown
+                        [ngClass]="{
+                            'ng-invalid ng-dirty': submitted && form.get('state')?.hasError('required')
+                        }"
+                        [options]="['Arizona', 'California', 'Florida', 'Ohio', 'Washington']"
+                        class="w-full"
+                        formControlName="state"
+                        styleClass="w-full" />
+                    <small *ngIf="submitted && form.get('state')?.hasError('required')" class="text-red-500">
+                        State is required
+                    </small>
+                </div>
+                <div class="field col-12 md:col-3">
+                    <label>Zipcode</label>
+                    <input
+                        [ngClass]="{
+                            'ng-invalid ng-dirty': submitted && form.get('zip')?.hasError('required')
+                        }"
+                        class="w-full ng-invalid ng-dirty"
+                        formControlName="zip"
+                        pInputText
+                        type="text" />
+                    <small *ngIf="submitted && form.get('zip')?.hasError('required')" class="text-red-500 block">
+                        Zipcode is required
+                    </small>
+                </div>
+                <div class="field mb-0 mt-2 col-12">
+                    <p-button label="Validate" styleClass="p-button-primary mr-3" type="submit"></p-button>
+                    <p-button label="Reset" styleClass="p-button-danger" type="reset"></p-button>
+                </div>
+            </form>
+        </p-card>
+        <p-card styleClass="mb-5" header="Advanced Form Validation">
+            <form (ngSubmit)="onAdvanceFormSubmit()" [formGroup]="advanceForm" class="formgrid grid">
+                <div class="field col-12 md:col-6">
+                    <label>Min. 8 Characters</label>
+                    <input
+                        [ngClass]="{
+                            'ng-invalid ng-dirty': advanceSubmitted && advanceForm.get('control1')?.errors
+                        }"
+                        class="w-full"
+                        formControlName="control1"
+                        pInputText />
+                    <div *ngIf="advanceSubmitted && advanceForm.get('control1')?.errors" class="text-red-500">
+                        <small *ngIf="advanceForm.get('control1')?.hasError('required')">Please enter a value</small>
+                        <small *ngIf="advanceForm.get('control1')?.hasError('minlength')">
+                            Input at least 8 characters
+                        </small>
+                    </div>
+                </div>
+                <div class="field col-12 md:col-6">
+                    <label>Between 5-10 Characters</label>
+                    <input
+                        [ngClass]="{
+                            'ng-invalid ng-dirty': advanceSubmitted && advanceForm.get('control2')?.errors
+                        }"
+                        class="w-full"
+                        formControlName="control2"
+                        pInputText />
+                    <div *ngIf="advanceSubmitted && advanceForm.get('control2')?.errors" class="text-red-500">
+                        <small *ngIf="advanceForm.get('control2')?.hasError('required')">Please enter a value</small>
+                        <small *ngIf="advanceForm.get('control2')?.hasError('minlength')">
+                            Input must be at least 5 characters
+                        </small>
+                        <small *ngIf="advanceForm.get('control2')?.hasError('maxlength')">
+                            Input must be no more than 10 characters
+                        </small>
+                    </div>
+                </div>
+                <div class="field col-12 md:col-6">
+                    <label>Min. Number ( >= 5 )</label>
+                    <input
+                        [ngClass]="{
+                            'ng-invalid ng-dirty': advanceSubmitted && advanceForm.get('control3')?.errors
+                        }"
+                        class="w-full"
+                        formControlName="control3"
+                        pInputText />
+                    <div *ngIf="advanceSubmitted && advanceForm.get('control3')?.errors" class="text-red-500">
+                        <small *ngIf="advanceForm.get('control3')?.hasError('required')">Please enter a value</small>
+                        <small *ngIf="advanceForm.get('control3')?.hasError('min')">
+                            The number must be at least 5
+                        </small>
+                    </div>
+                </div>
+                <div class="field col-12 md:col-6">
+                    <label>Between 10-20</label>
+                    <input
+                        [ngClass]="{
+                            'ng-invalid ng-dirty': advanceSubmitted && advanceForm.get('control3')?.errors
+                        }"
+                        class="w-full"
+                        formControlName="control4"
+                        pInputText />
+                    <div *ngIf="advanceSubmitted && advanceForm.get('control4')?.errors" class="text-red-500">
+                        <small *ngIf="advanceForm.get('control4')?.hasError('required')">Please enter a value</small>
+                        <small *ngIf="advanceForm.get('control4')?.hasError('min')">
+                            The number must be at least 10
+                        </small>
+                        <small *ngIf="advanceForm.get('control4')?.hasError('max')">
+                            Number must be less than or equal to 20
+                        </small>
+                    </div>
+                </div>
+                <!--<div class="field col-12 md:col-6">
+                        <label>City</label>
+                        <input class="w-full ng-invalid ng-dirty" formControlName="city" pInputText type="text" />
+                        <small *ngIf="form.get('firstname')?.hasError('required')" class="text-red-500">
+                            City is required
+                        </small>
+                    </div>
+                    <div class="field col-12 md:col-3">
+                        <label>State</label>
+                        <p-dropdown
+                            [options]="['Arizona', 'California', 'Florida', 'Ohio', 'Washington']"
+                            class="ng-invalid ng-dirty w-full"
+                            formControlName="state"
+                            styleClass="w-full" />
+
+                        <small *ngIf="form.get('firstname')?.hasError('required')" class="text-red-500">
+                            State is required
+                        </small>
+                    </div>
+                    <div class="field col-12 md:col-3">
+                        <label>Zipcode</label>
+                        <input class="w-full ng-invalid ng-dirty" formControlName="zip" pInputText type="text" />
+                        <small *ngIf="form.get('firstname')?.hasError('required')" class="text-red-500 block">
+                            Zipcode is required
+                        </small>
+                    </div>-->
+                <div class="field mb-0 col-12 md:col-3">
+                    <p-button label="Validate" styleClass="p-button-primary mr-3" type="submit"></p-button>
+                </div>
+            </form>
+        </p-card>
+        <p-card styleClass="mb-5" header="Advanced Form">
+            <div class="formgrid grid">
+                <div class="field col-12 md:col-6">
+                    <label>Firstname</label>
+                    <input class="w-full" pInputText type="text" />
+                </div>
+                <div class="field col-12 md:col-6">
+                    <label>Lastname</label>
+                    <input class="w-full" pInputText type="text" />
+                </div>
+                <div class="field col-12">
+                    <label>Address</label>
+                    <textarea class="w-full" pInputTextarea rows="4"></textarea>
+                </div>
+                <div class="field col-12 md:col-6">
+                    <label>City</label>
+                    <input class="w-full" pInputText type="text" />
+                </div>
+                <div class="field col-12 md:col-3">
+                    <label>State</label>
+                    <p-dropdown
+                        [options]="['Arizona', 'California', 'Florida', 'Ohio', 'Washington']"
+                        styleClass="w-full" />
+                </div>
+                <div class="field col-12 md:col-3">
+                    <label>Zip</label>
+                    <input class="w-full" pInputText type="text" />
+                </div>
+                <div class="field col-12">
+                    <div class="flex gap-4">
+                        <div class="flex align-items-center gap-1">
+                            <p-checkbox inputId="ny" name="group1" styleClass="mr-2" value="New York"></p-checkbox>
+                            <label for="ny">New York</label>
+                        </div>
+                        <div class="flex align-items-center gap-1">
+                            <p-checkbox inputId="sf" name="group1" styleClass="mr-2" value="San Francisco"></p-checkbox>
+                            <label for="sf">San Francisco</label>
+                        </div>
+                        <div class="flex align-items-center gap-1">
+                            <p-checkbox inputId="la" name="group1" styleClass="mr-2" value="Los Angeles"></p-checkbox>
+                            <label for="la">Los Angeles</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </p-card>
+    </div>
+</div>

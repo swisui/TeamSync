@@ -1,0 +1,14 @@
+@import '../variables/variables';
+
+:root {
+    --font-color: #eef2ff;
+    --card-bg: #19376d;
+    --background: #232f51;
+    --surface-border: #657489;
+}
+
+@import 'primeng/resources/themes/lara-dark-indigo/theme.css';
+@import 'primeng';
+
+@import '../variables/calendar-dark';
+@import 'angular-calendar/scss/angular-calendar';
